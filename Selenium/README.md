@@ -53,7 +53,7 @@ passwordField = driver.find_element(By.ID, "password")<br/>
 passwordField.claer();<br/>
 password.sendkeys("*******")<br/>
 
-## Localizar By Css_selector, por ejemplo en una lista <ol><li></li></ol>:<br/>
+## Localizar By Css_selector, por ejemplo en una lista:<br/>
 driver.find_element_by_css_selector("#cheese #cheddar")<br/>
 <br/>
 <ol id=cheese><br/>
