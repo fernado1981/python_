@@ -56,12 +56,12 @@ password.sendkeys("*******")<br/>
 ## Localizar By Css_selector, por ejemplo en una lista:<br/>
 driver.find_element_by_css_selector("#cheese #cheddar")<br/>
 <br/>
-/* <ol id=cheese>"<br/>
-/* <li id=cheddar>…"<br/>
-/* <li id=brie>…"<br/>
-/* <li id=rochefort>…"<br/>
-/* <li id=camembert>…"<br/>
-/* </ul>"<br/>
+<!--- <ol id=cheese><br/>
+ <li id=cheddar>…<br/>
+ <li id=brie>…<br/>
+ <li id=rochefort>…<br/>
+ <li id=camembert>...<br/>
+ </ul>--><br/>
 
 ## Localizar todos los elementos de la lista:<br/>
 driver.find_elements_by_css_selector("#cheese li")<br/>
