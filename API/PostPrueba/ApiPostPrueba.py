@@ -1,4 +1,4 @@
-from API.PostData import postData
+from API.PostPrueba.PostData import postData
 
 
 class ApiPostyPrueba:

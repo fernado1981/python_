@@ -1,6 +1,4 @@
-import requests
-
-from API.Searchdata import Searchdata
+from API.GetPrueba.Searchdata import Searchdata
 
 
 class ApiPrueba:
