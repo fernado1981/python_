@@ -1,4 +1,3 @@
-import re
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -36,6 +35,8 @@ class PruebaSelenium:
         self.driver.implicitly_wait(10)
 
     def searchElements(self):
+
+        global elements
         for element in self.driver.find_elements_by_xpath("//a"):
             elements = self.driver.find_elements(By.CSS_SELECTOR, "a[href='https://www.telefonica.com']")
 
