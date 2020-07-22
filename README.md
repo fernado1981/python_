@@ -38,13 +38,13 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 
 :dart: Buscar dic e iterarlo:
 -----------------------------
-> matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]
-> count = 0
-> while count < len(matrix):
->    if type(matrix[count]) == dict:
->        for c, v in matrix[count].items():
->            print("calve: ", c, ' Valor: ', v)
->    count += 1
+> matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]<br/>
+> count = 0<br/>
+> while count < len(matrix):<br/>
+>    if type(matrix[count]) == dict:<br/>
+>        for c, v in matrix[count].items():<br/>
+>            print("calve: ", c, ' Valor: ', v)<br/>
+>    count += 1<br/>
 
 ## :gem: Lista:
 Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript<br/>
