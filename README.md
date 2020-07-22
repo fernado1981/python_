@@ -1,7 +1,7 @@
 # :snake: python_:snake:
 iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza
 
-Versión última de python
+Versión última de python<br/>
 
 # Actualizar a la última version en mac:
 Para cambiar la version de python instalada por defecto, a la más actualizada, debemos descargar la última version, instalarla y despúes en los ficheros .bash_profile, .zshrc  y .profile meter las siguientes lineas alias python='/usr/bin/python3' siendo alias python= [ruta donde la tengáis instalada]. despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y wola actualizado python en mac
@@ -11,20 +11,20 @@ Para cambiar la version de python instalada por defecto, a la más actualizada, 
 ## :gem: Diccionario:
 un Diccionario es un conjunto de elementos organizados por clave : valor, se podría decir que son los conocidos tippo de datos "objetos" en javascript la forma de acceso a estos es muy similar a la de las listas<br/>
 
-> dic={"c":"valor", "clave":"valor", ^n}
+> dic={"c":"valor", "clave":"valor", ^n}<br/>
 
 :dart: Recorrer:
 ---------
 > for c,v in dic.items():<br/>
->  print(c,v)
+>  print(c,v)<br/>
 
 :dart: Eliminar: del()
 ---------------
-> del (self.dic[posición or 'item'])
+> del (self.dic[posición or 'item'])<br/>
 
 :dart: Añadir: append()
 ----------------
-> dic[item] = val
+> dic[item] = val<br/>
 
 :dart: Tomar un valor específico dentro de una lista con diccionarios:
 -----------------------------------------------------------------
@@ -43,48 +43,48 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
 ---------
 Muetsra la posición
 > for i in lista:<br/>
->   print(i)           //muesta la posición
->   print(lista[i])    //muetsra el valor por posición
+>   print(i)           //muesta la posición<br/>
+>   print(lista[i])    //muetsra el valor por posición<br/>
 
-Muestra la posición y su valor
-> for i in enumerate(lista):
->   print(i)   //(0,x)(1,x)(2,x)
+Muestra la posición y su valor<br/>
+> for i in enumerate(lista):<br/>
+>   print(i)   //(0,x)(1,x)(2,x)<br/>
 
 :dart: Eliminar: del () / pop()
 ------------------------
 > del (lista[posición])<br/>
 > pos=lista.index('elemento a buscar su posición')
-> lista.pop(pos)
+> lista.pop(pos)<br/>
 
 :dart: Añadir: append()
 ----------------
-> lista.append(elemento)
+> lista.append(elemento)<br/>
 
 :dart: Ver tamaño de una lista: len(lista)
 -----------------------------------
-> len(lista)
+> len(lista)<br/>
 
 :dart:bucle range: range(0,3)
 -----------------------------
-> for i in range(0,3):
->   print(i)      //0,1,2
+> for i in range(0,3):<br/>
+>   print(i)      //0,1,2<br/>
 
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
 el constructor siempre es el primero en ejecutrarse al instanciar un objeto a una clase, en el se inicializan las variables necesarias.<br/>
 
-> class NombreClase:
+> class NombreClase:<br/>
 
 :dart: Constructor:
 ------------
 > def __init__(self,atributos^n):<br/>
->   self.atributo = atributos
+>   self.atributo = atributos<br/>
 
 :dart: Métodos:
 --------
 Los metodos son funcionalidades muy especificas de la clase, por ejemplo añadir, eliminar, ver ...<br/>
-> def NombreMétodo(self,atributo):
->   ...
+> def NombreMétodo(self,atributo):<br/>
+>   ...<br/>
 
 :dart: Interactuación entre clases:
 ----------------------------
