@@ -1,4 +1,4 @@
-# :snake: python_
+# :snake: python_:snake:
 iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza
 
 Versión última de python
