@@ -13,15 +13,6 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 
 > dic={"c":"valor", "clave":"valor", ^n}<br/>
 
-dicA['Sueño']='mucho'
-
-#eliminar por clave
-del dicA['Rango']
-print(dicA)
-
-dicA.pop('Edad')
-print(dicA)
-
 :dart: Recorrer:
 ---------
 > for c,v in dic.items():<br/>
@@ -33,8 +24,8 @@ print(dicA)
 
 :dart: Eliminar: pop()
 ---------------
-> dic.pop('clave')
-> print(dic)
+> dic.pop('clave')<br/>
+> print(dic)<br/>
 
 :dart: Añadir:
 ----------------
@@ -42,9 +33,9 @@ print(dicA)
 
 :dart: Añadir con update
 -------------------------
-> valor = {"Rango": "Militar"}
-> dic.update(valor)
-> print(dic)
+> valor = {"Rango": "Militar"}<br/>
+> dic.update(valor)<br/>
+> print(dic)<br/>
 
 :dart: Tomar un valor específico dentro de una lista con diccionarios:
 -----------------------------------------------------------------
