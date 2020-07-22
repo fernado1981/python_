@@ -16,13 +16,13 @@ class get:
     responseJson = response.json()
     #creamos un objeto de tipo Get y la pasamor el responseJson y el ExpectedJson al constructor
     Param = Get(responseJson, ExpectedJson)
-    #invocamosd al método comparation de Get
+    #invocamos al método comparation de Get
     Param.comparation()
     #Añadimos valores al dic obtenido
     Param.addValue('Name', 'Fernando')
     #Mostramos resultados
     Param.showResult()
-    #Eliminamod valores del diccionario
+    #Eliminamos valores del diccionario
     Param.deleteValue('Name', 'Fernando')
     #Mostramos valores
     Param.showResult()
