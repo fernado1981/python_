@@ -1,16 +1,9 @@
 import requests
 
 from Get import Get
-
+#obtener los datos de una Url con get parsarlos a json , y esperar que sean iguales a los deseados
 
 class get:
-    # api-endpoint
-    # get del listado
-    # url = 'https://jsonplaceholder.typicode.com/todos/'
-    # response = requests.get(url)  # To execute get request
-    # print(response.status_code)  # To print http response code
-    # jsonRes = response.json()
-
     # get del listado filtrado por UserId:1
     url = 'https://jsonplaceholder.typicode.com/todos/1'
     response = requests.get(url)
@@ -24,17 +17,3 @@ class get:
     Param.showResult()
     Param.deleteValue('Name', 'Fernando')
     Param.showResult()
-
-
-# post del listado
-# response = requests.post('https://jsonplaceholder.typicode.com/posts', data=None)
-# jsonRes = response.json()  # output: {'id': 101}
-# print(response.status_code)
-# print(jsonRes)
-
-# post filtrado por title y userId:1
-# data = {'title': 'Pyton Requests', 'body': 'Requests are qwesome', 'userId': 1}
-# response = requests.post('https://jsonplaceholder.typicode.com/posts', data, stream=True)
-# jsonRes = response.json()
-# print(response.status_code)
-# print(jsonRes['title'], jsonRes['body'], sep=' : ')
