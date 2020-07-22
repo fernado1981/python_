@@ -45,7 +45,6 @@
 
 ## Localizar elemento By Id:<br/>
 > driver.find_element(By.ID, "cheese")<br/>
-<br/>
 > usernameField = driver.find_element(By.ID, "username")<br/>
 > usernameField.clear();<br/>
 > username.sendKeys("Fernando")<br/>
@@ -84,20 +83,16 @@ Espara hasta que se cumpla una condición:<br/>
 -----------------------------------------
 > wait.until(some_condition)<br/>
 
-Haz clic en el enlace para activar la alerta:<br/>
----------------------------------------------
+-- Haz clic en el enlace para activar la alerta:<br/>
 > driver.find_element(By.LINK_TEXT, "See an example alert").click()<br/>
 
-Espera a que se muestre la alerta y almacenala en una variable:<br/>
----------------------------------------------------------------
+-- Espera a que se muestre la alerta y almacenala en una variable:<br/>
 > alert = wait.until(expected_conditions.alert_is_present())<br/>
 
-Almacena el texto de la alerta en una variable:<br/>
------------------------------------------------
+-- Almacena el texto de la alerta en una variable:<br/>
 > text = alert.text<br/>
 
-Presiona el botón OK:<br/>
---------------------
+-- Presiona el botón OK:<br/>
 > alert.accept()<br/>
 
 # Espera Implicita:<br/>
