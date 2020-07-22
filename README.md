@@ -50,6 +50,11 @@ Muestra la posición y su valor<br/>
 > for i in enumerate(lista):<br/>
 >   print(i)   //(posición,valor)(posición,valor)(posición,valor)...<br/>
 
+Muestra la posición
+> for i in range(len(lista)):
+>    print(i)
+>    print(lista[i])     //muetsra el valor por posición<br/>
+
 :dart: Eliminar: del () / pop()
 ------------------------
 > del (lista[posición])<br/>
