@@ -92,10 +92,20 @@ Muestra el contenido del array por posición<br/>
 > for i in range(0,3):<br/>
 >   print(i)      //0,1,2<br/>
 
-:dart:saber el tipo de dato: type(dato)
+## MÉTODOS PREDEFINIDOS:<br/>
+:dart: saber el tipo de dato: type(dato)
 ---------------------------------
 > dato=[1,2]<br/>
 > type(dato)  //<class 'list'><br/>
+
+:dart: obtener el valor de un diccionario por su clave: __getitem__(clave)
+--------------------------------------------------------------------
+> dicA = {"Nombre": "Fer", "Edad": 39}<br/>
+<br/>
+> def __getitem__(Nombre):<br/>
+>    print("tengo: ", Nombre['Nombre'])<br/>
+<br/>
+> __getitem__(dicA)    //devuelve Fer<br/>
 
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
