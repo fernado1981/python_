@@ -118,6 +118,37 @@ Muestra el contenido del array por posición<br/>
 
 > __getitem__(dicA)    //devuelve Fer<br/>
 
+:dart: insertar en lista: insert(pos,value)
+-------------------------------------------
+> Zapatos = ["Reebok", "Adidas", "Nike"]
+> value = "ascis"
+> Zapatos.insert(2, value)
+
+:dart: insertar en lista: append(value)
+-------------------------------------------
+> Zapatos.append(value)
+> print(Zapatos)
+
+:dart: Eliminar: remove(value)
+-----------------------------
+> Zapatos.remove('Reebok')
+
+:dart: Eliminar: pop(posicion)
+-----------------------------
+> Zapatos.pop(0)
+
+:dart: Contar elementos: count(value)
+------------------------------------
+> Zapatos.count("ascis")
+
+:dart: longuitud lista: len(lista)
+------------------------------------
+> len(Zapatos)
+
+:dart: indice de un elemento en la lista: index(lista)
+-------------------------------------------------
+> Zapatos.index('Nike')
+
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
 el constructor siempre es el primero en ejecutrarse al instanciar un objeto a una clase, en el se inicializan las variables necesarias.<br/>
