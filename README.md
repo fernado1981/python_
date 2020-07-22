@@ -48,7 +48,7 @@ Muetsra la posición
 
 Muestra la posición y su valor<br/>
 > for i in enumerate(lista):<br/>
->   print(i)   //(0,x)(1,x)(2,x)<br/>
+>   print(i)   //(posición,valor)(posición,valor)(posición,valor)...<br/>
 
 :dart: Eliminar: del () / pop()
 ------------------------
