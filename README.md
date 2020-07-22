@@ -41,8 +41,8 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
 
 :dart: Recorrer:
 ---------
-FOR
-Muetsra la posición
+FOR<br/>
+Muetsra la posición<br/>
 > for i in lista:<br/>
 >   print(i)           //muesta la posición<br/>
 >   print(lista[i])    //muetsra el valor por posición<br/>
@@ -56,12 +56,12 @@ Muestra la posición<br/>
 >    print(i)<br/>
 >    print(lista[i])     //muetsra el valor por posición<br/>
 
-WHILE
-Muestra el contenido del array por posición
-> count = 0
-> while count < len(lista):
->    print(lista[count])
->    count += 1
+WHILE<br/>
+Muestra el contenido del array por posición<br/>
+> count = 0<br/>
+> while count < len(lista):<br/>
+>    print(lista[count])<br/>
+>    count += 1<br/>
 
 :dart: Eliminar: del () / pop()
 ------------------------
