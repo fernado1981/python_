@@ -36,6 +36,16 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 > for i in range(len(lista)):<br/>
 >   print(lista[i]['clave'])<br/>
 
+:dart: Buscar dic e iterarlo:
+-----------------------------
+> matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]
+> count = 0
+> while count < len(matrix):
+>    if type(matrix[count]) == dict:
+>        for c, v in matrix[count].items():
+>            print("calve: ", c, ' Valor: ', v)
+>    count += 1
+
 ## :gem: Lista:
 Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript<br/>
 
@@ -81,6 +91,11 @@ Muestra el contenido del array por posición<br/>
 -----------------------------
 > for i in range(0,3):<br/>
 >   print(i)      //0,1,2<br/>
+
+:dart:saber el tipo de dato: type(dato)
+---------------------------------
+dato=[1,2]<br/>
+>type(dato)  //<class 'list'><br/>
 
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
