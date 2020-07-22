@@ -50,15 +50,15 @@ Muestra la posición y su valor<br/>
 > for i in enumerate(lista):<br/>
 >   print(i)   //(posición,valor)(posición,valor)(posición,valor)...<br/>
 
-Muestra la posición
-> for i in range(len(lista)):
->    print(i)
+Muestra la posición<br/>
+> for i in range(len(lista)):<br/>
+>    print(i)<br/>
 >    print(lista[i])     //muetsra el valor por posición<br/>
 
 :dart: Eliminar: del () / pop()
 ------------------------
 > del (lista[posición])<br/>
-> pos=lista.index('elemento a buscar su posición')
+> pos=lista.index('elemento a buscar su posición')<br/>
 > lista.pop(pos)<br/>
 
 :dart: Añadir: append()
