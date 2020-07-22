@@ -41,8 +41,14 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
 
 :dart: Recorrer:
 ---------
+Muetsra la posición
 > for i in lista:<br/>
->   print(i)
+>   print(i)           //muesta la posición
+>   print(lista[i])    //muetsra el valor por posición
+
+Muestra la posición y su valor
+> for i in enumerate(lista):
+>   print(i)   //(0,x)(1,x)(2,x)
 
 :dart: Eliminar: del () / pop()
 ------------------------
@@ -57,6 +63,11 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
 :dart: Ver tamaño de una lista: len(lista)
 -----------------------------------
 > len(lista)
+
+:dart:bucle range: range(0,3)
+-----------------------------
+> for i in range(0,3):
+>   print(i)      //0,1,2
 
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
