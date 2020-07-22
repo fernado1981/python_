@@ -101,10 +101,10 @@ Muestra el contenido del array por posición<br/>
 :dart: obtener el valor de un diccionario por su clave: __getitem__(clave)
 --------------------------------------------------------------------
 > dicA = {"Nombre": "Fer", "Edad": 39}<br/>
-<br/>
+
 > def __getitem__(Nombre):<br/>
 >    print("tengo: ", Nombre['Nombre'])<br/>
-<br/>
+
 > __getitem__(dicA)    //devuelve Fer<br/>
 
 ## :gem: class:
