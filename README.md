@@ -94,8 +94,8 @@ Muestra el contenido del array por posición<br/>
 
 :dart:saber el tipo de dato: type(dato)
 ---------------------------------
-dato=[1,2]<br/>
->type(dato)  //<class 'list'><br/>
+> dato=[1,2]<br/>
+> type(dato)  //<class 'list'><br/>
 
 ## :gem: class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
