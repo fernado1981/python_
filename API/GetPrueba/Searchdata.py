@@ -17,8 +17,6 @@ class Searchdata:
 
      #Método de busqueda
     def searchApiGet(self):
-        #petició
-    def searchApiGet(self):
         #peticion get a la url dada
         self.response = requests.get(self.url)
         #se imprime el status
