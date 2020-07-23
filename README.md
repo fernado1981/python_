@@ -16,7 +16,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Recorrer:
 ---------
 > for c,v in dic.items():<br/>
-> print(c,v)<br/>
+>     print(c,v)<br/>
 
 :dart: Eliminar: del()
 ---------------
@@ -25,7 +25,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Eliminar: pop()
 ---------------
 > dic.pop('clave')<br/>
->   print(dic)<br/>
+>     print(dic)<br/>
 
 :dart: Añadir:
 ----------------
@@ -34,6 +34,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Añadir con update
 -------------------------
 > valor = {"Rango": "Militar"}<br/>
+
 > dic.update(valor)<br/>
 > print(dic)<br/>
 
@@ -99,6 +100,7 @@ Muestra el contenido del array por posición<br/>
 :dart: Eliminar: del () / pop()
 ------------------------
 > del (lista[posición])<br/>
+
 > pos=lista.index('elemento a buscar su posición')<br/>
 > lista.pop(pos)<br/>
 
