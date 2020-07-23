@@ -59,6 +59,15 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 >            print("calve: ", c, ' Valor: ', v)<br/>
 >    count += 1<br/>
 
+:dart: Buscar por clave:<br/>
+-----------------
+If in<br/>
+> if clave in dic<br/>
+
+If dic.has_Key(clave)<br/>
+> if d.has_key('x'):<br/>
+> print d['x'] <br/>
+
 ## :gem: Lista:
 Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript<br/>
 
