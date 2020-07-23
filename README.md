@@ -13,7 +13,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 
 > dic={"c":"valor", "clave":"valor", ^n}<br/>
 
-:mag_right:Recorrer:
+:dart: Recorrer:
 ---------
 > for c,v in dic.items():<br/>
 > print(c,v)<br/>
