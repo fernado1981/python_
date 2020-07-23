@@ -25,7 +25,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Eliminar: pop()
 ---------------
 > dic.pop('clave')<br/>
-> print(dic)<br/>
+>   print(dic)<br/>
 
 :dart: Añadir:
 ----------------
@@ -40,6 +40,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Tomar un valor específico dentro de una lista con diccionarios:
 -----------------------------------------------------------------
 > count=0<br/>
+
 > while count < len(lista):<br/>
 >   print(lista[count]['clave'])<br/>
 >   count+=1<br/>
@@ -51,6 +52,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 -----------------------------
 > matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]<br/>
 > count = 0<br/>
+
 > while count < len(matrix):<br/>
 >    if type(matrix[count]) == dict:<br/>
 >        for c, v in matrix[count].items():<br/>
@@ -80,6 +82,7 @@ Muestra la posición<br/>
 WHILE<br/>
 Muestra el contenido del array por posición<br/>
 > count = 0<br/>
+
 > while count < len(lista):<br/>
 >    print(lista[count])<br/>
 >    count += 1<br/>
