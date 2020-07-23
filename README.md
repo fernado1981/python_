@@ -16,7 +16,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
 :dart: Recorrer:
 ---------
 > for c,v in dic.items():<br/>
->  print(c,v)<br/>
+> &nbsp;&nbsp;print(c,v)<br/>
 
 :dart: Eliminar: del()
 ---------------
