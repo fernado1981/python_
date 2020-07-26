@@ -1,4 +1,4 @@
-from Selenium.linkedin import linkedin
+from Selenium.linkedin.linkedin import Testlinkedin
 
 
 class initLinkedin:
@@ -6,7 +6,8 @@ class initLinkedin:
     Passwd = "Bimbo2020"
     Url = "http://www.google.es"
 
-    opensesion = linkedin(Url, User, Passwd)
-    opensesion.serachUrl()
-    opensesion.initSesion()
-    opensesion.quitdriver()
+    sesion = Testlinkedin(Url, User, Passwd)
+    sesion.serachUrl()
+    sesion.initSesion()
+    sesion.quitdriver()
+    sesion.logout()

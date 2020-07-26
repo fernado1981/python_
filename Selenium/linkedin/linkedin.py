@@ -2,10 +2,11 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
 
 
-class linkedin:
+class Testlinkedin:
     Chrome(executable_path='/usr/local/bin/chromedriver')
     driver = Chrome()
     iniciar_sesion_link = '.nrgt .mslg .sld .cNifBc .r .l'
+    out = '.nav-item__content .nav_item__dropdown .nav-item__link'
     username_input = '#username'
     password_input = '#password'
 
@@ -32,6 +33,13 @@ class linkedin:
         linkedin = self.driver.find_element_by_css_selector("button[type='submit']")
         linkedin.click()
         assert self.driver.title == "LinkedIn", "Houston we've got a problem"
+
+    def logout(self):
+        linkedin = self.driver.find_element_by_css_selector(self.out)
+        linkedin.click()
+        linkedin = self.driver.find_element_by_link_text('Cerrar sesión')
+        linkedin.click()
+        assert self.driver.title == "LinkedIn: Log In or Sign Up", "Houston we've got a problem"
 
     def quitdriver(self):
         self.driver.quit()
