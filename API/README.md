@@ -1,40 +1,43 @@
+[Principal](../README.md)<br/>
+[Api_Post](../Cheat_Sheet/API_post.md) | [Api_Get](../Cheat_Sheet/API_Get.md)  | [set_conjuntos](../Cheat_Sheet/set_conjunto.md) | [lista_array](../Cheat_Sheet/lista_Array.md) | [Selenium](../Cheat_Sheet/selenium.md) | [SeleniumII](../Selenium/README.md)
+
 # PETICIONES HTTP:<br/>
-paquete request<br/>
-pip3 install requests<br/>
+    paquete request<br/>
+    pip3 install requests<br/>
 
 ## Solicitud GET
 
 Get de listado:<br/>
 ------------------
- url = 'https://jsonplaceholder.typicode.com/todos/'<br/>
- response = requests.get(url)<br/> 
- print(response.status_code)<br/>
- jsonRes = response.json()<br/>
+    url = 'https://jsonplaceholder.typicode.com/todos/'<br/>
+    response = requests.get(url)<br/> 
+    print(response.status_code)<br/>
+    jsonRes = response.json()<br/>
 
 Get por id:<br/>
 --------------
- url = 'https://jsonplaceholder.typicode.com/todos/1'<br/>
- response = requests.get(url)<br/>
- print(response.status_code)<br/>
- responseJson = response.json()<br/>
- print(responseJson)<br/>
+    url = 'https://jsonplaceholder.typicode.com/todos/1'<br/>
+    response = requests.get(url)<br/>
+    print(response.status_code)<br/>
+    responseJson = response.json()<br/>
+    print(responseJson)<br/>
  
 ## Solicitud POST
 
 Post de listado: <br/>
 -------------------
- response = requests.post('https://jsonplaceholder.typicode.com/posts', data=None) <br/>
- jsonRes = response.json()<br/>
- print(response.status_code) <br/>
- print(jsonRes) <br/>
+    response = requests.post('https://jsonplaceholder.typicode.com/posts', data=None) <br/>
+    jsonRes = response.json()<br/>
+    print(response.status_code) <br/>
+    print(jsonRes) <br/>
 
 Post filtrado por title y userId:1 <br/>
 ------------------------------------
- data = {'title': 'Pyton Requests', 'body': 'Requests are qwesome', 'userId': 1} <br/>
- response = requests.post('https://jsonplaceholder.typicode.com/posts', data, stream=True) <br/>
- jsonRes = response.json() <br/>
- print(response.status_code) <br/>
- print(jsonRes['title'], jsonRes['body'], sep=' : ') <br/>
+    data = {'title': 'Pyton Requests', 'body': 'Requests are qwesome', 'userId': 1} <br/>
+    response = requests.post('https://jsonplaceholder.typicode.com/posts', data, stream=True) <br/>
+    jsonRes = response.json() <br/>
+    print(response.status_code) <br/>
+    print(jsonRes['title'], jsonRes['body'], sep=' : ') <br/>
  
  
 ## Métodos de acceso:<br/>

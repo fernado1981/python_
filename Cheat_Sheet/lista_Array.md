@@ -1,19 +1,19 @@
 # listas/array:
 
-lista = [1, 2, 3, 4]<br/>
-lista.pop()<br/>
-pos = lista.index(2)<br/>
-lista.pop(pos)<br/>
-lista.insert(1, 5)<br/>
-del (lista[2])<br/>
-len(lista)<br/>
-suma = sum(lista)<br/>
-print(lista)<br/>
+    lista = [1, 2, 3, 4]
+    lista.pop()
+    pos = lista.index(2)
+    lista.pop(pos)
+    lista.insert(1, 5)
+    del (lista[2])
+    len(lista)
+    suma = sum(lista)
+    print(lista)
 
-for i in lista:<br/>
-    print(i)<br/>
+    for i in lista:
+        print(i)
 
-for i in range(len(lista)):<br/>
-    print(lista[i])<br/>
+    for i in range(len(lista)):
+        print(lista[i])
 
-
+[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](selenium.md)

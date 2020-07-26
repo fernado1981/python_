@@ -1,19 +1,21 @@
 # Set_Conjuntos:
 
-conjunto = {"yo", "tu", "el", "ella"}<br/>
-conjunto.remove("yo")<br/>
-conjunto.pop()<br/>
-conjunto.add("diego")<br/>
-conjunto.add("maria")<br/>
-conjunto.discard(1)<br/>
-conjuntoA = {"yo", "tu", "vosotros"}<br/>
-conjunto.update(conjuntoA)<br/>
-print(conjunto.difference(conjuntoA))<br/>
-print(conjunto)<br/>
-conjunto = list(conjunto)<br/>
+    conjunto = {"yo", "tu", "el", "ella"}
+    conjunto.remove("yo")
+    conjunto.pop()
+    conjunto.add("diego")
+    conjunto.add("maria")
+    conjunto.discard(1)
+    conjuntoA = {"yo", "tu", "vosotros"}
+    conjunto.update(conjuntoA)
+    print(conjunto.difference(conjuntoA))
+    print(conjunto)
+    conjunto = list(conjunto)
 
-for i in conjunto:<br/>
-    print(i)<br/>
+    for i in conjunto:
+        print(i)
 
-for i in range(len(conjunto)):<br/>
-    print(conjunto[i])<br/>
+    for i in range(len(conjunto)):
+        print(conjunto[i])
+
+[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](selenium.md)
