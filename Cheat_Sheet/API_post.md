@@ -1,3 +1,4 @@
+[Principal](../README.md)<br/>
 # API_Post:
 
     import requests
@@ -9,4 +10,4 @@
     response = response.json()
     print(response)
 
-[Api_Get](API_Get.md) | [diccionario](diccionario.md) | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](selenium.md)
+[Api_Get](API_Get.md) | [diccionario](diccionario.md) | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](../Selenium/README.md)

@@ -1,3 +1,4 @@
+[Principal](../README.md)<br/>
 #API_Get:
 
     import requests<br/>
@@ -15,4 +16,4 @@
             sospechoso = list(sospechoso)<br/>
             print(sospechoso)<br/>
             
-[Api_Post](API_post.md) | [diccionario](diccionario.md) | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](selenium.md)
+[Api_Post](API_post.md) | [diccionario](diccionario.md) | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](../Selenium/README.md)

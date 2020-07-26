@@ -1,3 +1,4 @@
+[Principal](../README.md)<br/>
 # Diccionarios:
 
     Fernando = {"Nombre": "Fernando", "Apellidos": "Manrique", "Edad": 39}
@@ -17,4 +18,4 @@
             for i in v:
                 print(i, ':', v[i])
 
-[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](selenium.md)
+[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [set_conjuntos](set_conjunto.md) | [lista_array](lista_Array.md) | [Selenium](../Selenium/README.md)
