@@ -1,4 +1,5 @@
 [Principal](../README.md)<br/>
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 # cramos el diciconario {K,V}
     Fernando = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
     Diego = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
@@ -33,4 +34,3 @@
     for c, v in Diego.items():
         print(c,v)
         
-[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)

@@ -1,4 +1,5 @@
 [Principal](../README.md)<br/>
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 # lista/array
     lista = [1, 2, 3, "hola", [4, 6, 2], {"Nombre:""Fernando"}, ("paco", "maria")]
 > append para añadir lista.append(valor)
@@ -64,5 +65,3 @@
     for i in lista:
         if type(i) == dict:
             print(i['Nombre'])
-            
-[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)

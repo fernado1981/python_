@@ -1,5 +1,5 @@
 [Principal](../README.md)<br/>
-[Api_Post](../Cheat_Sheet/API_post.md) | [Api_Get](../Cheat_Sheet/API_Get.md)  | [set_conjuntos](../Cheat_Sheet/set_conjunto.md) | [lista_array](../Cheat_Sheet/lista_Array.md) | [Selenium](../Cheat_Sheet/selenium.md) | [SeleniumII](../Selenium/README.md)
+[Api_Post](../Cheat_Sheet/READMEPOST.md) | [Api_Get](../Cheat_Sheet/READMEGET.md)  | [Tuple_Set](../Cheat_Sheet/READMETupleSet.md) | [lista_array](../Cheat_Sheet/READMELIST.md) | [Diccionario](../Cheat_Sheet/READMEDIC.md) | [Selenium](../Cheat_Sheet/REAMDESELENIUM.md)
 
 # PETICIONES HTTP:<br/>
     paquete request<br/>

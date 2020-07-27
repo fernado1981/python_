@@ -1,4 +1,5 @@
 [Principal](../README.md)<br/>
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 # Tuple set
     conjunto = ("pepe", "maria", "juanito", "raulin")
     conjuntos = {"pepe", "maria", "juanito", "raulin","fatima"}
@@ -32,5 +33,3 @@
 # Bucles asociados al conjunto
     for i in conjunto:
         print(i)
-
-[Api_Post](API_post.md) | [Api_Get](API_Get.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)

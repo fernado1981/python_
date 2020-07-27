@@ -1,6 +1,6 @@
 <a name="top"></a>
 
-[Api_Post](Cheat_Sheet/API_post.md) | [Api_Get](Cheat_Sheet/API_Get.md)  | [set_conjuntos](Cheat_Sheet/set_conjunto.md) | [lista_array](Cheat_Sheet/lista_Array.md) | [Selenium](Cheat_Sheet/selenium.md)
+[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Selenium](Cheat_Sheet/REAMDESELENIUM.md)
 
 # :snake: python_:snake:
 iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza
