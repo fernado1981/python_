@@ -6,7 +6,10 @@ class Testlinkedin:
     Chrome(executable_path='/usr/local/bin/chromedriver')
     driver = Chrome()
     iniciar_sesion_link = '.nrgt .mslg .sld .cNifBc .r .l'
-    out = '.nav-item__content .nav_item__dropdown .nav-item__link'
+    out = '.display-flex .nav-container .nav-item--profile .nav-item__content'
+    salir = "//*[@id='ember38']"
+    submit = "button[type='submit']"
+    inputGoogle = "input[name='q']"
     username_input = '#username'
     password_input = '#password'
 
@@ -18,7 +21,7 @@ class Testlinkedin:
     def serachUrl(self):
         self.driver.get(self.url)
         assert self.driver.title == "Google", "Houston we've got a problem"
-        element = self.driver.find_element_by_css_selector("input[name='q']")
+        element = self.driver.find_element_by_css_selector(self.inputGoogle)
         element.send_keys('linkedin')
         element.send_keys(Keys.ENTER)
         linkedin = self.driver.find_element_by_css_selector(self.iniciar_sesion_link)
@@ -30,16 +33,17 @@ class Testlinkedin:
         linkedin.send_keys(self.user)
         linkedin = self.driver.find_element_by_css_selector(self.password_input)
         linkedin.send_keys(self.passwd)
-        linkedin = self.driver.find_element_by_css_selector("button[type='submit']")
+        linkedin = self.driver.find_element_by_css_selector(self.submit)
         linkedin.click()
         assert self.driver.title == "LinkedIn", "Houston we've got a problem"
 
     def logout(self):
         linkedin = self.driver.find_element_by_css_selector(self.out)
         linkedin.click()
-        linkedin = self.driver.find_element_by_link_text('Cerrar sesión')
+        self.driver.implicitly_wait(10)
+        linkedin = self.driver.find_element_by_xpath(self.salir)
         linkedin.click()
-        assert self.driver.title == "LinkedIn: Log In or Sign Up", "Houston we've got a problem"
+        assert self.driver.title == "LinkedIn: inicio de sesión o registro", "Houston we've got a problem"
 
     def quitdriver(self):
         self.driver.quit()
