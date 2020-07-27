@@ -9,19 +9,23 @@
     print(type(dicF))
 
 # funcionaes del diccionario
-> add
+> add -- añadir
   
     dicF['Fernando']["Rango"] = "Rambo"
+    
+> pop(v) -- Eliminar por valor
 
-> values
+    dicF['Fernando'].pop('Edad')
+
+> values -- ver valores
 
     print(dicF.values())
 
-> keys
+> keys -- ver claves
 
     print(dicF.keys())
 
-> len
+> len  -- longitud
 
     print(len(dicF))
 
