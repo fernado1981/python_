@@ -3,7 +3,7 @@ from Selenium.linkedin.linkedin import Testlinkedin
 
 class initLinkedin:
     User = "fernando.manrique.villanueva@gmail.com"
-    Passwd = "Bimbo2020"
+    Passwd = "*******"
     Url = "http://www.google.es"
 
     sesion = Testlinkedin(Url, User, Passwd)
