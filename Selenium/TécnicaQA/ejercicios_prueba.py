@@ -17,7 +17,7 @@ class ejercicio_prueba:
     def setPeriodico(self, news):
         self.periodico = news
 
-    def ShowDiccionario(self):
+    def showDiccionario(self):
         for c, v in self.diccionario.items():
             if c == self.periodico:
                 for c, v in v.items():
