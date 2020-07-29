@@ -9,7 +9,7 @@ class pruebaTel:
 
     periodicos = {"Marca": Marca, "ElMundo": ElMundo}
     p1 = ejercicio_prueba(periodicos)
-    #url = p1.ShowDiccionario()
+    #url = p1.showDiccionario()
     #p1.openUrl(url)
     #p1.setApi(Api_url)
     #p1.apiGet()
