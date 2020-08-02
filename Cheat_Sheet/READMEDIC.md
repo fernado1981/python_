@@ -38,5 +38,3 @@
     for c, v in Diego.items():
         print(c,v)
         
-[texto_alternativo_imagen](URL_imagen)
-        
