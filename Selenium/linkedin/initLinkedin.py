@@ -7,7 +7,7 @@ class initLinkedin:
     Url = "http://www.google.es"
 
     sesion = Testlinkedin(Url, User, Passwd)
-    sesion.serachUrl()
+    sesion.searchUrl()
     sesion.initSesion()
     sesion.logout()
     sesion.quitdriver()
