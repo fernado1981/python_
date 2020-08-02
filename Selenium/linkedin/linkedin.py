@@ -18,7 +18,7 @@ class Testlinkedin:
         self.user = User
         self.passwd = Passwd
 
-    def serachUrl(self):
+    def searchUrl(self):
         self.driver.get(self.url)
         assert self.driver.title == "Google", "Houston we've got a problem"
         element = self.driver.find_element_by_css_selector(self.inputGoogle)
