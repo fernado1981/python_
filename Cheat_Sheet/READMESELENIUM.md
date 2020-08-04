@@ -7,3 +7,7 @@
     Chrome(executable_path='/usr/local/bin/chromedriver')
     driver = Chrome()
     driver.get('http://www.google.es/')
+
+
+# Formas de hacer scroll:
+[Scroll_Down](Scroll_down.png)
