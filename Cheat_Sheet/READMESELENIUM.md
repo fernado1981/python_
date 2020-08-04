@@ -10,4 +10,4 @@
 
 
 # Formas de hacer scroll:
-[Scroll_Down](Scroll_down.png)
+![Scroll_Down](Scroll_down.png)
