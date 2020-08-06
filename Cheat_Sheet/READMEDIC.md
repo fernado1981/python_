@@ -1,5 +1,5 @@
 [Principal](../README.md)<br/>
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](/READMESELENIUM.md)
 # cramos el diciconario {K,V}
     Fernando = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
     Diego = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
