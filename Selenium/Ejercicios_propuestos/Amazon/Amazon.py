@@ -1,4 +1,4 @@
-from Amazon.pruebaAmazon import pruebaAmazon
+from Selenium.Ejercicios_propuestos.Amazon.pruebaAmazon import pruebaAmazon
 
 
 class Amazon:
@@ -14,4 +14,5 @@ class Amazon:
     PAmazon = pruebaAmazon(urlGoogle, KeyWordGoogle, SearchAmazon, searchFirstoption, AcceptCookie, inputAmazon)
     PAmazon.OpenAmazon()
     PAmazon.searchChoose(buscar)
+    PAmazon.obtData()
     PAmazon.selecionarPrenda(index)
