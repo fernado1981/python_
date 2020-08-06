@@ -105,7 +105,7 @@ Espara hasta que se cumpla una condición:<br/>
     alert.accept()
     
 # Formas de hacer scroll:
-![Scroll_Down](Scroll_down.png)
+![Scroll_Down](../Cheat_Sheet/Scroll_down.png)
 
 # Espera Implicita:<br/>
     driver.implicitly_wait(10)
