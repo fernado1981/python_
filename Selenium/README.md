@@ -1,6 +1,6 @@
 <a name="top"></a>
 [Principal](../README.md)<br/>
-[Api_Post](../Cheat_Sheet/READMEPOST.md) | [Api_Get](../Cheat_Sheet/READMEGET.md)  | [Tuple_Set](../Cheat_Sheet/READMETupleSet.md) | [lista_array](../Cheat_Sheet/READMELIST.md) | [Diccionario](../Cheat_Sheet/READMEDIC.md) | [Selenium](../Cheat_Sheet/READMESELENIUM.md)
+[Api_Post](../Cheat_Sheet/READMEPOST.md) | [Api_Get](../Cheat_Sheet/READMEGET.md)  | [Tuple_Set](../Cheat_Sheet/READMETupleSet.md) | [lista_array](../Cheat_Sheet/READMELIST.md) | [Diccionario](../Cheat_Sheet/READMEDIC.md)
 
 
 # Documentación:
@@ -103,6 +103,9 @@ Espara hasta que se cumpla una condición:<br/>
 > Presiona el botón OK:<br/>
 
     alert.accept()
+    
+# Formas de hacer scroll:
+![Scroll_Down](Scroll_down.png)
 
 # Espera Implicita:<br/>
     driver.implicitly_wait(10)
