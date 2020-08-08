@@ -1,4 +1,4 @@
-from API.GetPrueba.Searchdata import Searchdata
+from API.GetPruebaCoches2.Searchdata import Searchdata
 
 
 class ApiPrueba:
@@ -8,5 +8,9 @@ class ApiPrueba:
      data = 'parkings'
      #cereamos un objeti de tipo SearchData y le pasamos la url y el data al constructor
      search = Searchdata(url, data)
+     #seteamos el color
+     search.setColor('yellow')
      #invocamos el método searchApiGet de SeachData
      search.searchApiGet()
+     #mostramos los datos obtenidos
+     search.showdisponibilitycars()
