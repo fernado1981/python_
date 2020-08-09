@@ -14,5 +14,5 @@ class Ej2:
     P2.setColor('blue')
     P2.deleteColorList()
     P2.addlist(color)
-    P2.addlist(color)
+    #P2.addlist(color)
     P2.showList()
