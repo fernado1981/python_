@@ -1,15 +1,18 @@
 import requests
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 
 class Respuestas:
     response = ''
     lista = []
-    driver = webdriver.Chrome()
+    #driver = webdriver.Chrome()
 
     def __init__(self, data):
+        self.driver = data.driver
         self.dataApi = data.dataApi
         self.dataNew = data.dataNews
+        self.exercise = data.dataExercise
 
     def getData(self):
         self.response = requests.get(self.dataApi['url'])
@@ -41,8 +44,45 @@ class Respuestas:
             if c == self.dataNew['periodico']:
                 for c, v in v.items():
                     self.dataNew['url'] = v
-                    print(self.dataNew['url'])
                 break
 
     def openUrl(self):
         self.driver.get(self.dataNew['url'])
+
+    def tearDown(self):
+        self.driver.quit()
+
+    def openGoogle(self):
+        self.driver.get(self.exercise['getGoogle'])
+        input = self.driver.find_element_by_name(self.exercise['iGoogleName'])
+        input.send_keys(self.exercise['sendUrlTel'])
+        input.send_keys(Keys.ENTER)
+        self.driver.implicitly_wait(10)
+
+    def firstoption(self):
+        first = self.driver.find_elements_by_xpath(self.exercise['firstOptionXpath'])[0]
+        first.find_element_by_xpath(self.exercise['link']).click()
+        self.driver.implicitly_wait(10)
+
+    def acceptbanner(self):
+        self.driver.maximize_window()
+        self.driver.find_element_by_css_selector(self.exercise['BannerCss']).click()
+        self.driver.implicitly_wait(10)
+    def taketag(self):
+        for val in self.driver.find_elements_by_xpath(self.exercise['link']):
+            self.lista.append(val.get_attribute('href'))
+        self.driver.implicitly_wait(25)
+
+    def Accionista(self):
+        self.driver.find_element_by_link_text(self.exercise['AccionistaslinkText']).click()
+        self.driver.implicitly_wait(10)
+
+    def valueNY(self):
+        iframe=self.driver.find_element_by_id(self.exercise['iframeId'])
+        self.driver.switch_to.frame(iframe)
+        self.driver.implicitly_wait(10)
+        self.driver.find_element_by_link_text(self.exercise['nyseLinkText']).click()
+        self.driver.implicitly_wait(10)
+
+        for val in self.driver.find_elements_by_css_selector(self.exercise['valNYCss']):
+                    print(val.text)

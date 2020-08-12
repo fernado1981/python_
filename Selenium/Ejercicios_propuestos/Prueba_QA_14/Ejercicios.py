@@ -3,13 +3,22 @@ from Selenium.Ejercicios_propuestos.Prueba_QA_14.data import data
 
 
 class Ejercicios:
+    # P1 = Respuestas(data)
+    # P1.getData()
+    # P1.searchData()
+    # P1.showData()
 
-    #P1 = Respuestas(data)
-    #P1.getData()
-    #P1.searchData()
-    #P1.showData()
+    # P2 = Respuestas(data)
+    # P2.setNews('ElMundo')
+    # P2.ObtnUrl()
+    # P2.openUrl()
+    # P2.tearDown()
 
-    P2 = Respuestas(data)
-    P2.setNews()
-    P2.ObtnUrl()
-    P2.openUrl()
+    P3 = Respuestas(data)
+    P3.openGoogle()
+    P3.firstoption()
+    P3.acceptbanner()
+    P3.taketag()
+    P3.Accionista()
+    P3.valueNY()
+    P3.tearDown()

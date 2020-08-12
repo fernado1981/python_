@@ -1,5 +1,8 @@
-class data:
+from selenium import webdriver
 
+
+class data:
+    driver = webdriver.Chrome()
     dataApi = {
         'url': 'http://demo5977139.mockable.io/qa-cdco/exercises/cars_01',
         'search': 'suspicious_car',
@@ -13,4 +16,17 @@ class data:
         'Marca': {'url': 'http://www.marca.es'},
         'ElMundo': {'url': 'http://www.elmundo.es'},
         'periodico': 'Marca'
+    }
+
+    dataExercise = {
+        'getGoogle': 'http://www.google.es',
+        'iGoogleName': 'q',
+        'sendUrlTel': 'https://www.telefonica.com/es',
+        'firstOptionXpath': "//div[@id='search']//div[@class='g']",
+        'link': './/a',
+        'BannerCss': '.cc-cookies .cc-cookie-accept',
+        'AccionistaslinkText': 'Accionistas e inversores',
+        'iframeId': 'euroland-ticker-es',
+        'nyseLinkText': 'NYSE',
+        'valNYCss': '.Tab_Active .last'
     }
