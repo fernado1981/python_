@@ -2,7 +2,7 @@ from Selenium.Ejercicios_propuestos.Prueba_QA_14.Respuestas import Respuestas
 from Selenium.Ejercicios_propuestos.Prueba_QA_14.data import data
 
 
-class Ejercicios:
+class Ejercicios():
     # P1 = Respuestas(data)
     # P1.getData()
     # P1.searchData()
@@ -14,7 +14,7 @@ class Ejercicios:
     # P2.openUrl()
     # P2.tearDown()
 
-    P3 = Respuestas(data)
+    P3 = Respuestas()
     P3.openGoogle()
     P3.firstoption()
     P3.acceptbanner()

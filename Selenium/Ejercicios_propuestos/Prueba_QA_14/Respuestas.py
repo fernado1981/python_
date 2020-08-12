@@ -1,14 +1,14 @@
 import requests
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+from Selenium.Ejercicios_propuestos.Prueba_QA_14.data import data
 
-class Respuestas:
+
+class Respuestas(data):
     response = ''
     lista = []
-    #driver = webdriver.Chrome()
 
-    def __init__(self, data):
+    def __init__(self):
         self.driver = data.driver
         self.dataApi = data.dataApi
         self.dataNew = data.dataNews
@@ -68,6 +68,7 @@ class Respuestas:
         self.driver.maximize_window()
         self.driver.find_element_by_css_selector(self.exercise['BannerCss']).click()
         self.driver.implicitly_wait(10)
+
     def taketag(self):
         for val in self.driver.find_elements_by_xpath(self.exercise['link']):
             self.lista.append(val.get_attribute('href'))
@@ -78,11 +79,11 @@ class Respuestas:
         self.driver.implicitly_wait(10)
 
     def valueNY(self):
-        iframe=self.driver.find_element_by_id(self.exercise['iframeId'])
+        iframe = self.driver.find_element_by_id(self.exercise['iframeId'])
         self.driver.switch_to.frame(iframe)
         self.driver.implicitly_wait(10)
         self.driver.find_element_by_link_text(self.exercise['nyseLinkText']).click()
         self.driver.implicitly_wait(10)
 
         for val in self.driver.find_elements_by_css_selector(self.exercise['valNYCss']):
-                    print(val.text)
+            print(val.text)
