@@ -43,10 +43,10 @@ class pruebaAmazon:
         print("")
         self.driver.execute_script("scroll(0,300)")
         for val in self.driver.find_elements_by_xpath('.//img'):
-            if val.get_attribute('data-image-index') is None:
+            if val.get_attribute('Data-image-index') is None:
                 pass
             else:
-                self.lista.append(val.get_attribute('data-image-index'))
+                self.lista.append(val.get_attribute('Data-image-index'))
                 self.lista.append(val.get_attribute('alt'))
         self.driver.implicitly_wait(20)
         print(self.lista)

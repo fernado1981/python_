@@ -5,13 +5,13 @@ from Selenium.Ejercicios_propuestos.Prueba_QA_12.exerciseTest import exerciseTes
 
 
 class ejercicio:
-    #P1 = Prensa(data.dataNews)
+    #P1 = Prensa(Data.dataNews)
     # P1.setNew('ElMundo')
     # P1.obtnUrl()
     # P1.openUrl()
     # P1.tearDown()
 
-    # P2 = ApiGet(data.dataApi)
+    # P2 = ApiGet(Data.dataApi)
     # P2.obtData()
     # P2.search()
 

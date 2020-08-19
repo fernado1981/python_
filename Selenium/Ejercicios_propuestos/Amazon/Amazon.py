@@ -9,7 +9,7 @@ class Amazon:
     AcceptCookie = '.a-declarative .sp-cc-buttons .a-button-primary'
     inputAmazon = '.nav-search-field  #twotabsearchtextbox'
     buscar = 'abrigos nepal hombre'
-    index = "//img[@data-image-index=30]"
+    index = "//img[@Data-image-index=30]"
 
     PAmazon = pruebaAmazon(urlGoogle, KeyWordGoogle, SearchAmazon, searchFirstoption, AcceptCookie, inputAmazon)
     PAmazon.OpenAmazon()

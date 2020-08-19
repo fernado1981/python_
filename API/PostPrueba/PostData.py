@@ -13,10 +13,10 @@ class postData:
         self.url = url
         self.data = data
     
-    #creamos el método para añadir el data por medio de Post
+    #creamos el método para añadir el Data por medio de Post
     def AddData(self):
         print(self.data)
-        #generamos la petición post pasandole la url, el data y strema=True
+        #generamos la petición post pasandole la url, el Data y strema=True
         response = requests.post(self.url, self.data, stream=True)
         #Imprimimos el status
         print(response.status_code)

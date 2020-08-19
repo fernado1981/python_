@@ -4,7 +4,7 @@ from Selenium.Ejercicios_propuestos.exercises.newspaper import newspaper
 
 class exercise:
     # API
-    # P1 = responses(data.dataApiGet['url'], data.dataApiGet['sospecha'])
+    # P1 = responses(Data.dataApiGet['url'], Data.dataApiGet['sospecha'])
     # P1.getApi()
     # P1.search()
 

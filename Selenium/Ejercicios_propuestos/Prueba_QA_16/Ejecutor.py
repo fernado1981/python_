@@ -9,7 +9,7 @@ class Ejecutor:
     #P1.searchWord()
     #P1.viewDetails()
 
-    #P2 = newsPaper()
+    #P2 = NewsPaper()
     #P2.setNews()
     #P2.openNews()
     #P2.exit()

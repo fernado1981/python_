@@ -15,7 +15,7 @@ class newspaper:
     #P1.obtenUrl()
 
     # paso de datos desde un fichero externo
-    #P1 = NewsPaperData(data.dataNews)
+    #P1 = NewsPaperData(Data.dataNews)
     #P1.setPeriodico('ElMundo')
     #P1.ObtenUrl()
     #P1.showUrl()
