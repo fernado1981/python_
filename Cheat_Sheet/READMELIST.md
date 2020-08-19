@@ -28,9 +28,16 @@
 > index para buscar una posicion lista.index(valor)
 
     print(lista.index("hola"))
+
 > sort() para ordenar lista.sort()
 
     lista[2].sort()
+    
+>  Ordenar la lista de objetos usando un parámetro "clave"
+        
+    myArray = [{"name": "Mario Peres"}, {"name": "Emilio Peres"}, {"name": "Yusaiba Peres"}]
+    myArray.sort(key=lambda person: person['name'])
+    print(myArray)
 
 > count para contar elementos de una lista lista.count(v)
 
