@@ -4,7 +4,7 @@ from Selenium.Ejercicios_propuestos.Prueba_QA_16.teleco import teleco
 
 
 class Ejecutor:
-    #P1 = apiGet()
+    #P1 = apiGetpy()
     #P1.getData()
     #P1.searchWord()
     #P1.viewDetails()

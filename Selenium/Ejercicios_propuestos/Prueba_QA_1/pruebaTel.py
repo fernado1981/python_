@@ -17,7 +17,7 @@ class pruebaTel:
     # url = p1.showDiccionario()
     # p1.openUrl(url)
     # p1.setApi(Api_url)
-    # p1.apiGet()
+    # p1.apiGetpy()
     # p1.searchTelefonica(telefonica)
     # p1.listadosTelefónica(telefonica)
     # p1.accionistas(telefonica)

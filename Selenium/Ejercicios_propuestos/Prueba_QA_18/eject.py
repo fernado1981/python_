@@ -4,7 +4,7 @@ from Selenium.Ejercicios_propuestos.Prueba_QA_18.Teleco.telefonica import telefo
 
 
 class eject:
-    #p1 = apiGet()
+    #p1 = apiGetpy()
     #value = p1.getdata()
     #p1.searchdata(value)
     #p1.showData()
