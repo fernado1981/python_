@@ -7,4 +7,5 @@ if response.status_code == 200:
     for c, v in response.items():
         if type(v) == list:
             for item in v:
-                    print(item['name'] == 'Tatooine')
+                    if item['name'] == 'Tatooine':
+                        print(item)

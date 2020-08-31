@@ -1,6 +1,6 @@
 import requests
 
-from API.getApi.data import data
+from API.StartWarsApiGet.data import data
 
 
 class getApiStartWars(data):
