@@ -4,7 +4,6 @@
 
 
 ... from pip._vendor import requests
-
 ... class ApiPrueba:
 ...    url = "http://demo5977139.mockable.io/qa-cdco/exercises/cars_01"
 ...    sospechoso = 'suspicious_car'
