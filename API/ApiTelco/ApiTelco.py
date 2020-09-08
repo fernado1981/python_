@@ -7,6 +7,7 @@ class ApiTelco(DataApi):
     response = ''
 
     def __init__(self):
+        self.data = DataApi.dataApi
         self.url = DataApi.dataApi['url']
         self.search = DataApi.dataApi['searchWord']
 
@@ -18,7 +19,7 @@ class ApiTelco(DataApi):
     def searchData(self):
         for c, v in self.response.items():
             if c == self.search:
-                DataApi.dataApi[True] = {c: v}
+                self.data[True] = {c: v}
 
     def seeData(self):
-        print(DataApi.dataApi)
+        print(self.data)

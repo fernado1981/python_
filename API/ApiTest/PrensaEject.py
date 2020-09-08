@@ -1,4 +1,4 @@
-from Api.Prensa import Prensa
+from API.ApiTest.Prensa import Prensa
 
 
 class PrensaEject:
@@ -9,7 +9,7 @@ class PrensaEject:
     }
 
     p = Prensa(data)
-    p.setNews()
+    p.setNews('ElMundo')
     p.searchUrl()
     p.openBrowser()
     p.closeBrowser()
