@@ -1,0 +1,13 @@
+1599646993657	geckodriver	INFO	Listening on 127.0.0.1:50471
+1599646993682	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3v/1sl8t8xd1ql2jp4p40d37hyw0000gn/T/rust_mozprofileLp9RjL"
+1599646996695	Marionette	INFO	Listening on port 50476
+1599646996747	Marionette	WARN	TLS certificate errors will be ignored for this session
+1599647021043	Marionette	INFO	Stopped listening on port 50476
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+

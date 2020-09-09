@@ -1,4 +1,4 @@
-from API.ApiTest.Prensa import Prensa
+from POO.PrensaNews.Prensa import Prensa
 
 
 class PrensaEject:
