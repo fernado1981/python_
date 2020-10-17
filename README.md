@@ -206,3 +206,6 @@ el constructor siempre es el primero en ejecutrarse al instanciar un objeto a un
      My_objtClass.<br/>
      
 [Subir](#top)
+
+### enlace de interes:
+<https://www.programiz.com/python-programming>
