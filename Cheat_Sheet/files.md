@@ -1,3 +1,11 @@
+<a name="top"></a>
+
+[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/files.md)
+
+
+[Selenium](Selenium/README.md)
+
+
 # funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
 Modos:
 ------
