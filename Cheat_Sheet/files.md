@@ -1,4 +1,4 @@
-# vamos a trabajar con la function "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
+# funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
 Modos:
 ------
 	Lectura 'r', 
