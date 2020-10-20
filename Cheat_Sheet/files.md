@@ -1,15 +1,15 @@
 # vamos a trabajar con la function "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
 Modos:
 ------
-lectoura 'r', 
-escritura (new line)'w', 
-add line 'a'
+	Lectura 'r', 
+	Escritura (new line)'w', 
+	Add line 'a'
 
 ### podemos ver en que modo se encuentra un fichero con la siguiente sentencia:
-[file].mode()
+	[file].mode()
 
 ### cerrar un fichero tras ser abierto:
-[file].close()
+	[file].close()
 
 ### con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la sentencia al final de la misma el fichero se cerrará automaticamente, evitando así tener que cerralo.
 
