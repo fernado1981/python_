@@ -60,8 +60,10 @@ construir un DataFrame desde un diccionario:
 	d = {'col1': [1, 2], 'col2': [3, 4]}
 	df = pd.DataFrame(data=d)
 	df
-Salida:
-   	     col1  col2
+	
+	Salida:
+	
+	    col1  col2
 	0     1     3
 	1     2     4
 
