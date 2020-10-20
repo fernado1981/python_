@@ -55,7 +55,11 @@ Modos:
 		   		writefile.write(line)
 				
 ### Pandas DataFrames:
-<https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
+
+	<https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
+
+Importar pandas:
+----------------
 	import pandas
 construir un DataFrame desde un diccionario:
 --------------------------------------------
