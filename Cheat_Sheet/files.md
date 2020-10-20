@@ -55,6 +55,7 @@ Modos:
 		   		writefile.write(line)
 				
 ### Pandas DataFrames:
+	import pandas
 construir un DataFrame desde un diccionario:
 --------------------------------------------
 	d = {'col1': [1, 2], 'col2': [3, 4]}
@@ -66,6 +67,17 @@ construir un DataFrame desde un diccionario:
 	    col1  col2
 	0     1     3
 	1     2     4
+
+lectura de un csv:
+------------------
+	csv_path =[path_file.csv]
+	df = pandas.read_csv(csv_path)
+
+Imprimir las cinco primeras filas:
+----------------------------------
+	csv_path =[path_file.csv]
+	df = pandas.read_csv(csv_path)
+	df.head()
 
 
 
