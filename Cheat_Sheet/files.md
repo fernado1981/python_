@@ -55,9 +55,9 @@ Modos:
 		   		writefile.write(line)
 				
 ### Pandas DataFrames:
-<br>
-References: <https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
-<br>
+
+> References: <https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
+
 Importar pandas:
 ----------------
 	import pandas
