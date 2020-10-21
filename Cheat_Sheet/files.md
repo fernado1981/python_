@@ -6,7 +6,7 @@
 [Selenium](Selenium/README.md)
 
 
-# funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
+# Funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
 Modos:
 ------
 	Lectura 'r', 
@@ -62,7 +62,7 @@ Modos:
 			for line in readfile:
 		   		writefile.write(line)
 				
-### Pandas DataFrames:
+# Pandas DataFrames:
 
 > References: <https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
 
