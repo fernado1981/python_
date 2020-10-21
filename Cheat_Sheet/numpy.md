@@ -1,3 +1,10 @@
+
+[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/files.md) | [numpy](Cheat_Sheet/numpy.md)
+
+
+[Selenium](Selenium/README.md)
+
+
 # Numpy
 Es una biblioteca para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar con ellas.
 
