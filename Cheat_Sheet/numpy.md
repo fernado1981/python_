@@ -1,5 +1,5 @@
 
-[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/files.md) | [numpy](Cheat_Sheet/numpy.md)
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuple_Set](READMETupleSet.md) | [lista_array](READMELIST.md) | [Diccionario](READMEDIC.md) | [Lectura y escritura de ficheros](files.md) | [numpy](numpy.md)
 
 
 [Selenium](Selenium/README.md)
