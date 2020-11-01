@@ -112,3 +112,61 @@
     print("Suma residual de los cuadrados (MSE): %.2f" % np.mean((test_y_ - test_y) ** 2))
     print("R2-score: %.2f" % r2_score(test_y_ , test_y) )
 
+# Librería scikit-learn para implementar regresión lineal multiple:
+### Importar paquetes necesarios:
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import pylab as pl
+    import numpy as np
+    %matplotlib inline
+### Downloading Data:
+    !wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+### Reading the data in:
+    df = pd.read_csv("FuelConsumption.csv")
+    # Dale un vistazo al conjunto de datos
+    df.head()
+### Seleccionemos algunas características:
+    cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
+    cdf.head(9)
+### Tracemos los valores de las emisiones con respecto al tamaño del motor:
+    plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
+    plt.xlabel("Engine size")
+    plt.ylabel("Emission")
+    plt.show()
+
+## Creating train and test dataset
+#### La división tren/prueba implica dividir el conjunto de datos en conjuntos de formación y de pruebas respectivamente, que son mutuamente excluyentes. Después de lo cual, usted entrena con el equipo de entrenamiento y prueba con el equipo de prueba. Esto proporcionará una evaluación más precisa de la precisión fuera de la muestra, ya que el conjunto de datos de la prueba no forma parte del conjunto de datos que se ha utilizado para entrenar los datos. Es más realista para los problemas del mundo real.
+    msk = np.random.rand(len(df)) < 0.8
+    train = cdf[msk]
+    test = cdf[~msk]
+#### Train data distribution
+    plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+    plt.xlabel("Engine size")
+    plt.ylabel("Emission")
+    plt.show()
+    
+## Multiple Regression Model:
+#### Cuando hay más de una variable independiente presente, el proceso se denomina regresión lineal múltiple. Lo bueno aquí es que la regresión lineal múltiple es la extensión del modelo de regresión lineal simple.
+    from sklearn import linear_model
+    regr = linear_model.LinearRegression()
+    x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB']])
+    y = np.asanyarray(train[['CO2EMISSIONS']])
+    regr.fit (x, y)
+    # The coefficients
+    print ('Coefficients: ', regr.coef_)
+
+## Ordinary Least Squares (OLS)
+#### OLS es un método para estimar los parámetros desconocidos en un modelo de regresión lineal. OLS elige los parámetros de una función lineal de un conjunto de variables explicativas minimizando la suma de los cuadrados de las diferencias entre la variable objetivo dependiente y las previstas por la función lineal. En otras palabras, intenta minimizar la suma de errores cuadrados (SSE) o el error cuadrado medio (MSE) entre la variable objetivo (y) y nuestro resultado previsto ( ℎ𝑎𝑡ℎ𝑎𝑡𝑦 ) en todas las muestras del conjunto de datos.
+
+#### OLS puede encontrar los mejores parámetros usando los siguientes métodos: - Resolución analítica de los parámetros del modelo mediante ecuaciones de forma cerrada - Utilizando un algoritmo de optimización (Descenso de Gradiente, Descenso de Gradiente Estocástico, Método de Newton, etc.)
+
+#### Prediction:
+    y_hat= regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB']])
+    x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB']])
+    y = np.asanyarray(test[['CO2EMISSIONS']])
+    print("Residual sum of squares: %.2f"
+      % np.mean((y_hat - y) ** 2))
+
+    # Explained variance score: 1 is perfect prediction
+    print('Variance score: %.2f' % regr.score(x, y))
+
