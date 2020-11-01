@@ -1,8 +1,6 @@
 
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuple_Set](READMETupleSet.md) | [lista_array](READMELIST.md) | [Diccionario](READMEDIC.md) | [Lectura y escritura de ficheros](files.md) | [numpy](numpy.md)
-
-
-[Selenium](Selenium/README.md)
+[Principal](../README.md)<br/>
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 
 
 # Numpy
