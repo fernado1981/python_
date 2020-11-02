@@ -1,6 +1,10 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 [Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
+<br/>
+[scikit-learn regresion lineal multiple](#multiple)
+
+
 # Librería scikit-learn para implementar regresión lineal simple:
 #### Descargaremos un set de datos relacionado al consumo de combustible y a la emisión del dióxido de Carbono en autos.  Luego, separaremos nuestros datos en un set de entrenamiento y en otro set de prueba, crearemos un modelo utilizando un set de entrenamiento, se evaluará utilizando el set de prueba para finalmente usar el modelo para predecir valores desconocidos
 ### Importando paquetes Necesarios:
@@ -146,7 +150,9 @@
     plt.ylabel("Emission")
     plt.show()
     
-## Multiple Regression Model:
+    
+<a name='multiple'></a>
+## Multiple Regression Model: 
 #### Cuando hay más de una variable independiente presente, el proceso se denomina regresión lineal múltiple. Lo bueno aquí es que la regresión lineal múltiple es la extensión del modelo de regresión lineal simple.
     from sklearn import linear_model
     regr = linear_model.LinearRegression()
