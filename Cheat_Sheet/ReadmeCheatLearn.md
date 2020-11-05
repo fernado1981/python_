@@ -5,7 +5,8 @@
 [Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 
 
-*[scikit-learn -> regresion lineal multiple](#multiple)*
+*[scikit-learn -> regresión lineal multiple](#multiple)*
+*[scikit-learn -> regresión polinómica](#polinomica)*
 
 
 # Librería scikit-learn para implementar regresión lineal simple:
@@ -179,5 +180,8 @@
 
     # Explained variance score: 1 is perfect prediction
     print('Variance score: %.2f' % regr.score(x, y))
+
+
+<a name='polinómica'></a>
 
 [Subir](#top)
