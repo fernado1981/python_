@@ -7,6 +7,7 @@
 
 *[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
 *[scikit-learn -> regresión polinómica](#polinomica)*
+*[scikit-learn -> regresión no lineal](#noLineal)*
 
 
 # Librería scikit-learn para implementar regresión lineal simple:
@@ -233,7 +234,7 @@
     train = cdf[msk]
     test = cdf[~msk]
 
-## Regresión Polinómica
+## Regresión Polinómica:
 #### En ocasiones la tendencia de los datos no es lineal si no que tiene una apariencia curva. Para estos caso podemos usar los métodos de Regresión Polinómica. De hecho, existen diversos tipos de regresión que pueden ser usados para ajustarse de acuerdo a la apariencia de los datos, como puede ser la regresión cuadratica, cúbica, etc. Puede haber tantos tipos de regresiones como grados en un polinomio.
 #### La función PloynomialFeatures() de la librería Scikit-learn maneja un nuevo conjunto de características del conjunto original.
 
@@ -296,5 +297,171 @@
     print("Residual sum of squares (MSE): %.2f" % np.mean((test_y3_ - test_y) ** 2))
     print("R2-score: %.2f" % r2_score(test_y3_ , test_y) )
 
+<a name='noLineal'></a>
+## Regresion no lienal:
+### Importando las librerías requeridas:
+    import numpy as np
+    import matplotlib.pyplot as plt
+    %matplotlib inline
+
+#### Las regresiones no-lineales son una relación entre variables independientes  𝑥  y una variable dependiente  𝑦  que resulta en una función no lineal. Básicamente, cada relación que no es lineal puede transformarse en una no lineal, y generalmente se representa con el polinomio de grados  𝑘  (potencia máxima de  𝑥 ).
+    𝑦=𝑎𝑥3+𝑏𝑥2+𝑐𝑥+𝑑 
+ 
+####Las funciones no lineales pueden tener elementos como exponentes, logaritmos, fracciones y otros. Por ejemplo:
+    𝑦=log(𝑥)
+ 
+#### O más complicados, como :
+    𝑦=log(𝑎𝑥3+𝑏𝑥2+𝑐𝑥+𝑑)
+
+### gráfico de la función cúbica:
+    x = np.arange(-5.0, 5.0, 0.1)
+
+    ##Puede ajustar la pendiente y la intersección para verificar los cambios del gráfico
+    y = 1*(x**3) + 1*(x**2) + 1*x + 3
+    y_noise = 20 * np.random.normal(size=x.size)
+    ydata = y + y_noise
+    plt.plot(x, ydata,  'bo')
+    plt.plot(x,y, 'r') 
+    plt.ylabel('Variable dependiente')
+    plt.xlabel('Variable indepdendiente')
+    plt.show()
+    
+#### Como se puede ver, esta función tiene  𝑥3  y  𝑥2  como variables independientes. También, el gráfico de esta función no es una linea directa, por lo que es una función no lineal.
+
+## Algunas otras funciones no lineales son:
+### Cuadrática 𝑌=𝑋2
+    x = np.arange(-5.0, 5.0, 0.1)
+
+    ##Se puede ajustar la pendiente y la intersección para verificar los cambios en el gráfico
+    y = np.power(x,2)
+    y_noise = 2 * np.random.normal(size=x.size)
+    ydata = y + y_noise
+    plt.plot(x, ydata,  'bo')
+    plt.plot(x,y, 'r') 
+    plt.ylabel('Variable dependiente')
+    plt.xlabel('Variable indepdiendente')
+    plt.show()
+
+### Exponencial
+#### Una función exponencial con base c se define por 𝑌=𝑎+𝑏𝑐𝑋
+#### donde b ≠0, c > 0 , c ≠1, y x es cualquier número real. La base, c, es constante y el exponente, x, es una variable.
+    X = np.arange(-5.0, 5.0, 0.1)
+
+    ##Se puede ajustar la pendiente y la intersección para verificar los cambios en el gráfico
+    Y= np.exp(X)
+    plt.plot(X,Y) 
+    plt.ylabel('Variable Dependiente')
+    plt.xlabel('Variable Independiente')
+    plt.show()
+    
+### Logarítmico
+#### La respuesta  𝑦  es el resultado de aplicar el mapa logarítmico desde el valor de entrada de  𝑥  a la variable de salida  𝑦 . Es una de las formas más simples de log(): i.e. 𝑦=log(𝑥)
+ 
+#### considerar que en vez de  𝑥 , podemos usar  𝑋 , el cual puede ser una representación polinomial de las  𝑥 's. En su forma general, se escribiría como 𝑦=log(𝑋)
+    X = np.arange(-5.0, 5.0, 0.1)
+
+    Y = np.log(X)
+    plt.plot(X,Y) 
+    plt.ylabel('Variable Dependiente')
+    plt.xlabel('Variable Independiente')
+    plt.show()
+    
+### Sigmoidal/Logística 𝑌=𝑎+𝑏1+𝑐(𝑋−𝑑)
+    X = np.arange(-5.0, 5.0, 0.1)
+
+    Y = 1-4/(1+np.power(3, X-2))
+
+    plt.plot(X,Y) 
+    plt.ylabel('Variable Dependiente')
+    plt.xlabel('Variable Independiente')
+    plt.show()
+    
+### Ejemplo Regresión No-Lineal:
+#### Por ejemplo, intentaremos fijar un modelo no lineal a los puntos correspondientes al GDP de China entre los años 1960 y 2014. Descargaremos un set de datos con dos columnas, la primera, un año entre 1960 y 2014, la segunda, el ingreso anual de China en dólares estadounidenses para ese año.
+    import numpy as np
+    import pandas as pd
+
+    #downloading dataset
+    !wget -nv -O china_gdp.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/china_gdp.csv
+    
+    df = pd.read_csv("china_gdp.csv")
+    df.head(10)
+    
+### Marcando el set de datos:
+    plt.figure(figsize=(8,5))
+    x_data, y_data = (df["Year"].values, df["Value"].values)
+    plt.plot(x_data, y_data, 'ro')
+    plt.ylabel('GDP')
+    plt.xlabel('Year')
+    plt.show()
+    
+### Eligiendo un modelo:
+    X = np.arange(-5.0, 5.0, 0.1)
+    Y = 1.0 / (1.0 + np.exp(-X))
+
+    plt.plot(X,Y) 
+    plt.ylabel('Variable Dependiente')
+    plt.xlabel('Variable Independiente')
+    plt.show()
+    
+### Construyendo el Modelo:
+    def sigmoid(x, Beta_1, Beta_2):
+        y = 1 / (1 + np.exp(-Beta_1*(x-Beta_2)))
+        return y
+
+### sigmoide posible:
+    beta_1 = 0.10
+    beta_2 = 1990.0
+
+    #función logística
+    Y_pred = sigmoid(x_data, beta_1 , beta_2)
+
+    #predicción de puntos
+    plt.plot(x_data, Y_pred*15000000000000.)
+    plt.plot(x_data, y_data, 'ro')
+    
+### busqueda de mejores parámetros y normalizar x e y:
+    # Normalicemos nuestros datos
+    xdata =x_data/max(x_data)
+    ydata =y_data/max(y_data)
+
+### ¿Cómo podemos encontrar los mejores parámetros para nuestra linea?
+#### podemos utilizar curve_fit la cual utiliza cuadrados mínimos no lineales para cuadrar con la función sigmoide
+#### popt son nuestros parámetros optimizados.
+    from scipy.optimize import curve_fit
+    popt, pcov = curve_fit(sigmoid, xdata, ydata)
+    #imprimir los parámetros finales
+    print(" beta_1 = %f, beta_2 = %f" % (popt[0], popt[1]))
+    
+### Dibujamos nuestro modelo de regresión:
+    x = np.linspace(1960, 2015, 55)
+    x = x/max(x)
+    plt.figure(figsize=(8,5))
+    y = sigmoid(x, *popt)
+    plt.plot(xdata, ydata, 'ro', label='data')
+    plt.plot(x,y, linewidth=3.0, label='fit')
+    plt.legend(loc='best')
+    plt.ylabel('GDP')
+    plt.xlabel('Year')
+    plt.show()
+
+###  calcular la exactitud del modelo:
+    msk = np.random.rand(len(df)) < 0.8
+    train_x = xdata[msk]
+    test_x = xdata[~msk]
+    train_y = ydata[msk]
+    test_y = ydata[~msk]
+
+    # construye el modelo utilizando el set de entrenamiento
+    popt, pcov = curve_fit(sigmoid, train_x, train_y)
+
+    # predecir utilizando el set de prueba
+    y_hat = sigmoid(test_x, *popt)
+
+### evaluation:
+    print("Promedio de error absoluto: %.2f" % np.mean(np.absolute(y_hat - test_y)))
+    print("Suma residual de cuadrados (MSE): %.2f" % np.mean((y_hat - test_y) ** 2))
+    from sklearn.metrics import r2_score
+    print("R2-score: %.2f" % r2_score(y_hat , test_y) )
 
 [Subir](#top)
