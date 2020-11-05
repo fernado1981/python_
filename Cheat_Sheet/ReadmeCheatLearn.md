@@ -6,7 +6,7 @@
 
 
 *[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
-*[scikit-learn -> regresión polinómica](#polinomica)*
+*[scikit-learn -> regresión polinómica](#polinomica)*<br/>
 *[scikit-learn -> regresión no lineal](#noLineal)*
 
 
