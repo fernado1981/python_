@@ -182,6 +182,119 @@
     print('Variance score: %.2f' % regr.score(x, y))
 
 
-<a name='polinómica'></a>
+<a name='polinomica'></a>
+## Regresión polinómica:
+#### Implementar una Regresión Polinómica. Descargaremos un set de datos relacionado al consumo de combustible y a la emisión del dióxido de Carbono en autos. Luego, separaremos nuestros datos en un set de entrenamiento y en otro set de prueba, crearemos un modelo utilizando un set de entrenamiento, se evaluará utilizando el set de prueba para finalmente usar el modelo para predecir valores desconocidos
+
+### Importando los paquetes necesarios:
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import pylab as pl
+    import numpy as np
+    %matplotlib inline
+
+### Descarga de Datos:
+    !wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+
+### Entender los Datos:
+##### FuelConsumption.csv:
+#### Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el cual contiene ratings específicos al consumo de combustible y emisiones de dióxido de carbono para aquellos vehículos ligeros en la venta minorista dentro de Canadá. Fuente de Datos
+
+    MODELYEAR (Año del modelo) e.g. 2014
+    MAKE (fabricante) e.g. Acura    
+    MODEL (modelo) e.g. ILX
+    VEHICLE CLASS (tipo de vehiculo) e.g. SUV
+    ENGINE SIZE (tamaño del motor) e.g. 4.7
+    CYLINDERS (cilindrada) e.g 6
+    TRANSMISSION (transmisión) e.g. A6
+    FUEL CONSUMPTION in CITY(L/100 km) (consumo en ciudad) e.g. 9.9
+    FUEL CONSUMPTION in HWY (L/100 km) (consumo en carretera) e.g. 8.9
+    FUEL CONSUMPTION COMB (L/100 km) (consumo mixto) e.g. 9.2
+    CO2 EMISSIONS (g/km) (emisiones de dioxido de carbono) e.g. 182 --> low --> 0
+
+### Leyendo los datos:
+    df = pd.read_csv("FuelConsumption.csv")
+    # observar dentro del conjunto de datos
+    df.head()
+
+### Seleccionemos algunas caracaterísticas para usar en la regresión:
+    cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
+    cdf.head(9)
+    
+### Grafiquemos los valores de emisión respecto al tamaño del motor:
+    plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
+    plt.xlabel("Engine size")
+    plt.ylabel("Emission")
+    plt.show()
+    
+### Crear conjunto de datos de entrenamiento y pruebas:
+#### Hay que dividir el conjunto en dos, el de entrenamiento y el de pruebas, los cuales son mutuamente excluyentes. Despues de hacerlo, deberá entrenar con el conjunto de entrenamiento y hacer pruebas con el conjunto de pruebas.
+    msk = np.random.rand(len(df)) < 0.8
+    train = cdf[msk]
+    test = cdf[~msk]
+
+## Regresión Polinómica
+#### En ocasiones la tendencia de los datos no es lineal si no que tiene una apariencia curva. Para estos caso podemos usar los métodos de Regresión Polinómica. De hecho, existen diversos tipos de regresión que pueden ser usados para ajustarse de acuerdo a la apariencia de los datos, como puede ser la regresión cuadratica, cúbica, etc. Puede haber tantos tipos de regresiones como grados en un polinomio.
+#### La función PloynomialFeatures() de la librería Scikit-learn maneja un nuevo conjunto de características del conjunto original.
+
+    from sklearn.preprocessing import PolynomialFeatures
+    from sklearn import linear_model
+    train_x = np.asanyarray(train[['ENGINESIZE']])
+    train_y = np.asanyarray(train[['CO2EMISSIONS']])
+
+    test_x = np.asanyarray(test[['ENGINESIZE']])
+    test_y = np.asanyarray(test[['CO2EMISSIONS']])
+
+    poly = PolynomialFeatures(degree=2)
+    #    fit_transform toma los valores de x e imprime una lista de los datos que van desde la magnitud 0 a la 2 (ya que hemos seleccionado que nuestro polinómio   sea de segundo grado).
+    train_x_poly = poly.fit_transform(train_x)
+    train_x_poly
+
+#### Ahora podemos manejar el problema como si se tratara de una 'regresión lineal'. Por lo tanto, esta regresión polinomica se considera como un caso especial de regresión lineal múltiple. Puede utilizar la misma mecánica para resolver dicho problema.
+### Usemos la función LinearRegression() para resolver:
+    clf = linear_model.LinearRegression()
+    train_y_ = clf.fit(train_x_poly, train_y)
+    # los coeficientes 
+    print ('Coefficients: ', clf.coef_)
+    print ('Intercept: ',clf.intercept_)
+
+### Grafiquemoslo:
+    plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+    XX = np.arange(0.0, 10.0, 0.1)
+    yy = clf.intercept_[0]+ clf.coef_[0][1]*XX+ clf.coef_[0][2]*np.power(XX, 2)
+    plt.plot(XX, yy, '-r' )
+    plt.xlabel("Engine size")
+    plt.ylabel("Emission")
+
+### Evaluación:
+    from sklearn.metrics import r2_score
+
+    test_x_poly = poly.fit_transform(test_x)
+    test_y_ = clf.predict(test_x_poly)
+
+    print("Mean absolute error: %.2f" % np.mean(np.absolute(test_y_ - test_y)))
+    print("Residual sum of squares (MSE): %.2f" % np.mean((test_y_ - test_y) ** 2))
+    print("R2-score: %.2f" % r2_score(test_y_ , test_y) )
+    
+### uso de la regresión polinomica de tercer grado(cúbica) para mayor precisión:
+    poly3 = PolynomialFeatures(degree=3)
+    train_x_poly3 = poly3.fit_transform(train_x)
+    clf3 = linear_model.LinearRegression()
+    train_y3_ = clf3.fit(train_x_poly3, train_y)
+    # The coefficients
+    print ('Coefficients: ', clf3.coef_)
+    print ('Intercept: ',clf3.intercept_)
+    plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+    XX = np.arange(0.0, 10.0, 0.1)
+    yy = clf3.intercept_[0]+ clf3.coef_[0][1]*XX + clf3.coef_[0][2]*np.power(XX, 2) + clf3.coef_[0][3]*np.power(XX, 3)
+    plt.plot(XX, yy, '-r' )
+    plt.xlabel("Engine size")
+    plt.ylabel("Emission")
+    test_x_poly3 = poly3.fit_transform(test_x)
+    test_y3_ = clf3.predict(test_x_poly3)
+    print("Mean absolute error: %.2f" % np.mean(np.absolute(test_y3_ - test_y)))
+    print("Residual sum of squares (MSE): %.2f" % np.mean((test_y3_ - test_y) ** 2))
+    print("R2-score: %.2f" % r2_score(test_y3_ , test_y) )
+
 
 [Subir](#top)
