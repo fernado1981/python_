@@ -158,8 +158,8 @@
     
 <a name='multiple'></a>
 *[scikit-learn -> regresión lineal](#lineal)*<br/>
-*[scikit-learn -> regresión polinómica](#polinomica)*<br/>
-*[scikit-learn -> regresión no lineal](#noLineal)*
+*[scikit-learn -> regresión no lineal](#noLineal)*<br/>
+*[scikit-learn -> regresión polinómica](#polinomica)*
 
 ## Multiple Regression Model: 
 #### Cuando hay más de una variable independiente presente, el proceso se denomina regresión lineal múltiple. Lo bueno aquí es que la regresión lineal múltiple es la extensión del modelo de regresión lineal simple.
@@ -188,6 +188,10 @@
 
 
 <a name='polinomica'></a>
+*[scikit-learn -> regresión lineal](#lineal)*<br/>
+*[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
+*[scikit-learn -> regresión no lineal](#noLineal)*<br/>
+
 ## Regresión polinómica:
 #### Implementar una Regresión Polinómica. Descargaremos un set de datos relacionado al consumo de combustible y a la emisión del dióxido de Carbono en autos. Luego, separaremos nuestros datos en un set de entrenamiento y en otro set de prueba, crearemos un modelo utilizando un set de entrenamiento, se evaluará utilizando el set de prueba para finalmente usar el modelo para predecir valores desconocidos
 
@@ -303,7 +307,7 @@
 
 <a name='noLineal'></a>
 *[scikit-learn -> regresión lineal](#lineal)*<br/>
-*[scikit-learn -> regresión no lineal](#noLineal)*<br/>
+*[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
 *[scikit-learn -> regresión polinómica](#polinomica)*
 ## Regresion no lienal:
 ### Importando las librerías requeridas:
