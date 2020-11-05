@@ -160,6 +160,7 @@
 *[scikit-learn -> regresión lineal](#lineal)*<br/>
 *[scikit-learn -> regresión polinómica](#polinomica)*<br/>
 *[scikit-learn -> regresión no lineal](#noLineal)*
+
 ## Multiple Regression Model: 
 #### Cuando hay más de una variable independiente presente, el proceso se denomina regresión lineal múltiple. Lo bueno aquí es que la regresión lineal múltiple es la extensión del modelo de regresión lineal simple.
     from sklearn import linear_model
