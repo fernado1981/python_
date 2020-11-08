@@ -1,6 +1,8 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
+[Documentación])<https://www.interactivechaos.com/python/function/traintestsplit>
+
 
 [Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 
