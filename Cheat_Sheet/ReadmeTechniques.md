@@ -289,3 +289,111 @@ Los datos incluyen información acerca de:
 - Los servicios que cada cliente ha contratado – teléfono, líneas múltiples, internet, seguridad online, resguardo online, protección de dispositivos, soporte técnico y streaming de TV y películas
 - Información de la cuenta del cliente - cuánto hace que es cliente, contrato, método de pago, facturación digital, cargos mensuales y cargos totales
 - Información demográfica de los clientes – sexo, rango de edad y si tienen pareja y dependientes
+
+### Cargar los datos Churn de la Telco:
+Telco Churn es un archivo de datos ficticio que trata sobre los esfuerzos de una compañía de telecomunicaciones para reducir la huída de sus clientes. Cada caso corresponde a un cliente y se guarda información demográfica e información referente al uso del servicio. Antes de trabajar con los datos, debes utilizar la URL para obtener el archivo ChurnData.csv.
+
+    !wget -O ChurnData.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/ChurnData.csv
+    
+### Cargar los Datos desde el Archivo CSV:
+    churn_df = pd.read_csv("ChurnData.csv")
+    churn_df.head()
+
+### Selección y pre-procesamiento de datos:
+Seleccionemos algunas características para el modelado. También cambiemos el tipo de dato del objetivo (target) para que sea un número entero (integer), ya que es un requerimiento del algoritmo skitlearn:
+
+    churn_df = churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip',   'callcard', 'wireless','churn']]
+    churn_df['churn'] = churn_df['churn'].astype('int')
+    churn_df.head()
+    
+### contamos el número de filas y columnas total:
+    print(churn_df.count)
+    
+### Definamos X, e y para nuestro set de datos:
+    X = np.asarray(churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip']])
+    X[0:5]
+    
+    y = np.asarray(churn_df['churn'])
+    y [0:5]
+### normalicemos el set de datos:
+    from sklearn import preprocessing
+    X = preprocessing.StandardScaler().fit(X).transform(X)
+    X[0:5]
+    
+### Entrenar/Probar el set de datos:
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+    print ('Train set:', X_train.shape,  y_train.shape)
+    print ('Test set:', X_test.shape,  y_test.shape)
+    
+### Modelando (Regresión Logística con Scikit-learn):
+LogisticRegression con el package Scikit-learn. Esta función implementa regresión logística y puede usar distintos optimizadores numéricos para encontrar parámetros, a saber, ‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’ solvers. Puedes también encontrar más información sobre los pros y contras de estos optimizadores si buscas en internet.
+
+La versión de Regresión Logística en, soporta regularización. Esto es, una técnica que soluciona problemas de sobreajuste en modelos de machine learning. El parámetro C indica fuerza de regularización inversa la cual debe ser un número flotante positivo. Valores más pequeños indican regularización más fuerte. Now lets fit our model with train set:
+
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import confusion_matrix
+    LR = LogisticRegression(C=0.01, solver='liblinear').fit(X_train,y_train)    
+    LR
+    
+### predecir usando nuestro set de prueba:
+    yhat = LR.predict(X_test)
+    yhat
+
+predict_proba devuelve estimaciones para todas las clases. La primer columna es la probabilidad de la clase 1, P(Y=1|X), y la segunda columna es la probabilidad de la clase 0, P(Y=0|X):
+
+    yhat_prob = LR.predict_proba(X_test)
+    
+### Evaluación:
+índice jaccard
+Probemos con el índice jaccard para la evaluación de precisión. Podemos definir como jaccard al tamaño de la intersección dividida por el tamaño de la unión de dos set de etiquetas. Si todo el set de etiquetas de muestra predichas coinciden con el set real de etiquetas, entonces la precisión es 1.0; sino, sería 0.0.
+
+    from sklearn.metrics import jaccard_similarity_score
+    jaccard_similarity_score(y_test, yhat)
+    
+### Matriz de confusión: (Otra forma de mirar la precisión del clasificador es ver la matriz de confusión.)
+
+    from sklearn.metrics import classification_report, confusion_matrix
+    import itertools
+    def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    Esta función muestra y dibuja la matriz de confusión.
+    La normalización se puede aplicar estableciendo el valor `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Matriz de confusión normalizada")
+    else:
+        print('Matriz de confusión sin normalización')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('Etiqueta Real')
+    plt.xlabel('Etiqueta Predicha')
+    print(confusion_matrix(y_test, yhat, labels=[1,0]))
+    
+### Calcular la matriz de confusión
+    cnf_matrix = confusion_matrix(y_test, yhat, labels=[1,0])
+    np.set_printoptions(precision=2)
+    
+### Dibujar la matriz de confusión no normalizada
+    plt.figure()
+    plot_confusion_matrix(cnf_matrix, classes=['churn=1','churn=0'],normalize= False,  title='Matriz de confusión')
