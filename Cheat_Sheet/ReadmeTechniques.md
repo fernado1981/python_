@@ -408,14 +408,14 @@ Probemos con el índice jaccard para la evaluación de precisión. Podemos defin
     print (classification_report(y_test, yhat))
     
     
-###                precision    recall  f1-score   support
+    ###                precision    recall  f1-score   support
 
-###           0       0.73      0.96      0.83        25
-###           1       0.86      0.40      0.55        15
+    ###           0       0.73      0.96      0.83        25
+    ###           1       0.86      0.40      0.55        15
 
-###   micro avg       0.75      0.75      0.75        40
-###   macro avg       0.79      0.68      0.69        40
-### weighted avg      0.78      0.75      0.72        40
+    ###   micro avg       0.75      0.75      0.75        40
+    ###   macro avg       0.79      0.68      0.69        40
+    ### weighted avg      0.78      0.75      0.72        40
 
 Partiendo de la cantidad de cada sección podemos calcular la precisión y el grado(recall) de cada etiqueta:
 - Precision es una medida de certeza basada en una etiqueta predicha. Se define de esta forma: precision = TP / (TP + FP)
