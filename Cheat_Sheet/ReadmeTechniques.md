@@ -8,8 +8,8 @@
 
 
 *[clasificacion -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
-*[clasificacion -> regresión polinómica](#RegrasionLogistica)*
-*[clasificacion -> regresión no lineal](#Árboles)*
+*[clasificacion -> regresión logística](#RegrasionLogistica)*<br/>
+*[clasificacion -> Arboles de decisión](#Árboles)*
 
 <a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):
