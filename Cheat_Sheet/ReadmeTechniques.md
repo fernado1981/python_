@@ -1,4 +1,17 @@
 
+<a name='top'></a>
+[Principal](../README.md)<br/>
+
+
+
+[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
+
+
+*[clasificacion -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
+*[clasificacion -> regresión polinómica](#RegrasionLogistica)*
+*[clasificacion -> regresión no lineal](#Árboles)*
+
+<a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):
 
 En este lab, cargaremos un conjunto de datos de un cliente, adaptaremos la información y utilizaremos el algoritmo de k-vecinos más cercanos para predecir un punto de datos. ¿Qué es K-Vecinos Más Cercano?
@@ -126,6 +139,7 @@ En clasificación multietiqueta, la función classification accuracy score compu
     
     print( "La mejor aproximación de certeza fue con ", mean_acc.max(), "con k=", mean_acc.argmax()+1) 
 
+<a name='Árboles'></a>
 ## ÁRBOLES DE DECISIÓN:
 En este ejercicio, aprenderás un algoritmo muy popular de machine learning llamado Árboles de Decisión. Utilizarás un algoritmo de clasificación para construir un modelo basado en datos históricos de pacientes y sus respectivos medicamentos. Luego, utilizarás el árbol de decisión recién entrenado para predecir la clase de paciente desconocido o para encontrar la droga adecuada para el mismo.
 
@@ -247,7 +261,7 @@ En la clasificación multietiqueta, la función devuelve un subconjunto de preci
     plt.figure(figsize=(100, 200))
     plt.imshow(img,interpolation='nearest')
 
-
+<a name='RegrasionLogistica'></a>
 ## REGRESION LOGÍSTICA:
 crear un modelo basado en datos de telecomunicaciones para predecir cuándo los clientes buscarán otro competidor de forma tal de poder tomar alguna decisión para retenerlos.
 
