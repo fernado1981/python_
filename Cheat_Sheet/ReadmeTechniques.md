@@ -397,3 +397,28 @@ Probemos con el índice jaccard para la evaluación de precisión. Podemos defin
 ### Dibujar la matriz de confusión no normalizada
     plt.figure()
     plot_confusion_matrix(cnf_matrix, classes=['churn=1','churn=0'],normalize= False,  title='Matriz de confusión')
+    print (classification_report(y_test, yhat))
+    
+    
+###                precision    recall  f1-score   support
+
+###           0       0.73      0.96      0.83        25
+###           1       0.86      0.40      0.55        15
+
+###   micro avg       0.75      0.75      0.75        40
+###   macro avg       0.79      0.68      0.69        40
+### weighted avg      0.78      0.75      0.72        40
+
+Partiendo de la cantidad de cada sección podemos calcular la precisión y el grado(recall) de cada etiqueta:
+- Precision es una medida de certeza basada en una etiqueta predicha. Se define de esta forma: precision = TP / (TP + FP)
+- Recall es un grado positivo verdadero. Se define de esta forma: Recall =  TP / (TP + FN)
+Por lo tanto, podemos calcular la precisión y grado de cada clase.
+- F1 score: Ahora estamos en condiciones de calcular los puntajes F1 para cada etiqueta basada en la precisión y grado de cada etiqueta.
+El puntaje F1 es el promedio armónico de la precisión y grado, donde un grado F1 alcanza su mejor valor en 1 (precisión y grado perfectos) y peor escenario en 0. Es una buena forma de mostrar que un clasificador tiene un buen valor tanto para la precisión como para el grado.
+Y finalmente, podemos decir que la exactitud promedio para este clasificador es el promedio del score f1 para ambas etiquetas, cuyo valor es is 0.72 en nuestro caso.
+
+### Log Loss:
+Ahora, probemos log loss para la evaluación. En regresión logística, la salida puede ser que la probabilidad de cliente churn sea sí (o su equivalente 1). Esta probabilidad es un valor entre 0 y 1. Log loss( pérdida logarítmica) mida el rendimiento de un clasificador donde la salida predicha es una probabilidad de valor entre 0 y 1.
+
+    from sklearn.metrics import log_loss
+    log_loss(y_test, yhat_prob)
