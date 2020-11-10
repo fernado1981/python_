@@ -4,6 +4,8 @@
 En este lab, cargaremos un conjunto de datos de un cliente, adaptaremos la información y utilizaremos el algoritmo de k-vecinos más cercanos para predecir un punto de datos. ¿Qué es K-Vecinos Más Cercano?
 Vecinos K Más Cercanos es un algoritmo para aprendizaje supervisado. Donde los datos se entrenana con puntos de datos que corresponden a su clasificación. Como un punto se predice, toma en cuenta los puntos 'K' más cercanos para determinar su clasificación
 
+<KNN.png>
+
 En este caso, tenemos puntos de datos de Clase A y B. Deseamos predecir dónde está la estrella (punto de datos de prueba). Si consideramos un valor k de 3 (3 el punto más cercano) obtendremos una predicción de Clase B. Sin embargo, si consideramos un valor k de 6, obtendremos una predicción de Clase A.
 
 En este sentido, es importante considerar el valor de k. Mirando al diagrama, deberías deducir lo que es realmente un algormitmo de K Vecinos más cercanos. Tiene en cuenta los vecinos 'K' más cercano (puntos) cuando predice la clasificación de los puntos de prueba.
@@ -269,6 +271,8 @@ La regresión logística es una curva especial en forma de s a partir de tomar l
 
 En resumen, la Regresión Logística pasa la entrada a través de las funciones logística/sigmoide pero en realidad termina tratando al resultado como una probabilidad:
 
+<Regresion logística.png>
+
 ### Cliente churn con Regresión Logística
 Una compañía de telecomunicaciones está preocupada por el número de clientes que dejan sus líneas fijas de negocio por las de competidores de cable. Ellos necesitan entender quién se está yendo. Imagina que eres un analista en esta compañía y que tienes que descubrir quién es el cliente que se va y por qué
 
@@ -397,6 +401,10 @@ Probemos con el índice jaccard para la evaluación de precisión. Podemos defin
 ### Dibujar la matriz de confusión no normalizada
     plt.figure()
     plot_confusion_matrix(cnf_matrix, classes=['churn=1','churn=0'],normalize= False,  title='Matriz de confusión')
+    
+    
+<matriz de confusion.png>
+    
     print (classification_report(y_test, yhat))
     
     
