@@ -1,5 +1,6 @@
 
 ## K-Vecinos Más Cercanos (KNN):
+
 #### En este lab, cargaremos un conjunto de datos de un cliente, adaptaremos la información y utilizaremos el algoritmo de k-vecinos más cercanos para predecir un punto de datos. ¿Qué es K-Vecinos Más Cercano?
 #### Vecinos K Más Cercanos es un algoritmo para aprendizaje supervisado. Donde los datos se entrenana con puntos de datos que corresponden a su clasificación. Como un punto se predice, toma en cuenta los puntos 'K' más cercanos para determinar su clasificación
 
@@ -119,3 +120,6 @@
     plt.show()
     
     print( "La mejor aproximación de certeza fue con ", mean_acc.max(), "con k=", mean_acc.argmax()+1) 
+
+## ÁRBOLES DE DECISIÓN:
+En este ejercicio, aprenderás un algoritmo muy popular de machine learning llamado Árboles de Decisión. Utilizarás un algoritmo de clasificación para construir un modelo basado en datos históricos de pacientes y sus respectivos medicamentos. Luego, utilizarás el árbol de decisión recién entrenado para predecir la clase de paciente desconocido o para encontrar la droga adecuada para el mismo.
