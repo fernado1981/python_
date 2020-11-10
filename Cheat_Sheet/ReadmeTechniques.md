@@ -7,8 +7,8 @@
 [Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 
 
-*[clasificacion -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
-*[clasificacion -> Arboles de decisión](#Árboles)*
+*[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
+*[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*
 
 <a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):
