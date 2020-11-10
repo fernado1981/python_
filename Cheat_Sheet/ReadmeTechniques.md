@@ -246,3 +246,46 @@ En la clasificación multietiqueta, la función devuelve un subconjunto de preci
     plt.imshow(img,interpolation='nearest')
 
 
+## REGRESION LOGÍSTICA:
+crear un modelo basado en datos de telecomunicaciones para predecir cuándo los clientes buscarán otro competidor de forma tal de poder tomar alguna decisión para retenerlos.
+
+#### ¿Cuál es la diferencia entre Regresión Logística y Regresión Lineal?
+Mientras la Regresión Lineal es para estimar valores continuos (ej. estimar precios de casas), no es la mejor herramienta para predecir la clase de un punto de datos observados. Para estimar la clase de punto de datos, necesitaremos una guía de lo que sería la clase más probable para ese punto de datos. Por esto, utilizamos Regresión Logística.
+
+### Regresión Lineal:
+
+Como sabes, la __Regresión lineal__ encuentra una función que relaciona una variable continua dependiente, _y_, con algunos predictores (variables independientes _x1_, _x2_, etc.). Por ejemplo, la regresión lineal Simple asume una función de la forma:
+
+    𝑦=𝜃0+𝜃1∗𝑥1+𝜃2∗𝑥2+...
+ 
+
+y encuentra los valores de los parámetros _θ0_, _θ1_, _𝜃2_, etc, donde el término _𝜃0_ es "intersección". Generalmente se muestra como:
+
+    ℎθ(𝑥)=𝜃𝑇𝑋
+    
+La Regresion Logística es una variación de una Regresión Lineal, útil cuando la variable dependiente observada, y, es categórica. Produce una fórmula que predice la probabilidad de la clase etiqueta como una función de las variables independientes.
+
+La regresión logística es una curva especial en forma de s a partir de tomar la regresión lineal y transformar la estimación numérica en una probabilidad
+
+En resumen, la Regresión Logística pasa la entrada a través de las funciones logística/sigmoide pero en realidad termina tratando al resultado como una probabilidad:
+
+### Cliente churn con Regresión Logística
+Una compañía de telecomunicaciones está preocupada por el número de clientes que dejan sus líneas fijas de negocio por las de competidores de cable. Ellos necesitan entender quién se está yendo. Imagina que eres un analista en esta compañía y que tienes que descubrir quién es el cliente que se va y por qué
+
+### importamos librerías:
+    import pandas as pd
+    import pylab as pl
+    import numpy as np
+    import scipy.optimize as opt
+    from sklearn import preprocessing
+    %matplotlib inline 
+    import matplotlib.pyplot as plt
+
+### Acerca del set de datos:
+Utilizaremos datos de las telecomunicaciones para poder predecir el cliente churn. Estos son datos históricos de clientes donde cada fila representa un cliente. Los datos son fáciles de comprender, y podrás descubrir conclusiones que puedes usar de inmediato. Generalmente, es menos caro mantener clientes que conseguir nuevos, así que el foco de este análisis es predecir los clientes que se quedarían en la compañía.
+Los datos incluyen información acerca de:
+
+- Clientes que se fueron el último mes – la columna se llama Churn
+- Los servicios que cada cliente ha contratado – teléfono, líneas múltiples, internet, seguridad online, resguardo online, protección de dispositivos, soporte técnico y streaming de TV y películas
+- Información de la cuenta del cliente - cuánto hace que es cliente, contrato, método de pago, facturación digital, cargos mensuales y cargos totales
+- Información demográfica de los clientes – sexo, rango de edad y si tienen pareja y dependientes
