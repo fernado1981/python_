@@ -8,7 +8,8 @@
 
 
 *[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
-*[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*
+*[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
+*[Regresion -> regresión logística](#RegrasionLogistica)*
 
 <a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):
@@ -259,5 +260,190 @@ En la clasificación multietiqueta, la función devuelve un subconjunto de preci
     img = mpimg.imread(filename)
     plt.figure(figsize=(100, 200))
     plt.imshow(img,interpolation='nearest')
+    
+<a name='RegrasionLogistica'></a>
+## REGRESION LOGÍSTICA:
+crear un modelo basado en datos de telecomunicaciones para predecir cuándo los clientes buscarán otro competidor de forma tal de poder tomar alguna decisión para retenerlos.
+
+#### ¿Cuál es la diferencia entre Regresión Logística y Regresión Lineal?
+Mientras la Regresión Lineal es para estimar valores continuos (ej. estimar precios de casas), no es la mejor herramienta para predecir la clase de un punto de datos observados. Para estimar la clase de punto de datos, necesitaremos una guía de lo que sería la clase más probable para ese punto de datos. Por esto, utilizamos Regresión Logística.
+
+### Regresión Lineal:
+
+Como sabes, la __Regresión lineal__ encuentra una función que relaciona una variable continua dependiente, _y_, con algunos predictores (variables independientes _x1_, _x2_, etc.). Por ejemplo, la regresión lineal Simple asume una función de la forma:
+
+    𝑦=𝜃0+𝜃1∗𝑥1+𝜃2∗𝑥2+...
+ 
+
+y encuentra los valores de los parámetros _θ0_, _θ1_, _𝜃2_, etc, donde el término _𝜃0_ es "intersección". Generalmente se muestra como:
+
+    ℎθ(𝑥)=𝜃𝑇𝑋
+    
+La Regresion Logística es una variación de una Regresión Lineal, útil cuando la variable dependiente observada, y, es categórica. Produce una fórmula que predice la probabilidad de la clase etiqueta como una función de las variables independientes.
+
+La regresión logística es una curva especial en forma de s a partir de tomar la regresión lineal y transformar la estimación numérica en una probabilidad
+
+En resumen, la Regresión Logística pasa la entrada a través de las funciones logística/sigmoide pero en realidad termina tratando al resultado como una probabilidad:
+
+<Regresion logística.png>
+
+### Cliente churn con Regresión Logística
+Una compañía de telecomunicaciones está preocupada por el número de clientes que dejan sus líneas fijas de negocio por las de competidores de cable. Ellos necesitan entender quién se está yendo. Imagina que eres un analista en esta compañía y que tienes que descubrir quién es el cliente que se va y por qué
+
+### importamos librerías:
+    import pandas as pd
+    import pylab as pl
+    import numpy as np
+    import scipy.optimize as opt
+    from sklearn import preprocessing
+    %matplotlib inline 
+    import matplotlib.pyplot as plt
+
+### Acerca del set de datos:
+Utilizaremos datos de las telecomunicaciones para poder predecir el cliente churn. Estos son datos históricos de clientes donde cada fila representa un cliente. Los datos son fáciles de comprender, y podrás descubrir conclusiones que puedes usar de inmediato. Generalmente, es menos caro mantener clientes que conseguir nuevos, así que el foco de este análisis es predecir los clientes que se quedarían en la compañía.
+Los datos incluyen información acerca de:
+
+- Clientes que se fueron el último mes – la columna se llama Churn
+- Los servicios que cada cliente ha contratado – teléfono, líneas múltiples, internet, seguridad online, resguardo online, protección de dispositivos, soporte técnico y streaming de TV y películas
+- Información de la cuenta del cliente - cuánto hace que es cliente, contrato, método de pago, facturación digital, cargos mensuales y cargos totales
+- Información demográfica de los clientes – sexo, rango de edad y si tienen pareja y dependientes
+
+### Cargar los datos Churn de la Telco:
+Telco Churn es un archivo de datos ficticio que trata sobre los esfuerzos de una compañía de telecomunicaciones para reducir la huída de sus clientes. Cada caso corresponde a un cliente y se guarda información demográfica e información referente al uso del servicio. Antes de trabajar con los datos, debes utilizar la URL para obtener el archivo ChurnData.csv.
+
+    !wget -O ChurnData.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/ChurnData.csv
+    
+### Cargar los Datos desde el Archivo CSV:
+    churn_df = pd.read_csv("ChurnData.csv")
+    churn_df.head()
+
+### Selección y pre-procesamiento de datos:
+Seleccionemos algunas características para el modelado. También cambiemos el tipo de dato del objetivo (target) para que sea un número entero (integer), ya que es un requerimiento del algoritmo skitlearn:
+
+    churn_df = churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip',   'callcard', 'wireless','churn']]
+    churn_df['churn'] = churn_df['churn'].astype('int')
+    churn_df.head()
+    
+### contamos el número de filas y columnas total:
+    print(churn_df.count)
+    
+### Definamos X, e y para nuestro set de datos:
+    X = np.asarray(churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip']])
+    X[0:5]
+    
+    y = np.asarray(churn_df['churn'])
+    y [0:5]
+### normalicemos el set de datos:
+    from sklearn import preprocessing
+    X = preprocessing.StandardScaler().fit(X).transform(X)
+    X[0:5]
+    
+### Entrenar/Probar el set de datos:
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+    print ('Train set:', X_train.shape,  y_train.shape)
+    print ('Test set:', X_test.shape,  y_test.shape)
+    
+### Modelando (Regresión Logística con Scikit-learn):
+LogisticRegression con el package Scikit-learn. Esta función implementa regresión logística y puede usar distintos optimizadores numéricos para encontrar parámetros, a saber, ‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’ solvers. Puedes también encontrar más información sobre los pros y contras de estos optimizadores si buscas en internet.
+
+La versión de Regresión Logística en, soporta regularización. Esto es, una técnica que soluciona problemas de sobreajuste en modelos de machine learning. El parámetro C indica fuerza de regularización inversa la cual debe ser un número flotante positivo. Valores más pequeños indican regularización más fuerte. Now lets fit our model with train set:
+
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import confusion_matrix
+    LR = LogisticRegression(C=0.01, solver='liblinear').fit(X_train,y_train)    
+    LR
+    
+### predecir usando nuestro set de prueba:
+    yhat = LR.predict(X_test)
+    yhat
+
+predict_proba devuelve estimaciones para todas las clases. La primer columna es la probabilidad de la clase 1, P(Y=1|X), y la segunda columna es la probabilidad de la clase 0, P(Y=0|X):
+
+    yhat_prob = LR.predict_proba(X_test)
+    
+### Evaluación:
+índice jaccard
+Probemos con el índice jaccard para la evaluación de precisión. Podemos definir como jaccard al tamaño de la intersección dividida por el tamaño de la unión de dos set de etiquetas. Si todo el set de etiquetas de muestra predichas coinciden con el set real de etiquetas, entonces la precisión es 1.0; sino, sería 0.0.
+
+    from sklearn.metrics import jaccard_similarity_score
+    jaccard_similarity_score(y_test, yhat)
+    
+### Matriz de confusión: (Otra forma de mirar la precisión del clasificador es ver la matriz de confusión.)
+
+    from sklearn.metrics import classification_report, confusion_matrix
+    import itertools
+    def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    Esta función muestra y dibuja la matriz de confusión.
+    La normalización se puede aplicar estableciendo el valor `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Matriz de confusión normalizada")
+    else:
+        print('Matriz de confusión sin normalización')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('Etiqueta Real')
+    plt.xlabel('Etiqueta Predicha')
+    print(confusion_matrix(y_test, yhat, labels=[1,0]))
+    
+### Calcular la matriz de confusión
+    cnf_matrix = confusion_matrix(y_test, yhat, labels=[1,0])
+    np.set_printoptions(precision=2)
+    
+### Dibujar la matriz de confusión no normalizada
+    plt.figure()
+    plot_confusion_matrix(cnf_matrix, classes=['churn=1','churn=0'],normalize= False,  title='Matriz de confusión')
+    
+    
+<matriz de confusion.png>
+    
+    print (classification_report(y_test, yhat))
+    
+    
+    ###                precision    recall  f1-score   support
+
+    ###           0       0.73      0.96      0.83        25
+    ###           1       0.86      0.40      0.55        15
+
+    ###   micro avg       0.75      0.75      0.75        40
+    ###   macro avg       0.79      0.68      0.69        40
+    ### weighted avg      0.78      0.75      0.72        40
+
+Partiendo de la cantidad de cada sección podemos calcular la precisión y el grado(recall) de cada etiqueta:
+- Precision es una medida de certeza basada en una etiqueta predicha. Se define de esta forma: precision = TP / (TP + FP)
+- Recall es un grado positivo verdadero. Se define de esta forma: Recall =  TP / (TP + FN)
+Por lo tanto, podemos calcular la precisión y grado de cada clase.
+- F1 score: Ahora estamos en condiciones de calcular los puntajes F1 para cada etiqueta basada en la precisión y grado de cada etiqueta.
+El puntaje F1 es el promedio armónico de la precisión y grado, donde un grado F1 alcanza su mejor valor en 1 (precisión y grado perfectos) y peor escenario en 0. Es una buena forma de mostrar que un clasificador tiene un buen valor tanto para la precisión como para el grado.
+Y finalmente, podemos decir que la exactitud promedio para este clasificador es el promedio del score f1 para ambas etiquetas, cuyo valor es is 0.72 en nuestro caso.
+
+### Log Loss:
+Ahora, probemos log loss para la evaluación. En regresión logística, la salida puede ser que la probabilidad de cliente churn sea sí (o su equivalente 1). Esta probabilidad es un valor entre 0 y 1. Log loss( pérdida logarítmica) mida el rendimiento de un clasificador donde la salida predicha es una probabilidad de valor entre 0 y 1.
+
+    from sklearn.metrics import log_loss
+    log_loss(y_test, yhat_prob)
+
 
 [Subir](#top)
