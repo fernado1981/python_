@@ -10,7 +10,6 @@
 *[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
 *[scikit-learn -> regresión polinómica](#polinomica)*<br/>
 *[scikit-learn -> regresión no lineal](#noLineal)*<br/>
-*[scikit-learn -> regresión logística](#RegrasionLogistica)*<br/>
 
 <a name='lineal'></a>
 # Librería scikit-learn para implementar regresión lineal simple:
