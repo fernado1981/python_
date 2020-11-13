@@ -1,0 +1,3 @@
+Nombre;F_nacimiento;Edad
+fernando;1981;39
+diego;1994;27
