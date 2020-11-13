@@ -6,7 +6,7 @@
 [Selenium](Selenium/README.md)
 
 # Trabajando con ficheros
-# Funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
+## Funccion "open" integrada en python para la creación de objetos de tipo (file.txt ...) y obtener datos de un fichero.
 Modos:
 
 	Lectura 'r', 
@@ -15,13 +15,13 @@ Modos:
 
 NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la sentencia al final de la misma el fichero se cerrará automaticamente, evitando así tener que cerralo.
 
-## importamos las librerías necesarias:
+### Importamos las librerías necesarias:
 
     from csv import reader
     from csv import DictReader
-# Lectura:
+## Lectura:
 
-### archivos de texto .txt:
+### Archivos de texto .txt:
 - read(), lee todo el contenido
 - esta es la forma más simple de leer un archivo, la cual no es eficaz si queremos buscar o modificar valores, sin embargo es eficaz si sólo queremos mostrar el texto o compararlo con otro.
 
@@ -38,7 +38,7 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
             for i in contenido:
                 print(i)
 
-### archivos csv .csv sin cabecera
+### Archivos csv .csv sin cabecera
 - reader('archivo, delimiter=';',quotechar='"') lee linea a linea y genera un array por cada una de ellas:
 
         with open('../asociacion_sin_cabecera.csv', 'r') as archivo:
@@ -46,7 +46,7 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
             for i in contenido:
                 print(' '.join(i))
 
-### archivos csv .csv con cabecera, en este caso nos saltamos la linea de la cabecera:
+### Archivos csv .csv con cabecera, en este caso nos saltamos la linea de la cabecera:
 - reader('archivo, delimiter,quotechar) lee linea a linea y genera un array por cada una de ellas
 - next(contenido), nos saltamos la primera linea de la variable contenido la cual contiene los datos del csv
 - podemos acceder a los valores de las columnas por posición
@@ -57,13 +57,13 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
             for i in contenido:
                 print(i[0],i[2],i[6])
 
-### objeto Dictreader(), nos permite acceder por por nombre de la columna:
+### Objeto Dictreader(), nos permite acceder por por nombre de la columna:
     with open('../asociacionCSV.csv', 'r') as archivo:
         contenido = DictReader(archivo, delimiter=',', quotechar='"')
         for i in contenido:
             print(i['Importe'])
 
-### objeto Dictreader(), sin cabecera nos permite acceder por por nombre de la columna:
+### Objeto Dictreader(), sin cabecera nos permite acceder por por nombre de la columna:
 - fieldnames=[,,,] es un array con el que podemos crear las cabeceras del .csv
 
         with open('../asociacionCSV.csv', 'r') as archivo:
@@ -72,15 +72,15 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
                 print(i['Asociacion'])
 
 
-### podemos ver en que modo se encuentra un fichero con la siguiente sentencia:
+### Podemos ver en que modo se encuentra un fichero con la siguiente sentencia:
 	[file].mode()
 
-# WRITE:
-# .csv
-## importamos las librerías necesarias:
+## WRITE CSV:
+
+### Importamos las librerías necesarias:
 	from csv import writer, DictWriter
 
-## Generamos el contenido a escribir:
+### Generamos el contenido a escribir:
 	matriz = [
     		['fernando', 1981, 39],
     		['diego', 1994, 27]
@@ -91,7 +91,7 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
     		{'Nombre': 'diego', 'F_nacimiento': 1994, 'Edad': 27}
 	]
 
-## writer(archivo,delimiter,quoter), sin cabeceras:
+### writer(archivo,delimiter,quoter), sin cabeceras:
 - writerows('valor'), escribe una row en el fichero
 
 		with open('../pruebaMatrizSnHeader.csv', 'w') as archivo:
@@ -99,7 +99,7 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
   			doc.writerows(matriz)
  			doc.writerows([['pepe', 1989, 23]])
 
-## añadir cabecera DictWriter(archivo, delimiter,fieldnames=[])
+### Añadir cabecera DictWriter(archivo, delimiter,fieldnames=[])
 - cabecera=['name_header','name_header','name_header',...], para añadir las cabeceras
 
 		cabeceras = ['Nombre', 'F_nacimiento', 'Edad']
@@ -108,8 +108,8 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
     			documento.writeheader()
     			documento.writerows(matriz_header)
 
-## .txt:
-## writer(archivo,delimiter,quoter), sin cabeceras:
+## WRITE TXT:
+### writer(archivo,delimiter,quoter), sin cabeceras:
 - writerows('valor'), escribe una row en el fichero
 
 		with open('../pruebaMatrizSnHeader.txt', 'w') as archivo:
@@ -117,7 +117,7 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
   			doc.writerows(matriz)
  			doc.writerows([['pepe', 1989, 23]])
 
-## añadir cabecera DictWriter(archivo, delimiter,fieldnames=[])
+### Añadir cabecera DictWriter(archivo, delimiter,fieldnames=[])
 - cabecera=['name_header','name_header','name_header',...], para añadir las cabeceras
 
 		cabeceras = ['Nombre', 'F_nacimiento', 'Edad']
@@ -126,22 +126,21 @@ NOTA: con sentencia with, abrimos el fichero en el modo deseado y ejecutamos la 
     			documento.writeheader()
     			documento.writerows(matriz_header)
 
-## copiar un file:
+### Copiar un file:
 	
 	with open("READMEDIC.md",'r') as readfile:
 		with open("READMEDIC.md",'w') as writefile:
 			for line in readfile:
 		   		writefile.write(line)
 				
-# PPANDAS DATAFRAMES:
+# PANDAS DATAFRAMES:
 
 > References: <https://pandas.pydata.org/pandas-docs/stable/reference/frame.html>
 
-Importar pandas:
-----------------
+### Importar pandas:
 	import pandas
-construir un DataFrame desde un diccionario:
---------------------------------------------
+	
+### Construir un DataFrame desde un diccionario:
 	d = {'col1': [1, 2], 'col2': [3, 4]}
 	df = pd.DataFrame(data=d)
 	df
@@ -152,17 +151,14 @@ construir un DataFrame desde un diccionario:
 	0     1     3
 	1     2     4
 
-lectura de un csv:
-------------------
+### Lectura de un csv:
 	csv_path =[path_file.csv]
 	df = pandas.read_csv(csv_path)
 
-Imprimir las cinco primeras filas:
-----------------------------------
+### Imprimir las cinco primeras filas:
 	csv_path =[path_file.csv]
 	df = pandas.read_csv(csv_path)
 	df.head()
-
 
 
 [Subir](#top)
