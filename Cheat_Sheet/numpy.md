@@ -7,6 +7,12 @@ Documentación: <https://numpy.org/doc/>
 # Numpy
 Es una biblioteca para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar con ellas.
 
+### Instalar Jupiter, matploitlib
+- pip3 install jupyter 
+- pip3 install matplotlib
+- python3 -mpip install -U matplotlib
+- python3 -mpip install -U matplotlib
+
 ### importar numpy:
     import numpy as np
 
@@ -36,3 +42,4 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
     import matplotlib.pylot as plt
     %matplotlib inline
     plt.plot(x,y)
+    plt.show()
