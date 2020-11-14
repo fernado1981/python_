@@ -15,7 +15,6 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
 
 ### Importar numpy:
     import numpy as np
-    import matplotlib.pyplot as plt
 
 ### Convertir una lista a un arreglo numpy:
     a=np.array([1,2,3,4,5])
@@ -31,6 +30,9 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
     print("la media de los datos del arreglo es:", mean_a)
   
 ## CREAR y TRAZAR FUNCIONES:
+### Importar librería:
+    import matplotlib.pyplot as plt
+    
 ### crear un vector con cuatro puntos equidistanciados, desde 0 hasta 2:
     np.linspace(0, 2, 4)
 
