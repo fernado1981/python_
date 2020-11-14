@@ -13,34 +13,31 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
 - python3 -mpip install -U matplotlib
 - python3 -mpip install -U matplotlib
 
-### importar numpy:
+### Importar numpy:
     import numpy as np
     import matplotlib.pyplot as plt
 
-### convertir una lista a un arreglo numpy:
-    import numpy as np
+### Convertir una lista a un arreglo numpy:
     a=np.array([1,2,3,4,5])
     
 ### type(), obtiene el tipo <numpy.ndarray>:
-    type(a)
+    print("El tipo es: ", type(a))
     
 ### dtype, obtener el tipo de datos del arreglo:
-    a.dtype
+    print("los datos son de tipo: ", a.dtype)
     
 ### mean(), obtener la media del arreglo:
-    mean_a=a.mean()
-    mean_a
+    mean_a = a.mean()
+    print("la media de los datos del arreglo es:", mean_a)
   
 ## CREAR y TRAZAR FUNCIONES:
 ### crear un vector con cuatro puntos equidistanciados, desde 0 hasta 2:
-    np.linspace(0,2,4)
+    np.linspace(0, 2, 4)
 
 ### crear la funcion y=sin(x)+2 , uando la matriz numpy x
-    x=np.linspace(0.2*np.pi,100)
-    y=np.sin(x)
+    x = np.linspace(0.2 * np.pi, 100)
+    y = np.sin(x)
     
 ### matplotlib.pylot, Trazar la solucion:
-    import matplotlib.pylot as plt
-    %matplotlib inline
-    plt.plot(x,y)
+    plt.plot(x, y)
     plt.show()
