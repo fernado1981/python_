@@ -53,3 +53,15 @@ cursor.fetchone() El método devuelve un solo registro o Ninguno si no hay más 
             for val in data:
                 print(val)
         self.mydb.commit()
+
+### Mas:
+### craer una database
+    cursor.execute("CREATE DATABASE " + DBname)
+### ver las databases existentes
+    cursor.execute("show databases")
+### eliminar una database
+    cursor.execute("drop database "+ DBname)
+### crear table
+    cursor.execute("CREATE TABLE users (name VARCHAR(255), user_name VARCHAR(255))")
+### actualizacion
+    cursor.execute("UPDATE users SET name = 'Kareem' WHERE id = 1")
