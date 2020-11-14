@@ -15,6 +15,7 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
 
 ### importar numpy:
     import numpy as np
+    import matplotlib.pyplot as plt
 
 ### convertir una lista a un arreglo numpy:
     import numpy as np
