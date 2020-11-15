@@ -296,7 +296,7 @@ Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el c
     plt.ylabel("Emission")
     print(plt.show())
     
-    ![React](../Images/polinomica.png)
+![React](../Images/polinomica.png)
     
 ### Crear conjunto de datos de entrenamiento y pruebas:
 Hay que dividir el conjunto en dos, el de entrenamiento y el de pruebas, los cuales son mutuamente excluyentes. Despues de hacerlo, deberá entrenar con el conjunto de entrenamiento y hacer pruebas con el conjunto de pruebas.
@@ -339,7 +339,7 @@ Ahora podemos manejar el problema como si se tratara de una 'regresión lineal'.
     plt.ylabel("Emission")
     print(plt.show())
     
-    ![React](../Images/polinomicaGRF.png)
+![React](../Images/polinomicaGRF.png)
 
 ### Evaluación:
     test_x_poly = poly.fit_transform(test_x)
@@ -366,7 +366,7 @@ Ahora podemos manejar el problema como si se tratara de una 'regresión lineal'.
     plt.ylabel("Emission")
     print(plt.show())
     
-    ![React](../Images/polinomica3.png)
+![React](../Images/polinomica3.png)
 
     test_x_poly3 = poly3.fit_transform(test_x)
     test_y3_ = clf3.predict(test_x_poly3)
