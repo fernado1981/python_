@@ -20,12 +20,13 @@
     import pandas as pd
     import pylab as pl
     import numpy as np
-    %matplotlib inline
+    import wget as wget
 
 ### Descargando los Datos:
 #### Para descargar los datos, usaremos !wget desde IBM Object Storage.
     
-    !wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+    url = 'https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv'
+    wget.download(url, 'FuelConsumption.csv')
 
 #### ¿Sabías? Cuando se trata de Machine Learning, seguro trabajarás con grandes datasets (juego de datos). Entonces, ¿dónde podrás guardar esos datos? IBM ofrece una oportunidad única para las empresas, con 10 Tb de IBM Cloud Object Storage: Sign up now for free
 
@@ -47,8 +48,8 @@
    
 ### Leyendo los datos:
     df = pd.read_csv("FuelConsumption.csv")
-    #un vistazo dentro del set de datos
-    df.head()
+    # un vistazo dentro del set de datos
+    print(df.head())
     
 ### Exploración de Datos:
     # Tengamos primero una exploración descriptiva de nuestros datos.
