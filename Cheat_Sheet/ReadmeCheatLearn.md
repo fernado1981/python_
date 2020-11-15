@@ -54,14 +54,21 @@
 ### Exploración de Datos:
     # Tengamos primero una exploración descriptiva de nuestros datos.
     # Sumarizar los datos
-    df.describe()
+    print(df.describe())
+    
 ### Seleccionemos algunas características para explorar más en detalle:
     cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
-    cdf.head(9)
+    print(cdf.head(9))
+    
 ### podemos dibujar cada una de estas características:
-    viz = cdf[['CYLINDERS','ENGINESIZE','CO2EMISSIONS','FUELCONSUMPTION_COMB']]
-    viz.hist()
-    plt.show()
+    print(cdf.hist())
+    print(plt.show())
+    
+    
+    
+    
+    
+    
 ### Ahora, comparemos estas características anteriores con la emisión de carbono, para ver cuán lineal es la regresión:
     plt.scatter(cdf.FUELCONSUMPTION_COMB, cdf.CO2EMISSIONS,  color='blue')
     plt.xlabel("FUELCONSUMPTION_COMB")
