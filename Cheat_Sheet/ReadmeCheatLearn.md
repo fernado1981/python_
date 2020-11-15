@@ -150,9 +150,7 @@ comparamos los valores actuales y predichos para calcular la exactitud del model
 
     import matplotlib.pyplot as plt
     from sklearn import linear_model
-    from sklearn.metrics import r2_score
     import pandas as pd
-    import pylab as pl
     import numpy as np
     import wget as wget
 
@@ -247,61 +245,71 @@ OLS puede encontrar los mejores parámetros usando los siguientes métodos:
 *[scikit-learn -> regresión no lineal](#noLineal)*<br/>
 
 ## Regresión polinómica:
-#### Implementar una Regresión Polinómica. Descargaremos un set de datos relacionado al consumo de combustible y a la emisión del dióxido de Carbono en autos. Luego, separaremos nuestros datos en un set de entrenamiento y en otro set de prueba, crearemos un modelo utilizando un set de entrenamiento, se evaluará utilizando el set de prueba para finalmente usar el modelo para predecir valores desconocidos
+Implementar una Regresión Polinómica. Descargaremos un set de datos relacionado al consumo de combustible y a la emisión del dióxido de Carbono en autos. Luego, separaremos nuestros datos en un set de entrenamiento y en otro set de prueba, crearemos un modelo utilizando un set de entrenamiento, se evaluará utilizando el set de prueba para finalmente usar el modelo para predecir valores desconocidos
 
 ### Importando los paquetes necesarios:
+   
     import matplotlib.pyplot as plt
+    from sklearn import linear_model
+    from sklearn.metrics import r2_score
     import pandas as pd
     import pylab as pl
     import numpy as np
-    %matplotlib inline
+    import wget as wget
 
-### Descarga de Datos:
-    !wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+### Descargando los Datos:
+Para descargar los datos, usaremos !wget desde IBM Object Storage.
+    
+    url = 'https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv'
+    wget.download(url, 'FuelConsumption.csv')
 
-### Entender los Datos:
-##### FuelConsumption.csv:
-#### Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el cual contiene ratings específicos al consumo de combustible y emisiones de dióxido de carbono para aquellos vehículos ligeros en la venta minorista dentro de Canadá. Fuente de Datos
+¿Sabías? Cuando se trata de Machine Learning, seguro trabajarás con grandes datasets (juego de datos). Entonces, ¿dónde podrás guardar esos datos? IBM ofrece una oportunidad única para las empresas, con 10 Tb de IBM Cloud Object Storage: Sign up now for free
 
-    MODELYEAR (Año del modelo) e.g. 2014
-    MAKE (fabricante) e.g. Acura    
-    MODEL (modelo) e.g. ILX
-    VEHICLE CLASS (tipo de vehiculo) e.g. SUV
-    ENGINE SIZE (tamaño del motor) e.g. 4.7
-    CYLINDERS (cilindrada) e.g 6
-    TRANSMISSION (transmisión) e.g. A6
-    FUEL CONSUMPTION in CITY(L/100 km) (consumo en ciudad) e.g. 9.9
-    FUEL CONSUMPTION in HWY (L/100 km) (consumo en carretera) e.g. 8.9
-    FUEL CONSUMPTION COMB (L/100 km) (consumo mixto) e.g. 9.2
-    CO2 EMISSIONS (g/km) (emisiones de dioxido de carbono) e.g. 182 --> low --> 0
+##### Understanding the Data
+FuelConsumption.csv:
+Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el cual contiene ratings específicos al consumo de combustible y emisiones de dióxido de carbono para aquellos vehículos ligeros en la venta minorista dentro de Canadá. Dataset source
 
+    MODELYEAR e.g. 2014
+    MAKE e.g. Acura
+    MODEL e.g. ILX
+    VEHICLE CLASS e.g. SUV
+    ENGINE SIZE e.g. 4.7
+    CYLINDERS e.g 6
+    TRANSMISSION e.g. A6
+    FUEL CONSUMPTION in CITY(L/100 km) e.g. 9.9
+    FUEL CONSUMPTION in HWY (L/100 km) e.g. 8.9
+    FUEL CONSUMPTION COMB (L/100 km) e.g. 9.2
+    CO2 EMISSIONS (g/km) e.g. 182 --> low --> 0
+   
 ### Leyendo los datos:
     df = pd.read_csv("FuelConsumption.csv")
-    # observar dentro del conjunto de datos
-    df.head()
+    # un vistazo dentro del set de datos
+    print(df.head())
 
 ### Seleccionemos algunas caracaterísticas para usar en la regresión:
     cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
-    cdf.head(9)
+    print(cdf.head(9))
     
 ### Grafiquemos los valores de emisión respecto al tamaño del motor:
     plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
     plt.xlabel("Engine size")
     plt.ylabel("Emission")
-    plt.show()
+    print(plt.show())
+    
+    ![React](../Images/polinomica.png)
     
 ### Crear conjunto de datos de entrenamiento y pruebas:
-#### Hay que dividir el conjunto en dos, el de entrenamiento y el de pruebas, los cuales son mutuamente excluyentes. Despues de hacerlo, deberá entrenar con el conjunto de entrenamiento y hacer pruebas con el conjunto de pruebas.
+Hay que dividir el conjunto en dos, el de entrenamiento y el de pruebas, los cuales son mutuamente excluyentes. Despues de hacerlo, deberá entrenar con el conjunto de entrenamiento y hacer pruebas con el conjunto de pruebas.
+    
     msk = np.random.rand(len(df)) < 0.8
     train = cdf[msk]
     test = cdf[~msk]
 
 ## Regresión Polinómica:
-#### En ocasiones la tendencia de los datos no es lineal si no que tiene una apariencia curva. Para estos caso podemos usar los métodos de Regresión Polinómica. De hecho, existen diversos tipos de regresión que pueden ser usados para ajustarse de acuerdo a la apariencia de los datos, como puede ser la regresión cuadratica, cúbica, etc. Puede haber tantos tipos de regresiones como grados en un polinomio.
-#### La función PloynomialFeatures() de la librería Scikit-learn maneja un nuevo conjunto de características del conjunto original.
+En ocasiones la tendencia de los datos no es lineal si no que tiene una apariencia curva. Para estos caso podemos usar los métodos de Regresión Polinómica. De hecho, existen diversos tipos de regresión que pueden ser usados para ajustarse de acuerdo a la apariencia de los datos, como puede ser la regresión cuadratica, cúbica, etc. Puede haber tantos tipos de regresiones como grados en un polinomio.
 
-    from sklearn.preprocessing import PolynomialFeatures
-    from sklearn import linear_model
+La función PloynomialFeatures() de la librería Scikit-learn maneja un nuevo conjunto de características del conjunto original.
+
     train_x = np.asanyarray(train[['ENGINESIZE']])
     train_y = np.asanyarray(train[['CO2EMISSIONS']])
 
@@ -309,11 +317,12 @@ OLS puede encontrar los mejores parámetros usando los siguientes métodos:
     test_y = np.asanyarray(test[['CO2EMISSIONS']])
 
     poly = PolynomialFeatures(degree=2)
-    #    fit_transform toma los valores de x e imprime una lista de los datos que van desde la magnitud 0 a la 2 (ya que hemos seleccionado que nuestro polinómio   sea de segundo grado).
+    #fit_transform toma los valores de x e imprime una lista de los datos que van desde la magnitud 0 a la 2 (ya que hemos seleccionado que nuestro polinómio   sea de segundo grado).
     train_x_poly = poly.fit_transform(train_x)
-    train_x_poly
+    print(train_x_poly)
 
-#### Ahora podemos manejar el problema como si se tratara de una 'regresión lineal'. Por lo tanto, esta regresión polinomica se considera como un caso especial de regresión lineal múltiple. Puede utilizar la misma mecánica para resolver dicho problema.
+Ahora podemos manejar el problema como si se tratara de una 'regresión lineal'. Por lo tanto, esta regresión polinomica se considera como un caso especial de regresión lineal múltiple. Puede utilizar la misma mecánica para resolver dicho problema.
+
 ### Usemos la función LinearRegression() para resolver:
     clf = linear_model.LinearRegression()
     train_y_ = clf.fit(train_x_poly, train_y)
@@ -328,10 +337,11 @@ OLS puede encontrar los mejores parámetros usando los siguientes métodos:
     plt.plot(XX, yy, '-r' )
     plt.xlabel("Engine size")
     plt.ylabel("Emission")
+    print(plt.show())
+    
+    ![React](../Images/polinomicaGRF.png)
 
 ### Evaluación:
-    from sklearn.metrics import r2_score
-
     test_x_poly = poly.fit_transform(test_x)
     test_y_ = clf.predict(test_x_poly)
 
@@ -344,20 +354,25 @@ OLS puede encontrar los mejores parámetros usando los siguientes métodos:
     train_x_poly3 = poly3.fit_transform(train_x)
     clf3 = linear_model.LinearRegression()
     train_y3_ = clf3.fit(train_x_poly3, train_y)
+
     # The coefficients
-    print ('Coefficients: ', clf3.coef_)
-    print ('Intercept: ',clf3.intercept_)
-    plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+    print('Coefficients: ', clf3.coef_)
+    print('Intercept: ', clf3.intercept_)
+    plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS, color='blue')
     XX = np.arange(0.0, 10.0, 0.1)
-    yy = clf3.intercept_[0]+ clf3.coef_[0][1]*XX + clf3.coef_[0][2]*np.power(XX, 2) + clf3.coef_[0][3]*np.power(XX, 3)
-    plt.plot(XX, yy, '-r' )
-    plt.xlabel("Engine size")
+    yy = clf3.intercept_[0] + clf3.coef_[0][1] * XX + clf3.coef_[0][2] * np.power(XX, 2) + clf3.coef_[0][3] * np.power(XX, 3)
+    plt.plot(XX, yy, '-r')
+    plt.xlabel("Engine size")   
     plt.ylabel("Emission")
+    print(plt.show())
+    
+    ![React](../Images/polinomica3.png)
+
     test_x_poly3 = poly3.fit_transform(test_x)
     test_y3_ = clf3.predict(test_x_poly3)
     print("Mean absolute error: %.2f" % np.mean(np.absolute(test_y3_ - test_y)))
     print("Residual sum of squares (MSE): %.2f" % np.mean((test_y3_ - test_y) ** 2))
-    print("R2-score: %.2f" % r2_score(test_y3_ , test_y) )
+    print("R2-score: %.2f" % r2_score(test_y3_, test_y))
 
 <a name='noLineal'></a>
 *[scikit-learn -> regresión lineal simple](#linealsimple)*<br/>
