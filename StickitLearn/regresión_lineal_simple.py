@@ -1,7 +1,6 @@
 from sklearn.metrics import r2_score
 import matplotlib.pyplot as plt
 import pandas as pd
-import pylab as pl
 import numpy as np
 import wget as wget
 from sklearn import linear_model
