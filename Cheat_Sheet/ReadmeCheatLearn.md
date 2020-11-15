@@ -66,7 +66,7 @@ Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el c
     print(cdf.hist())
     print(plt.show())
    
-![React](../images/RegrsionLS.png)
+![React](../Images/RegrsionLS.png)
     
 ### Ahora, comparemos estas características anteriores con la emisión de carbono, para ver cuán lineal es la regresión:
     plt.scatter(cdf.FUELCONSUMPTION_COMB, cdf.CO2EMISSIONS,  color='blue')
@@ -80,7 +80,7 @@ Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el c
     plt.show()
     
     
-![React](../images/ComparacionLS.png)
+![React](../Images/ComparacionLS.png)
     
 ## Creando el set de datos de entrenamiento y de el prueba:
 Train/Test Split divide el dataseet en uno de entrenamiento y otro de pruebas, siendo excluyentes. Después de ello, entrenas con el set de entrenamiento y pruebas con el de prueba. 
@@ -91,7 +91,7 @@ Esto significa que sabemos la salida de cada punto de datos del set, siendo un e
     train = cdf[msk]
     test = cdf[~msk]
     
-![React](../images/set_datos_entrenamiento_y_prueba.png)
+![React](../Images/set_datos_entrenamiento_y_prueba.png)
     
 ## Modelo de Regresión Simple:
 La Regresión Lineal cuadra con un modelo lineal de coeficientes B = (B1, ..., Bn) para minimizar la 'suma residual de cuadrados' entre la x independiente del dataset y la dependiente y por la aproximación lineal.
@@ -102,7 +102,7 @@ La Regresión Lineal cuadra con un modelo lineal de coeficientes B = (B1, ..., B
     plt.ylabel("Emission")
     plt.show()
     
-![React](../images/set_datos_entrenamiento_y_prueba.png)
+![React](../Images/set_datos_entrenamiento_y_prueba.png)
 
 ## Modeling
 Usando el paquete sklearn para modelar datos:
@@ -195,7 +195,7 @@ Hemos descargado el dataset de consumo de combustible, FuelConsumption.csv, el c
     plt.ylabel("Emission")
     print(plt.show())
     
-![React](../images/regresion_lineal_multiple.png)
+![React](../Images/regresion_lineal_multiple.png)
 
 ## Creating train and test dataset
 La división tren/prueba implica dividir el conjunto de datos en conjuntos de formación y de pruebas respectivamente, que son mutuamente excluyentes. Después de lo cual, usted entrena con el equipo de entrenamiento y prueba con el equipo de prueba. Esto proporcionará una evaluación más precisa de la precisión fuera de la muestra, ya que el conjunto de datos de la prueba no forma parte del conjunto de datos que se ha utilizado para entrenar los datos. Es más realista para los problemas del mundo real.
@@ -210,7 +210,7 @@ La división tren/prueba implica dividir el conjunto de datos en conjuntos de fo
     plt.ylabel("Emission")
     print(plt.show())
     
-![React](../images/distribucionlinealmultiple.png)
+![React](../Images/distribucionlinealmultiple.png)
     
 ## Multiple Regression Model: 
 Cuando hay más de una variable independiente presente, el proceso se denomina regresión lineal múltiple. Lo bueno aquí es que la regresión lineal múltiple es la extensión del modelo de regresión lineal simple.
