@@ -47,9 +47,7 @@ Demo simnplificado:
     plt.show()
 
 
-matplotlib_histogram
-
-
+![React](../Images/matplotlib_histogram.png)
 
 ### Instalar Jupiter, matploitlib
 - pip3 install jupyter 
