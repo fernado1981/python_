@@ -7,8 +7,8 @@ Documentación: <https://numpy.org/doc/>
 # Numpy
 Es una biblioteca para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar con ellas.
 
-#matplot
-la historia de Matplotlib y su arquitectura. Matplotlib es uno de los
+# Matplot:
+  la historia de Matplotlib y su arquitectura. Matplotlib es uno de lo
 más utilizados, si no la biblioteca de
 visualización de datos más popular en Python.
 Fue creado por John Hunter, quien era neurobiólogo y era parte de un
