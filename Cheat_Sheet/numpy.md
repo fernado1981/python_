@@ -8,8 +8,27 @@ Documentación: <https://numpy.org/doc/>
 Es una biblioteca para crear vectores y matrices grandes multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar con ellas.
 
 # Matplot:
-la historia de Matplotlib y su arquitectura. Matplotlib es uno de los más utilizados, si no la biblioteca de visualización de datos más popular en Python
-Fue creado por John Hunter, quien era neurobiólogo y era parte de un equipo de investigación que estaba trabajando en el análisis de las señales de electrocorticografía, ECoG para abreviar. El equipo estaba usando un software propietario para análisis. Sin embargo, solo tenían una licencia y se turnaban para usarla. Entonces, para superar esta limitación, John se propuso reemplazar el software propietario con una versión basada en MATLAB que podría ser utilizada por él y sus compañeros de equipo, y eso podría ser extendido por múltiples investigadores. Como resultado, Matplotlib se desarrolló originalmente como una herramienta de visualización ECoG, y al igual que MATLAB, Matplotlib estaba equipado con una interfaz de scripting para la generación de gráficos rápida y fácil, representada por pyplot. 
+la historia de Matplotlib y su arquitectura. Matplotlib es uno de los más utilizados, si no la biblioteca de visualización de datos más popular en Python. Fue creado por John Hunter, quien era neurobiólogo y era parte de un equipo de investigación que estaba trabajando en el análisis de las señales de electrocorticografía, ECoG para abreviar. El equipo estaba usando un software propietario para análisis. Sin embargo, solo tenían una licencia y se turnaban para usarla. Entonces, para superar esta limitación, John se propuso reemplazar el software propietario con una versión basada en MATLAB que podría ser utilizada por él y sus compañeros de equipo, y eso podría ser extendido por múltiples investigadores. Como resultado, Matplotlib se desarrolló originalmente como una herramienta de visualización ECoG, y al igual que MATLAB, Matplotlib estaba equipado con una interfaz de scripting para la generación de gráficos rápida y fácil, representada por pyplot. 
+
+EJ:
+
+    #importamos figurecanvas
+    from matplotlib.backends_agg import FigureCanvasAgg as FigureCanvas
+    #importamos Figure artist
+    from matplotlib.figure import Figure
+    fig = FigureCanvas()
+    canvas = FigureCanvas(fig)
+        
+    #creamos un random de 10000 numeros usando numpy
+    import numpy as np
+    x = np.random.randn(10000)
+    #creamos axes artist (1 columna, 1 fila 1º celda)
+    ax = fig.add.subplot(111)
+    # creamos histograma de 10000 numeros
+    ax.hist(x, 100)
+    #añadimos el titulo y la salvamos
+    ax.set_title('Normal distribution with $\mu=0, \sigma=1$')
+    fig.savefig('matplotlib_histogram.png')
 
 ### Instalar Jupiter, matploitlib
 - pip3 install jupyter 
