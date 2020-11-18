@@ -10,7 +10,8 @@ Es una biblioteca para crear vectores y matrices grandes multidimensionales, jun
 # Matplot:
 la historia de Matplotlib y su arquitectura. Matplotlib es uno de los más utilizados, si no la biblioteca de visualización de datos más popular en Python. Fue creado por John Hunter, quien era neurobiólogo y era parte de un equipo de investigación que estaba trabajando en el análisis de las señales de electrocorticografía, ECoG para abreviar. El equipo estaba usando un software propietario para análisis. Sin embargo, solo tenían una licencia y se turnaban para usarla. Entonces, para superar esta limitación, John se propuso reemplazar el software propietario con una versión basada en MATLAB que podría ser utilizada por él y sus compañeros de equipo, y eso podría ser extendido por múltiples investigadores. Como resultado, Matplotlib se desarrolló originalmente como una herramienta de visualización ECoG, y al igual que MATLAB, Matplotlib estaba equipado con una interfaz de scripting para la generación de gráficos rápida y fácil, representada por pyplot. 
 
-EJ:
+Demo:
+-----
 
     #importamos figurecanvas
     from matplotlib.backends_agg import FigureCanvasAgg as FigureCanvas
@@ -29,6 +30,19 @@ EJ:
     #añadimos el titulo y la salvamos
     ax.set_title('Normal distribution with $\mu=0, \sigma=1$')
     fig.savefig('matplotlib_histogram.png')
+    
+    
+Demo simnplificado:
+-------------------
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    x = np.random.randn(10000)
+    plt.hist(x,100)
+    plt.title('Normal distribution with $\mu=0, \sigma=1$')
+    plt.savefig('matplotlib_histogrampng)
+    plt.show()
 
 ### Instalar Jupiter, matploitlib
 - pip3 install jupyter 
