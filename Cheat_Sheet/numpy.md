@@ -14,24 +14,25 @@ la historia de Matplotlib y su arquitectura. Matplotlib es uno de los más utili
 Demo:
 -----
 
-    #importamos figurecanvas
-    from matplotlib.backends_agg import FigureCanvasAgg as FigureCanvas
-    #importamos Figure artist
+    # importamos figurecanvas
+    from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+    # importamos Figure artist
     from matplotlib.figure import Figure
-    fig = FigureCanvas()
+
+    fig = Figure()
     canvas = FigureCanvas(fig)
-        
-    #creamos un random de 10000 numeros usando numpy
+
+    # creamos un random de 10000 numeros usando numpy
     import numpy as np
+
     x = np.random.randn(10000)
-    #creamos axes artist (1 columna, 1 fila 1º celda)
-    ax = fig.add.subplot(111)
+    # creamos axes artist (1 columna, 1 fila 1º celda)
+    ax = fig.add_subplot(111)
     # creamos histograma de 10000 numeros
     ax.hist(x, 100)
-    #añadimos el titulo y la salvamos
+    # añadimos el titulo y la salvamos
     ax.set_title('Normal distribution with $\mu=0, \sigma=1$')
     fig.savefig('matplotlib_histogram.png')
-    
     
 Demo simnplificado:
 -------------------
@@ -44,6 +45,11 @@ Demo simnplificado:
     plt.title('Normal distribution with $\mu=0, \sigma=1$')
     plt.savefig('matplotlib_histogrampng)
     plt.show()
+
+
+matplotlib_histogram
+
+
 
 ### Instalar Jupiter, matploitlib
 - pip3 install jupyter 
