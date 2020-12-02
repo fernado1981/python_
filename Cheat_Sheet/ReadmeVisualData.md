@@ -8,6 +8,8 @@
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
 <br/>Ejemplo:<br/>
+vamos a mostrar tanto los cinco paises que más contribuyen con la imigración como los que menos contibuyen:
+#### paises que más contribuyen
 ##### Importamos las librerías necesarias:
 
     import matplotlib as mpl
@@ -69,6 +71,28 @@ Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantit
     plt.show()
     
 ![React](../Images/gráfico_area.png)
+
+#### Mostrar los cinco paises que menos contribuyen con la imigración
+    df_least5 = df_can.tail(5)
+    
+transpose the dataframe
+    
+    df_least5 = df_least5[years].transpose() 
+    df_least5.head()
+    
+cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
+
+    df_least5.index = df_least5.index.map(int)
+    df_least5 = df_least5.plot(kind='area', alpha=0.55, stacked=False, figsize=(20, 10))
+
+pintamos la gráfica
+
+    plt.title('Immigration Trend of 5 Countries with Least Contribution to Immigration')
+    plt.ylabel('Number of Immigrants')
+    plt.xlabel('Years')
+
+    plt.show()
+
     
 
 
