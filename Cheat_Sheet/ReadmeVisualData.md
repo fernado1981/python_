@@ -51,15 +51,20 @@ Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantit
 ##### Obtenemos los cinco primeros valores, head()
 
     df_top5= df_canada.head()
-    df_top5= df_top5[years].transpose()   #transponemos los datos de vertical a horizontal
-    df_top5.plot(kind='area')  #le decimos que el gráfico a dibujar sea de tipo área
-    
+    df_top5.head()
+    # cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
+    df_top5.index = df_top5.index.map(int)
+    df_top5.plot(kind='area', 
+             alpha=0.25,   #0-1, valor por defecto a 0.5
+             stacked=False,   #Para crear una grafica no apilada estableceremos stacked=False.
+             figsize=(20, 10), # pasar el tamaño de tupla (x, y)
+             )
 ##### Pintamos el gráfico y lo mostramos
 
-    plt.title('top 5 paises con mayor imigración')
-    plt.ylabel('Número de imigrantes')
-    plt.xlabel('years')
-  
+    plt.title('Immigration Trend of Top 5 Countries')
+    plt.ylabel('Number of Immigrants')
+    plt.xlabel('Years')
+
     plt.show()
     
 ![React](../Images/gráfico_area.png)
