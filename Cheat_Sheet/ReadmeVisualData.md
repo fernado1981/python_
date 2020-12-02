@@ -203,10 +203,10 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 ![React](../Images/histograma_graphic_data_multiple.png)
 
 Nota: El resultado no es muy fino por lo que vamos a realizar las siguientes modificaciones para que se vea bien:
-*Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
-*establecer una transparencia del 60% con el parámetro alpha
-*etiquetar el eje x con el parámetro x-label
-*cambiar el color de las graficas con el parámetro color
+* Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
+* establecer una transparencia del 60% con el parámetro alpha
+* etiquetar el eje x con el parámetro x-label
+* cambiar el color de las graficas con el parámetro color
 
  
  
