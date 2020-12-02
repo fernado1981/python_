@@ -309,3 +309,36 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
     plt.show()
 
 ![React](../Images/BarChart_anotation_with_text.png)
+
+
+# pregunta: Al utilizar la capa de scripting y el conjunto de datos df_can, se crea una grafica de barras horizontales que muestra el numero total de inmigrantes en Canadá proveniente de los 15 países que mas aportan para el periodo de 1980 a 2013. Etiqueta cada país con el numero total de inmigrantes.
+
+##### paso 1: Ordenamos y obtenemos los datos
+    df_can.sort_values(by='Total', ascending=True, inplace=True)
+    df_top15 = df_can['Total'].tail(15)
+    df_top15
+    
+##### Paso2: graficamos los datos:
+* Generamos plot
+
+      df_top15.plot(kind='barh', figsize=(12,12), color='steelblue')
+      plt.xlabel('Número de inmigrantes')
+      plt.title('top 15 pais que mas contribuyeron en la imigracion de Canada entre 1980 - 2013)
+      
+ * anotamos los valores de las etiquetas a cada pais
+      
+       for index, value in enumerate(df_top15):
+         print('index: ',index)
+         print('value: ',value)
+         label = format(value,',')
+      
+ * anotamos el texto al final de la barra
+ 
+         plt.anotate(label, xy=(value - 47000, index - 0.10), color='white')
+       plt.show()
+
+
+![React](../Images/BarChart_horizontal.png)
+
+
+
