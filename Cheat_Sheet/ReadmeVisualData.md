@@ -148,8 +148,8 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
     print(count) # conteo de las frecuencias
     print(bin_edges) # rango de los contenedores, por defecto son 10 contenedores
     
-  *salida count[178  11   1   2   0   0   0   0   1   2]
-  *salida bin_edges[    0. ->  3412.9 -> 6825.8 -> 10238.7 -> 13651.6 -> 17064.5 -> 20477.4 -> 23890.3 -> 27303.2 -> 30716.1 -> 34129 ]
+  *salida count[178  11   1   2   0   0   0   0   1   2]<br/>
+  *salida bin_edges[ 0. ->  3412.9 -> 6825.8 -> 10238.7 -> 13651.6 -> 17064.5 -> 20477.4 -> 23890.3 -> 27303.2 -> 30716.1 -> 34129 ]<br/>
 
 **Nota:** Por defecto, el método histrogram divide el conjunto de datos en 10 contenedores.
 
