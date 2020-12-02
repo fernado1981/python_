@@ -7,7 +7,7 @@
 
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
-Ejemplo:
+Ejemplo:<br/>
 importamos las librerías necesarias
 
     import matplotlib as mpl
