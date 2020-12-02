@@ -49,17 +49,17 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
 ![React](../Images/datos_limpios_1.png) 
 
 ##### 7) Revisar el tipo de dato de las etiquetas de las columnas todas deben ser de tipo cadena
-mostrará true si son de tipo cadena y false si no
-
-    all(isinstance(column, str) for column in df_can.columns)
+* mostrará true si son de tipo cadena y false si no
+      
+      all(isinstance(column, str) for column in df_can.columns)
     
-convertimos a tipo cadena
+* convertimos a tipo cadena
 
-    df_can.columns = list(map(str, df_can.columns))
+      df_can.columns = list(map(str, df_can.columns))
 
-Revisemos el ahora el tipo de dato en los nombres de las columnas
+* Revisemos el ahora el tipo de dato en los nombres de las columnas
 
-    all(isinstance(column, str) for column in df_can.columns)
+      all(isinstance(column, str) for column in df_can.columns)
 
 ##### Cambiamos los indices por country y añadimos la columna total:
     df_can.set_index('Country', inplace=True)
@@ -95,7 +95,6 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
              )
              
 ##### Pintamos el gráfico y lo mostramos capa de Scripting (método procedural)
-
     plt.title('Immigration Trend of Top 5 Countries')
     plt.ylabel('Number of Immigrants')
     plt.xlabel('Years')
@@ -105,15 +104,15 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
 ![React](../Images/gráfico_area.png)
 
 ##### Pintamos el gráfico y lo mostramos Capa de Artista  (método orientado a objetos)
-generamos el tipo de gráfico  capa de Scripting (método procedural)
+* generamos el tipo de gráfico  capa de Scripting (método procedural)
     
-    ax = df_top5.plot(kind='area', alpha=0.35, figsize=(20, 10))
+      ax = df_top5.plot(kind='area', alpha=0.35, figsize=(20, 10))
 
-Pintamos el gráfico capa de Scripting (método procedural)
-    
-    ax.set_title('Immigration Trend of Top 5 Countries')
-    ax.set_ylabel('Number of Immigrants')
-    ax.set_xlabel('Years')
+* Pintamos el gráfico capa de Scripting (método procedural)
+
+      ax.set_title('Immigration Trend of Top 5 Countries')
+      ax.set_ylabel('Number of Immigrants')
+      ax.set_xlabel('Years')
     
 ![React](../Images/gráfico_area_1.png)
 
@@ -169,16 +168,16 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 **Nota:** Obsérvese que las etiquetas del eje x no corresponden con el tamaño del contenedor. Esto se soluciona pasando una palabra xticks que contenga la lista de los tamaños de los contenedores como se explica a continuación:
 
 ##### Pintamos la gráfica con las columnas centradas (xticks=bin_edges)
-'bin_edges' es una lista de los intervalos de los contenedores 
+* 'bin_edges' es una lista de los intervalos de los contenedores 
 
-    count, bin_edges = np.histogram(df_can['2013'])
-    df_can['2013'].plot(kind='hist', figsize=(8, 5), xticks=bin_edges)
+      count, bin_edges = np.histogram(df_can['2013'])
+      df_can['2013'].plot(kind='hist', figsize=(8, 5), xticks=bin_edges)
 
-    plt.title('Imigración 195 paises en 2013') # añade un titulo al histograma
-    plt.ylabel('Número de paises') # añadir etiqueta de y
-    plt.xlabel('Número de imigrantes') # añadir etiqueta de x
+      plt.title('Imigración 195 paises en 2013') # añade un titulo al histograma
+      plt.ylabel('Número de paises') # añadir etiqueta de y
+      plt.xlabel('Número de imigrantes') # añadir etiqueta de x
 
-    plt.show()
+      plt.show()
 
 ![React](../Images/histograma_graphic_1.png)
 
@@ -189,36 +188,36 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
  ![React](../Images/histograma_multiple_data.png)
  
 ##### Generamos el histograma:
-Obtener los datos y trasponerlos
+* Obtener los datos y trasponerlos
     
-    df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
-    df_t.head()
+      df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
+      df_t.head()
     
-Generar el histograma
+* Generar el histograma
     
-    df_t.plot(kind='hist', figsize=(10, 6))
+      df_t.plot(kind='hist', figsize=(10, 6))
 
-    plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
-    plt.ylabel('Number of Years')
-    plt.xlabel('Number of Immigrants')
+      plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
+      plt.ylabel('Number of Years')
+      plt.xlabel('Number of Immigrants')
 
-    plt.show()
+      plt.show()
     
 ![React](../Images/histograma_graphic_data_multiple.png)
 
 **Nota:** El resultado no es muy fino dado que sale apilado, por lo que vamos a realizar las siguientes modificaciones para que se vea bien:
-* Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
-* establecer una transparencia del 60% con el parámetro alpha
-* etiquetar el eje x con el parámetro x-label
-* cambiar el color de las graficas con el parámetro color
+1. Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
+2. establecer una transparencia del 60% con el parámetro alpha
+3. etiquetar el eje x con el parámetro x-label
+4. cambiar el color de las graficas con el parámetro color
 
-Obtener los valores de x
+* Obtener los valores de x
  
-    count, bin_edges = np.histogram(df_t, 15)
-
-Generar el histograma
+      count, bin_edges = np.histogram(df_t, 15)
+      
+* Generar el histograma
   
-    df_t.plot(kind ='hist', 
+      df_t.plot(kind ='hist', 
           figsize=(10, 6),
           bins=15,
           alpha=0.6,
@@ -226,9 +225,9 @@ Generar el histograma
           color=['coral', 'darkslateblue', 'mediumseagreen']
          )
 
-    plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
-    plt.ylabel('Number of Years')
-    plt.xlabel('Number of Immigrants')
+      plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
+      plt.ylabel('Number of Years')
+      plt.xlabel('Number of Immigrants')
 
     plt.show()
 
