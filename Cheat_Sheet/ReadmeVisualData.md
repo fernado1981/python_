@@ -263,12 +263,12 @@ La grafica de barras de arriba muestra el numero total de inmigrantes divididos 
 
 Anotemos esto en la grafica usando el método annotate de la capa de scripting o la interfaz pyploy. Pasaremos los siguientes parámetros:
 
-* s: str, el texto de la anotación.
-* xy: Tupla para especificar el punto (x,y) a ser anotado (en este caso, el punto final de la flecha).
-* xytext: Tupla para especificar el punto (x,y) donde colocar el texto (en este caso, el punto inicial de la flecha)
-* xycoords: El sistema de coordenadas xy dado - 'data' utiliza el sistema de coordenadas del objeto a ser anotado (por defecto).
-* arrowprops: Toma un diccionario de propiedades para dibujar la flecha:
-    ** arrowstyle: Especifica el estilo de la flecha, '->' es la flecha estandar.
-    ** connectionstyle: Especifica el tipo de conexión. arc3 es una línea recta.
-    ** color: Especifica el color de la flecha.
-    ** lw: Especifica el ancho de la flecha.
+* **s:** str, el texto de la anotación.
+* **xy:** Tupla para especificar el punto (x,y) a ser anotado (en este caso, el punto final de la flecha).
+* **xytext:** Tupla para especificar el punto (x,y) donde colocar el texto (en este caso, el punto inicial de la flecha)
+* **xycoords:** El sistema de coordenadas xy dado - 'data' utiliza el sistema de coordenadas del objeto a ser anotado (por defecto).
+* **arrowprops:** Toma un diccionario de propiedades para dibujar la flecha:
+    - arrowstyle: Especifica el estilo de la flecha, '->' es la flecha estandar.
+    - connectionstyle: Especifica el tipo de conexión. arc3 es una línea recta.
+    - color: Especifica el color de la flecha.
+    - lw: Especifica el ancho de la flecha.
