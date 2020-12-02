@@ -1,7 +1,7 @@
 # Visualizacion de datos
  Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html>
  Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate>
-### Tipo de gráficos:
+#### Tipo de gráficos:
 1) Gráfico de área
 2) Gráfico de histogramas
 3) Gráficos de barras
@@ -41,7 +41,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
     
 ![React](../Images/datos_limpios.png) 
 
-###### 6) cambiar los nombres de las columnas
+##### 6) cambiar los nombres de las columnas
     df_can.rename(columns={'OdName':'Country', 'AreaName':'Continent','RegName':'Region'}, inplace=True)
     df_can.head()
 
@@ -141,10 +141,10 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 ¿Cuál es la distribución de frecuencias de la cantidad de inmigrantes provenientes de distintos países hacia Canadá en 2013?
 **Nota:** Primero devemos dividir los datos en intervalos. Para esto, usaremos el método histrogram de Numpy para obtener el rango de los contenedores y el conteo de frecuencias.
     
-# revisar rapidamente los datos de 2013 
+##### revisar rapidamente los datos de 2013 
     df_can['2013'].head()
 
-# np.histogram regresa 2 valores
+##### np.histogram regresa 2 valores
     count, bin_edges = np.histogram(df_can['2013'])
 
     print(count) # conteo de las frecuencias
@@ -188,11 +188,13 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
  ![React](../Images/histograma_multiple_data.png)
  
 ##### Generamos el histograma:
-# Obtener los datos y trasponerlos
+Obtener los datos y trasponerlos
+    
     df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
     df_t.head()
     
-# generar el histograma
+Generar el histograma
+    
     df_t.plot(kind='hist', figsize=(10, 6))
 
     plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
@@ -209,10 +211,12 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 * etiquetar el eje x con el parámetro x-label
 * cambiar el color de las graficas con el parámetro color
 
-##### obtener los valores de x
+Obtener los valores de x
+ 
     count, bin_edges = np.histogram(df_t, 15)
 
-##### generar el histograma
+Generar el histograma
+  
     df_t.plot(kind ='hist', 
           figsize=(10, 6),
           bins=15,
@@ -249,7 +253,7 @@ Comparación del número de inmigrantes Islandeses a Canadá durante el periodo 
     df_iceland = df_can.loc['Iceland', years]
     df_iceland.head()
 
-##### # paso 2: graficar los datos
+##### paso 2: graficar los datos
     df_iceland.plot(kind='bar', figsize=(10, 6), rot=90)
 
     plt.xlabel('Year') # añadir etiquetado al eje x de la grafica
@@ -293,7 +297,7 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
 * **va:** alineación vertical del texto [‘centro’ | ‘arriba’ | ‘abajo’ | ‘fondo’]
 * **ha:** alineación horizontal del texto [‘centro’ | ‘derecha’ | ‘izquierda’]
 
-##### texto de la anotación
+##### Texto de la anotación
     plt.annotate('2008 - 2011 Financial Crisis', # texto a mostrarse 
              xy=(28, 30),                    # empieza el texto en el punto (año 2008, pob 30)
              rotation=72.5,                  # basado en prueba y error para igualar la flecha
