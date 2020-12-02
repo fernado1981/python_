@@ -10,8 +10,9 @@
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
 <br/>**Ejemplo:**<br/>
-vamos a mostrar tanto los cinco paises que más contribuyen con la imigración como los que menos contibuyen:
-Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migratorios internacionales a y desde los países seleccionados – Revisión de 2015 del portal de la ONU.
+vamos a mostrar tanto los cinco paises que más contribuyen con la imigración como los que menos contibuyen<br/>
+Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migratorios internacionales a y desde los países seleccionados – (Revisión de 2015 del portal de la ONU).
+
 ##### TAREAS GENERICAS
 ##### 1) Importamos las librerías necesarias:
     import matplotlib as mpl
