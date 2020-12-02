@@ -54,6 +54,7 @@ Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantit
     df_top5.head()
     # cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
     df_top5.index = df_top5.index.map(int)
+    # generamos el tipo de gráfico
     df_top5.plot(kind='area', 
              alpha=0.25,   #0-1, valor por defecto a 0.5
              stacked=False,   #Para crear una grafica no apilada estableceremos stacked=False.
