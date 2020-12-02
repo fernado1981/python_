@@ -1,4 +1,5 @@
 # Visualizacion de datos
+ Pandas: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html>
 ### Tipo de gráficos:
 1) Gráfico de área
 2) Gráfico de histogramas
@@ -148,14 +149,36 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
     print(count) # conteo de las frecuencias
     print(bin_edges) # rango de los contenedores, por defecto son 10 contenedores
     
-  *count[178  11   1   2   0   0   0   0   1   2]<br/>
-  *bin_edges[ 0. ->  3412.9 -> 6825.8 -> 10238.7 -> 13651.6 -> 17064.5 -> 20477.4 -> 23890.3 -> 27303.2 -> 30716.1 -> 34129 ]<br/>
+![React](../Images/histograma_range_frequency.png)
 
 **Nota:** Por defecto, el método histrogram divide el conjunto de datos en 10 contenedores.
 
+##### Pintamos la gráfica (las columnas salen descentradas)
+    df_can['2013'].plot(kind='hist', figsize=(8, 5))
 
+    plt.title('Imigración 195 paises en 2013') # añade un titulo al histograma
+    plt.ylabel('Número de paises') # añadir etiqueta de y
+    plt.xlabel('Número de imigrantes') # añadir etiqueta de x
 
+    plt.show()
+    
+![React](../Images/histograma_graphic.png)
 
+**Nota:** Obsérvese que las etiquetas del eje x no corresponden con el tamaño del contenedor. Esto se soluciona pasando una palabra xticks que contenga la lista de los tamaños de los contenedores como se explica a continuación:
+
+##### Pintamos la gráfica con las columnas centradas (xticks=bin_edges)
+'bin_edges' es una lista de los intervalos de los contenedores 
+
+    count, bin_edges = np.histogram(df_can['2013'])
+    df_can['2013'].plot(kind='hist', figsize=(8, 5), xticks=bin_edges)
+
+    plt.title('Imigración 195 paises en 2013') # añade un titulo al histograma
+    plt.ylabel('Número de paises') # añadir etiqueta de y
+    plt.xlabel('Número de imigrantes') # añadir etiqueta de x
+
+    plt.show()
+
+![React](../Images/histograma_graphic_1.png)
 
 
 
