@@ -1,5 +1,6 @@
 # Visualizacion de datos
- Pandas: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html>
+ Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html>
+ Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate>
 ### Tipo de gráficos:
 1) Gráfico de área
 2) Gráfico de histogramas
@@ -249,7 +250,7 @@ Comparación del número de inmigrantes Islandeses a Canadá durante el periodo 
     df_iceland.head()
 
 ##### # paso 2: graficar los datos
-    df_iceland.plot(kind='bar', figsize=(10, 6))
+    df_iceland.plot(kind='bar', figsize=(10, 6), rot=90)
 
     plt.xlabel('Year') # añadir etiquetado al eje x de la grafica
     plt.ylabel('Number of immigrants') # añadir etiquetado al eje y de la grafica
@@ -259,7 +260,7 @@ Comparación del número de inmigrantes Islandeses a Canadá durante el periodo 
     
 ![React](../Images/BarChart.png)
 
-La grafica de barras de arriba muestra el numero total de inmigrantes divididos por año. Podemos ver claramente el impacto de la crisis financiera; el numero de inmigrantes hacia Canadá comenzó a incrementarse rápidamente después de 2008.
+**Nota:** La grafica de barras de arriba muestra el numero total de inmigrantes divididos por año. Podemos ver claramente el impacto de la crisis financiera; el numero de inmigrantes hacia Canadá comenzó a incrementarse rápidamente después de 2008.
 
 Anotemos esto en la grafica usando el método annotate de la capa de scripting o la interfaz pyploy. Pasaremos los siguientes parámetros:
 
@@ -268,7 +269,38 @@ Anotemos esto en la grafica usando el método annotate de la capa de scripting o
 * **xytext:** Tupla para especificar el punto (x,y) donde colocar el texto (en este caso, el punto inicial de la flecha)
 * **xycoords:** El sistema de coordenadas xy dado - 'data' utiliza el sistema de coordenadas del objeto a ser anotado (por defecto).
 * **arrowprops:** Toma un diccionario de propiedades para dibujar la flecha:
-    - arrowstyle: Especifica el estilo de la flecha, '->' es la flecha estandar.
-    - connectionstyle: Especifica el tipo de conexión. arc3 es una línea recta.
-    - color: Especifica el color de la flecha.
-    - lw: Especifica el ancho de la flecha.
+    - **arrowstyle:** Especifica el estilo de la flecha, '->' es la flecha estandar.
+    - **connectionstyle:** Especifica el tipo de conexión. arc3 es una línea recta.
+    - **color:** Especifica el color de la flecha.
+    - **lw:** Especifica el ancho de la flecha.
+    
+
+##### flecha de la anotación, plt.annotate()
+    plt.annotate('',                      # s: str. Se dejará en blanco si no hay texto
+             xy=(32, 70),             # ubicará la cabeza de la flecha en el punto (año 2012, pob 70)
+             xytext=(28, 20),         # ubicará la base de la flecha en el punto (año 2008, pob 20)
+             xycoords='data',         # Usará el sistema de coordenadas del objeto a ser anotado 
+             arrowprops=dict(arrowstyle='->', connectionstyle='arc3', color='blue', lw=2)
+            )
+
+    plt.show()
+
+![React](../Images/BarChart_anotation.png)
+
+Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros adicionales:
+
+* **rotation:** Angulo de rotación del texto dado en grados (al revés de las manecillas del reloj)
+* **va:** alineación vertical del texto [‘centro’ | ‘arriba’ | ‘abajo’ | ‘fondo’]
+* **ha:** alineación horizontal del texto [‘centro’ | ‘derecha’ | ‘izquierda’]
+
+##### texto de la anotación
+    plt.annotate('2008 - 2011 Financial Crisis', # texto a mostrarse 
+             xy=(28, 30),                    # empieza el texto en el punto (año 2008, pob 30)
+             rotation=72.5,                  # basado en prueba y error para igualar la flecha
+             va='bottom',                    # el texto se alineara verticalmente 'abajo'
+             ha='left',                      # el texto se alineara horizontalmente a la 'izquierda'
+            )
+
+    plt.show()
+
+![React](../Images/BarChart_anotation_with_text.png)
