@@ -9,4 +9,4 @@
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
 Ejemplo:
 dataset deprueba en excel:
-![DATASET](../images/Dataset_area.png)
+![DATASET](../Images/Dataset_area.png)
