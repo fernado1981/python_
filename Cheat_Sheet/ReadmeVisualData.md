@@ -31,7 +31,7 @@ ordenadmos los datos de la columna total, sort_values()
 
     df_canada.sort_values(['Total'], ascending=False, axis=0, inplace=True)
     
-    ![React](../Images/data_set_limpio.png)
+![React](../Images/data_set_limpio.png)
     
 obtenemos los cinco primeros valores, head()
 
