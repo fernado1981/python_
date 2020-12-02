@@ -187,7 +187,7 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
  ![React](../Images/histograma_multiple_data.png)
  
 ##### Generamos el histograma:
-# transponer DataFrame
+# Obtener los datos y trasponerlos
     df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
     df_t.head()
     
@@ -229,6 +229,46 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 ![React](../Images/histograma_graphic_data_multiple_no_apilado.png)
 
 #### DIAGRAMA DE BARRAS:
+La grafica de barras es una manera de representación de datos donde la longitud de las barras muestran la magnitud/tamaño de una característica/variable. Estas graficas usualmente representan de forma numérica y por categoría, variables agrupadas en intervalos.
 
+Para crear una grafica de barras tenemos que pasar uno o dos argumentos mediante el parámetro kind en la función plot():
 
+* kind=bar crea una grafica de barras verticales
+* kind=barh crea una grafica de barras horizontales
 
+**Grafica de Barras Verticales
+
+En las graficas de barras verticales, el eje x se usa para el etiquetado y la longitud de las barras en el eje y corresponde a la magnitud de la variable utilizada. Estas graficas son particularmente útiles en el análisis para series de datos de tiempo. Una desventaja es que carecen de espacio para añadir una etiqueta al pie de cada barra.
+
+**Efecto de la Crisis Financiera de Islandia:**
+De 2008 a 2011 la crisis financiera de Islandia fue el mayor evento económico y político de ese país. En relación con el tamaño de su economía, el colapso de sistema bancario de Islandia fue el mas grande experimentado por cualquier en la historia de la economía. La crisis llevó a una severa depresión económica de 2008 a 2011 y una significante agitación política.
+
+Comparación del número de inmigrantes Islandeses a Canadá durante el periodo de 1980 a 2013.
+##### paso 1: obtener los datos
+    df_iceland = df_can.loc['Iceland', years]
+    df_iceland.head()
+
+##### # paso 2: graficar los datos
+    df_iceland.plot(kind='bar', figsize=(10, 6))
+
+    plt.xlabel('Year') # añadir etiquetado al eje x de la grafica
+    plt.ylabel('Number of immigrants') # añadir etiquetado al eje y de la grafica
+    plt.title('Icelandic immigrants to Canada from 1980 to 2013') # añadir un titulo a la grafica
+
+    plt.show()
+    
+![React](../Images/BarChart.png)
+
+La grafica de barras de arriba muestra el numero total de inmigrantes divididos por año. Podemos ver claramente el impacto de la crisis financiera; el numero de inmigrantes hacia Canadá comenzó a incrementarse rápidamente después de 2008.
+
+Anotemos esto en la grafica usando el método annotate de la capa de scripting o la interfaz pyploy. Pasaremos los siguientes parámetros:
+
+* s: str, el texto de la anotación.
+* xy: Tupla para especificar el punto (x,y) a ser anotado (en este caso, el punto final de la flecha).
+* xytext: Tupla para especificar el punto (x,y) donde colocar el texto (en este caso, el punto inicial de la flecha)
+* xycoords: El sistema de coordenadas xy dado - 'data' utiliza el sistema de coordenadas del objeto a ser anotado (por defecto).
+* arrowprops: Toma un diccionario de propiedades para dibujar la flecha:
+**    arrowstyle: Especifica el estilo de la flecha, '->' es la flecha estandar.
+**    connectionstyle: Especifica el tipo de conexión. arc3 es una línea recta.
+**    color: Especifica el color de la flecha.
+**    lw: Especifica el ancho de la flecha.
