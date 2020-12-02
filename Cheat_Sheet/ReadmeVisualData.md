@@ -66,7 +66,7 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
     
 ![React](../Images/datos_limpios_2.png) 
 
-### DIAGRAMA TIPO ÁREA:
+### DIAGRAMA DE ÁREA:
 #### paises que más contribuyen
 ##### Obtenemos la lista de años dese 1980 a 2014
      years = list(map(str,range(1980,2014)))
@@ -134,7 +134,7 @@ Pintamos el gráfico capa de Scripting (método procedural)
 
     plt.show()
 
-#### Histogramas:
+#### HISTOGRAMAS:
 Un histograma representa la distribución de frecuencia de un conjunto de datos numéricos. La forma en que trabaja es dividiendo el eje x en contenedores y asignando cada dato dentro del conjunto a uno de ellos para después contar el numero de datos asignado a cada contenedor. De esta forma el eje y es la frecuencia o el numero de datos en cada contenedor.
 <br/>**Ejemplo:**<br/>
 ¿Cuál es la distribución de frecuencias de la cantidad de inmigrantes provenientes de distintos países hacia Canadá en 2013?
@@ -202,14 +202,33 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
     
 ![React](../Images/histograma_graphic_data_multiple.png)
 
-Nota: El resultado no es muy fino por lo que vamos a realizar las siguientes modificaciones para que se vea bien:
+**Nota:** El resultado no es muy fino dado que sale apilado, por lo que vamos a realizar las siguientes modificaciones para que se vea bien:
 * Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
 * establecer una transparencia del 60% con el parámetro alpha
 * etiquetar el eje x con el parámetro x-label
 * cambiar el color de las graficas con el parámetro color
 
- 
- 
+##### obtener los valores de x
+    count, bin_edges = np.histogram(df_t, 15)
+
+##### generar el histograma
+    df_t.plot(kind ='hist', 
+          figsize=(10, 6),
+          bins=15,
+          alpha=0.6,
+          xticks=bin_edges,
+          color=['coral', 'darkslateblue', 'mediumseagreen']
+         )
+
+    plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
+    plt.ylabel('Number of Years')
+    plt.xlabel('Number of Immigrants')
+
+    plt.show()
+
+![React](../Images/histograma_graphic_data_multiple_no_apilado.png)
+
+#### DIAGRAMA DE BARRAS:
 
 
 
