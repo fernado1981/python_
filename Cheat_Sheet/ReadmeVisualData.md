@@ -7,7 +7,7 @@
 
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
-<br/>Ejemplo:<br/>
+<br/>**Ejemplo:**<br/>
 vamos a mostrar tanto los cinco paises que más contribuyen con la imigración como los que menos contibuyen:
 Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migratorios internacionales a y desde los países seleccionados – Revisión de 2015 del portal de la ONU.
 ##### TAREAS GENERICAS
@@ -84,14 +84,14 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
 ##### cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
     df_top5.index = df_top5.index.map(int)
     
-##### generamos el tipo de gráfico
+##### generamos el tipo de gráfico capa de Scripting (método procedural)
     df_top5.plot(kind='area', 
              alpha=0.25,   #0-1, valor por defecto a 0.5
              stacked=False,   #Para crear una grafica no apilada estableceremos stacked=False.
              figsize=(20, 10), # pasar el tamaño de tupla (x, y)
              )
              
-##### Pintamos el gráfico y lo mostramos
+##### Pintamos el gráfico y lo mostramos capa de Scripting (método procedural)
 
     plt.title('Immigration Trend of Top 5 Countries')
     plt.ylabel('Number of Immigrants')
@@ -100,6 +100,19 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
     plt.show()
     
 ![React](../Images/gráfico_area.png)
+
+##### Pintamos el gráfico y lo mostramos Capa de Artista  (método orientado a objetos)
+generamos el tipo de gráfico  capa de Scripting (método procedural)
+    
+    ax = df_top5.plot(kind='area', alpha=0.35, figsize=(20, 10))
+
+Pintamos el gráfico capa de Scripting (método procedural)
+    
+    ax.set_title('Immigration Trend of Top 5 Countries')
+    ax.set_ylabel('Number of Immigrants')
+    ax.set_xlabel('Years')
+    
+![React](../Images/gráfico_area_1.png)
 
 ### Mostrar los cinco paises que menos contribuyen con la imigración
 ##### Obtenemos los cinco primeros valores, head()
@@ -122,10 +135,23 @@ Revisemos el ahora el tipo de dato en los nombres de las columnas
 
 #### Histogramas:
 Un histograma representa la distribución de frecuencia de un conjunto de datos numéricos. La forma en que trabaja es dividiendo el eje x en contenedores y asignando cada dato dentro del conjunto a uno de ellos para después contar el numero de datos asignado a cada contenedor. De esta forma el eje y es la frecuencia o el numero de datos en cada contenedor.
-<br/><b>Ejemplo:<b/><br/>
+<br/>**Ejemplo:**<br/>
 ¿Cuál es la distribución de frecuencias de la cantidad de inmigrantes provenientes de distintos países hacia Canadá en 2013?
-Nota: Primero devemos dividir los datos en intervalos. Para esto, usaremos el método histrogram de Numpy para obtener el rango de los contenedores y el conteo de frecuencias.
+**Nota:** Primero devemos dividir los datos en intervalos. Para esto, usaremos el método histrogram de Numpy para obtener el rango de los contenedores y el conteo de frecuencias.
+    
+# revisar rapidamente los datos de 2013 
+    df_can['2013'].head()
 
+# np.histogram regresa 2 valores
+    count, bin_edges = np.histogram(df_can['2013'])
+
+    print(count) # conteo de las frecuencias
+    print(bin_edges) # rango de los contenedores, por defecto son 10 contenedores
+    
+  *salida count[178  11   1   2   0   0   0   0   1   2]
+  *salida bin_edges[    0. ->  3412.9 -> 6825.8 -> 10238.7 -> 13651.6 -> 17064.5 -> 20477.4 -> 23890.3 -> 27303.2 -> 30716.1 -> 34129 ]
+
+**Nota:** Por defecto, el método histrogram divide el conjunto de datos en 10 contenedores.
 
 
 
