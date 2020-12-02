@@ -9,16 +9,15 @@
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
 <br/>Ejemplo:<br/>
 vamos a mostrar tanto los cinco paises que más contribuyen con la imigración como los que menos contibuyen:
-#### paises que más contribuyen
-##### Importamos las librerías necesarias:
-
+Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migratorios internacionales a y desde los países seleccionados – Revisión de 2015 del portal de la ONU.
+##### TAREAS GENERICAS
+##### 1) Importamos las librerías necesarias:
     import matplotlib as mpl
     import matplotlib.pyplot as plt
     import numpy as np  # muy útil para cálculos científicos con Python
     import pandas as pd # Librería para estructar datos primarios
     
-##### Obtenemos el dataset deprueba (como se puede observar es de tipo excel):
-    
+##### 2) Obtenemos el dataset deprueba (como se puede observar es de tipo excel):
     df_can = pd.read_excel('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-   data/CognitiveClass/DV0101EN/labs/Data_Files/Canada.xlsx',
                        sheet_name='Canada by Citizenship',
                        skiprows=range(20),
@@ -29,39 +28,69 @@ vamos a mostrar tanto los cinco paises que más contribuyen con la imigración c
 
 ![React](../Images/data_set_bruto.png)
 
-##### Cambiamos los indices por country y añadimos la columna total:
+##### 3) Imprimir el tamaño del DataFrame
+    print(df_can.shape)
+
+##### 4) Limpiar el conjunto de datos para borrar las columnas que no ofrecen información en nuestra visualización
+    df_can.drop(['AREA', 'REG', 'DEV', 'Type', 'Coverage'], axis=1, inplace=True)
     
-    df_can.set_index('Country', inplace=True)
+##### 5) Veamos los primeros cinco elementos para ver como cambió el DataFrame
+    df_can.head()
+    
+![React](../Images/datos_limpios.png) 
+
+###### 6) cambiar los nombres de las columnas
+    df_can.rename(columns={'OdName':'Country', 'AreaName':'Continent','RegName':'Region'}, inplace=True)
     df_can.head()
 
+![React](../Images/datos_limpios_1.png) 
+
+##### 7) Revisar el tipo de dato de las etiquetas de las columnas todas deben ser de tipo cadena
+mostrará true si son de tipo cadena y false si no
+
+    all(isinstance(column, str) for column in df_can.columns)
+    
+convertimos a tipo cadena
+
+    df_can.columns = list(map(str, df_can.columns))
+
+Revisemos el ahora el tipo de dato en los nombres de las columnas
+
+    all(isinstance(column, str) for column in df_can.columns)
+
+##### Cambiamos los indices por country y añadimos la columna total:
+    df_can.set_index('Country', inplace=True)
     df_can['Total'] = df_can.sum(axis=1)
     df_can.head()
+    
+![React](../Images/datos_limpios_2.png) 
 
-![React](../Images/data_set_modificado.png)
-
-#### Generación de area plot
+### DIAGRAMA TIPO ÁREA:
+#### paises que más contribuyen
 ##### Obtenemos la lista de años dese 1980 a 2014
-     
      years = list(map(str,range(1980,2014)))
      
 ##### Ordenadmos los datos de la columna total, sort_values()
-
-    df_canada.sort_values(['Total'], ascending=False, axis=0, inplace=True)
-    
-![React](../Images/data_set_limpio.png)
-    
+    df_can.sort_values(['Total'], ascending=False, axis=0, inplace=True)
+   
 ##### Obtenemos los cinco primeros valores, head()
-
-    df_top5= df_canada.head()
+    df_top5 = df_can.head()
+  
+##### transponer el DataFrame (vertical to horizontal)
+    df_top5 = df_top5[years].transpose() 
     df_top5.head()
-    # cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
+![React](../Images/datos_limpios_3.png) 
+       
+##### cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
     df_top5.index = df_top5.index.map(int)
-    # generamos el tipo de gráfico
+    
+##### generamos el tipo de gráfico
     df_top5.plot(kind='area', 
              alpha=0.25,   #0-1, valor por defecto a 0.5
              stacked=False,   #Para crear una grafica no apilada estableceremos stacked=False.
              figsize=(20, 10), # pasar el tamaño de tupla (x, y)
              )
+             
 ##### Pintamos el gráfico y lo mostramos
 
     plt.title('Immigration Trend of Top 5 Countries')
@@ -72,28 +101,35 @@ vamos a mostrar tanto los cinco paises que más contribuyen con la imigración c
     
 ![React](../Images/gráfico_area.png)
 
-#### Mostrar los cinco paises que menos contribuyen con la imigración
+### Mostrar los cinco paises que menos contribuyen con la imigración
+##### Obtenemos los cinco primeros valores, head()
     df_least5 = df_can.tail(5)
     
-transpose the dataframe
-    
+##### Transpose the dataframe
     df_least5 = df_least5[years].transpose() 
     df_least5.head()
     
-cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
-
+##### Cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
     df_least5.index = df_least5.index.map(int)
     df_least5 = df_least5.plot(kind='area', alpha=0.55, stacked=False, figsize=(20, 10))
 
-pintamos la gráfica
-
+##### Pintamos la gráfica
     plt.title('Immigration Trend of 5 Countries with Least Contribution to Immigration')
     plt.ylabel('Number of Immigrants')
     plt.xlabel('Years')
 
     plt.show()
 
-    
+#### Histogramas:
+Un histograma representa la distribución de frecuencia de un conjunto de datos numéricos. La forma en que trabaja es dividiendo el eje x en contenedores y asignando cada dato dentro del conjunto a uno de ellos para después contar el numero de datos asignado a cada contenedor. De esta forma el eje y es la frecuencia o el numero de datos en cada contenedor.
+<br/><b>Ejemplo:<b/><br/>
+¿Cuál es la distribución de frecuencias de la cantidad de inmigrantes provenientes de distintos países hacia Canadá en 2013?
+Nota: Primero devemos dividir los datos en intervalos. Para esto, usaremos el método histrogram de Numpy para obtener el rango de los contenedores y el conteo de frecuencias.
+
+
+
+
+
 
 
 
