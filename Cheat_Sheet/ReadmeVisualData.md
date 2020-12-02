@@ -180,5 +180,36 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 
 ![React](../Images/histograma_graphic_1.png)
 
+¿Cual es la distribución de la inmigración en Dinamarca, Noruega y Suecia desde 1980 a 2013?
+
+    df_can.loc[['Denmark', 'Norway', 'Sweden'], years]
+    
+ ![React](../Images/histograma_multiple_data.png)
+ 
+##### Generamos el histograma:
+# transponer DataFrame
+    df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
+    df_t.head()
+    
+# generar el histograma
+    df_t.plot(kind='hist', figsize=(10, 6))
+
+    plt.title('Histogram of Immigration from Denmark, Norway, and Sweden from 1980 - 2013')
+    plt.ylabel('Number of Years')
+    plt.xlabel('Number of Immigrants')
+
+    plt.show()
+    
+![React](../Images/histograma_graphic_data_multiple.png)
+
+Nota: El resultado no es muy fino por lo que vamos a realizar las siguientes modificaciones para que se vea bien:
+*Incrementar el tamaño de contenedor a 15 pasando el parámetro bins
+*establecer una transparencia del 60% con el parámetro alpha
+*etiquetar el eje x con el parámetro x-label
+*cambiar el color de las graficas con el parámetro color
+
+ 
+ 
+
 
 
