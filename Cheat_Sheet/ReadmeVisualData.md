@@ -61,10 +61,11 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
 
       all(isinstance(column, str) for column in df_can.columns)
 
-##### Cambiamos los indices por country y añadimos la columna total:
-    df_can.set_index('Country', inplace=True)
-    df_can['Total'] = df_can.sum(axis=1)
-    df_can.head()
+* Cambiamos los indices por country y añadimos la columna total:
+  
+      df_can.set_index('Country', inplace=True)
+      df_can['Total'] = df_can.sum(axis=1)
+      df_can.head()
     
 ![React](../Images/datos_limpios_2.png) 
 
