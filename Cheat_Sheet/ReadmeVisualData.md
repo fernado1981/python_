@@ -311,7 +311,7 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
 ![React](../Images/BarChart_anotation_with_text.png)
 
 
-# pregunta: Al utilizar la capa de scripting y el conjunto de datos df_can, se crea una grafica de barras horizontales que muestra el numero total de inmigrantes en Canadá proveniente de los 15 países que mas aportan para el periodo de 1980 a 2013. Etiqueta cada país con el numero total de inmigrantes.
+**pregunta:** Al utilizar la capa de scripting y el conjunto de datos df_can, se crea una grafica de barras horizontales que muestra el numero total de inmigrantes en Canadá proveniente de los 15 países que mas aportan para el periodo de 1980 a 2013. Etiqueta cada país con el numero total de inmigrantes.
 
 ##### paso 1: Ordenamos y obtenemos los datos
     df_can.sort_values(by='Total', ascending=True, inplace=True)
