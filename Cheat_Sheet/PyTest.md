@@ -66,7 +66,7 @@ test_sample_pass.py
     
       pytest pruebas/test_sample_pass.py
      
-* OutPut
+* OutPut<br/>
     =========================== test session starts ============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -79,7 +79,7 @@ test_sample_pass.py
 
       pytest pruebas/
 
-* OutPut
+* OutPut<br/>
     ====================== test session starts ==========================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -112,7 +112,7 @@ test_sample_pass.py
 
       pytest pruebas/test_sample_pass.py::test_nombre
 
-* OutPut
+* OutPut<br/>
     ====================== test session starts ============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -142,7 +142,7 @@ test_sample_pass.py
     
     pytest.main()
 
-* Output:
+* Output:<br/>
     ============================= test session starts =============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
