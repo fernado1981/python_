@@ -89,25 +89,25 @@ collected 4 items <br/>
 pruebas\test_sample_fail.py FF                               [ 50%]<br/>
 pruebas\test_sample_pass.py ..                               [100%]<br/>
 
-============================ FAILURES ==============================<br/>
+============================ FAILURES =======================<br/>
 ____________________________ test_answer ___________________________<br/>
 
-def test_answer():<br/>
->   assert func(3) == 5<br/>
-E   assert 4 == 5<br/>
-E    +  where 4 = func(3)<br/>
-pruebas\test_sample_fail.py:8: AssertionError<br/>
+*def test_answer():<br/>
+*>   assert func(3) == 5<br/>
+*E   assert 4 == 5<br/>
+*E    +  where 4 = func(3)<br/>
+*pruebas\test_sample_fail.py:8: AssertionError<br/>
 ____________________________ test_nombre ____________________________<br/>
 
-def test_nombre():<br/>
->    assert nombre('Fernando') == 'Pepe'<br/>
-E    AssertionError: assert 'Fernando' == 'Pepe'<br/>
-E     - Pepe<br/>
-E         + Fernando<br/>
-pruebas\test_sample_fail.py:11: AssertionError<br/>
+*def test_nombre():<br/>
+*>    assert nombre('Fernando') == 'Pepe'<br/>
+*E    AssertionError: assert 'Fernando' == 'Pepe'<br/>
+*E     - Pepe<br/>
+*E         + Fernando<br/>
+*pruebas\test_sample_fail.py:11: AssertionError<br/>
 ================================== short test summary info ==================================<br/>
-FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
-FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
+*FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
+*FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
 ================================ 2 failed, 2 passed in 0.10s ================================<br/>
 
 
