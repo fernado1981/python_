@@ -151,36 +151,36 @@ pruebas\test_sample_pass.py .                                    [100%]<br/>
 
 **Salida:
 
-============================= test session starts =============================
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
-rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini
-collected 4 items
+============================= test session starts =============================<br/>
+platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
+collected 4 items<br/>
 
-test_sample_fail.py FF                                                   [ 50%]
-test_sample_pass.py ..                                                   [100%]
+test_sample_fail.py FF                                                   [ 50%]<br/>
+test_sample_pass.py ..                                                   [100%]<br/>
 
-================================== FAILURES ===================================
-_________________________________ test_answer _________________________________
+================================== FAILURES ===================================<br/>
+_________________________________ test_answer _________________________________<br/>
 
-    def test_answer():
->       assert func(5) == 5
-E       assert 6 == 5
-E        +  where 6 = func(5)
+def test_answer():<br/>
+>       assert func(5) == 5<br/>
+E       assert 6 == 5<br/>
+E        +  where 6 = func(5)<br/>
 
-test_sample_fail.py:11: AssertionError
-_________________________________ test_nombre _________________________________
+test_sample_fail.py:11: AssertionError<br/>
+_________________________________ test_nombre _________________________________<br/>
 
-    def test_nombre():
->       assert nombre('Fernando') == 'fer'
-E       AssertionError: assert 'Fernando' == 'fer'
-E         - fer
-E         + Fernando
+def test_nombre():<br/>
+>       assert nombre('Fernando') == 'fer'<br/>
+E       AssertionError: assert 'Fernando' == 'fer'<br/>
+E         - fer<br/>
+E         + Fernando<br/>
 
-test_sample_fail.py:14: AssertionError
-=========================== short test summary info ===========================
-FAILED test_sample_fail.py::test_answer - assert 6 == 5
-FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...
-========================= 2 failed, 2 passed in 0.42s =========================
+test_sample_fail.py:14: AssertionError<br/>
+=========================== short test summary info ===========================<br/>
+FAILED test_sample_fail.py::test_answer - assert 6 == 5<br/>
+FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
+========================= 2 failed, 2 passed in 0.42s =========================<br/>
 
 
 
