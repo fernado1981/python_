@@ -45,12 +45,10 @@ test_sample_pass.py
 **Nota:** esta prueba pasará dado que 4+1 no son 5 y 'Fernando' es igual a 'Fernando'
 
 **Ejecutar las pruebas de un fichero**
+* sintax: pytest [path_al_file.py]
     
-     pytest pruebas/test_sample_pass.py
+      pytest pruebas/test_sample_pass.py
      
-**Salida**
-
-pytest <br/>
 =========================== test session starts ============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -61,27 +59,12 @@ pruebas\test_sample.py .                                             [100%]<br/>
 **Ejecutar todas las pruebas**
 
     pytest
-    
-**Salida**
 
-pytest <br/>
-=========================== test session starts ============================<br/>
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
-rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
-collected 2 item                                                            <br/>                                                                                       
-pruebas\test_sample.py .                                             [100%]<br/>
-============================ 2 passed in 0.03s ============================<br/>
-    
 **Ejecutar pruebas en un directorio**
+* sintax: pytest [path_al_directorio]
 
-    pytest prueba/
+      pytest pruebas/
     
-    
-
-**Salida**
-
-pytest <br/>
-(venv) C:\Users\FMANRIQU\Desktop\python>pytest pruebas/<br/>
 ====================== test session starts ==========================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -109,5 +92,17 @@ ____________________________ test_nombre ____________________________<br/>
 *FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
 *FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
 ================================ 2 failed, 2 passed in 0.10s ================================<br/>
+
+**Ejecutar un test especifico de un fichero**
+* sintax: pytest [path_al_file.py]::[test_a_ejecutar]
+    
+      pytest pruebas/test_sample_pass.py::test_nombre
+
+====================== test session starts ==========================<br/>
+platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
+collected 1 item   <br/>                                                                                                                                                    
+pruebas\test_sample_pass.py .                                    [100%]<br/>
+========================== 1 passed in 0.02s ==========================<br/>
 
 
