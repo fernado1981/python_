@@ -81,7 +81,7 @@ pruebas\test_sample.py .                                             [100%]<br/>
 **Salida**
 
 pytest <br/>
-(venv) C:\Users\FMANRIQU\Desktop\python>pytest pruebas/
+(venv) C:\Users\FMANRIQU\Desktop\python>pytest pruebas/<br/>
 ====================== test session starts ==========================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
