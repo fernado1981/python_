@@ -71,7 +71,7 @@ rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
 collected 4 items <br/>                                                                                                                                                 
 pruebas\test_sample_fail.py FF                               [ 50%]<br/>
 pruebas\test_sample_pass.py ..                               [100%]<br/>
-============================ FAILURES =========================<br/>
+============================ FAILURES ==========================<br/>
 ____________________________ test_answer ___________________________<br/>
 
 *def test_answer():<br/>
