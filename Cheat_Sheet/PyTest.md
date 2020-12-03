@@ -62,11 +62,11 @@ test_sample_pass.py
 **NOTA:** En este caso para cuando encuentre el segundo fallo
     
 4. **Ejecutar las pruebas de un fichero**
-* sintax: pytest [path_al_file.py]
+* **sintax:** pytest [path_al_file.py]
     
       pytest pruebas/test_sample_pass.py
      
-* OutPut<br/>
+* **OutPut**<br/>
     =========================== test session starts ============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -75,11 +75,11 @@ test_sample_pass.py
     ============================ 2 passed in 0.03s ============================<br/>
 
 5. **Ejecutar pruebas en un directorio**
-* sintax: pytest [path_al_directorio]
+* **sintax:** pytest [path_al_directorio]
 
       pytest pruebas/
 
-* OutPut<br/>
+* **OutPut**<br/>
     ====================== test session starts ==========================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -108,11 +108,11 @@ test_sample_pass.py
     ====================== 2 failed, 2 passed in 0.10s =========================<br/>
 
 6. **Ejecutar un test específico de un fichero**
-* sintax: pytest [path_al_file.py]::[test_a_ejecutar]
+* **sintax:** pytest [path_al_file.py]::[test_a_ejecutar]
 
       pytest pruebas/test_sample_pass.py::test_nombre
 
-* OutPut<br/>
+* **OutPut**<br/>
     ====================== test session starts ============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -125,7 +125,7 @@ test_sample_pass.py
     pytest test_mod.py::TestClass::test_method
     
 7. **Llamar a pytest en código Python**
-* sintax: pytest.main()
+* **sintax:** pytest.main()
 test_sample_pass.py
   
     def func(x):
@@ -142,7 +142,7 @@ test_sample_pass.py
     
     pytest.main()
 
-* Output:<br/>
+* **Output:**<br/>
     ============================= test session starts =============================<br/>
     platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
     rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
