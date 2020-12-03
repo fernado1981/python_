@@ -67,12 +67,12 @@ test_sample_pass.py
       pytest pruebas/test_sample_pass.py
      
 * OutPut
-=========================== test session starts ============================<br/>
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
-rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
-collected 2 item                                                            <br/>                                                                                       
-pruebas\test_sample.py .                                             [100%]<br/>
-============================ 2 passed in 0.03s ============================<br/>
+    =========================== test session starts ============================<br/>
+    platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+    rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
+    collected 2 item                                                            <br/>                                                                                       
+    pruebas\test_sample.py .                                             [100%]<br/>
+    ============================ 2 passed in 0.03s ============================<br/>
 
 5. **Ejecutar pruebas en un directorio**
 * sintax: pytest [path_al_directorio]
@@ -80,32 +80,32 @@ pruebas\test_sample.py .                                             [100%]<br/>
       pytest pruebas/
 
 * OutPut
-====================== test session starts ==========================<br/>
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
-rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
-collected 4 items <br/>                                                                                                                                                 
-pruebas\test_sample_fail.py FF                               [ 50%]<br/>
-pruebas\test_sample_pass.py ..                               [100%]<br/>
-============================ FAILURES ==========================<br/>
-____________________________ test_answer ___________________________<br/>
+    ====================== test session starts ==========================<br/>
+    platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+    rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
+    collected 4 items <br/>                                                                                                                                                 
+    pruebas\test_sample_fail.py FF                               [ 50%]<br/>
+    pruebas\test_sample_pass.py ..                               [100%]<br/>
+    ============================ FAILURES ==========================<br/>
+    ____________________________ test_answer ___________________________<br/>
 
-*def test_answer():<br/>
-*>   assert func(3) == 5<br/>
-*E   assert 4 == 5<br/>
-*E    +  where 4 = func(3)<br/>
-*pruebas\test_sample_fail.py:8: AssertionError<br/>
-____________________________ test_nombre ____________________________<br/>
+    *def test_answer():<br/>
+    *>   assert func(3) == 5<br/>
+    *E   assert 4 == 5<br/>
+    *E    +  where 4 = func(3)<br/>
+    *pruebas\test_sample_fail.py:8: AssertionError<br/>
+    ____________________________ test_nombre ____________________________<br/>
 
-*def test_nombre():<br/>
-*>    assert nombre('Fernando') == 'Pepe'<br/>
-*E    AssertionError: assert 'Fernando' == 'Pepe'<br/>
-*E     - Pepe<br/>
-*E         + Fernando<br/>
-*pruebas\test_sample_fail.py:11: AssertionError<br/>
-====================== short test summary info ==========================<br/>
-*FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
-*FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
-====================== 2 failed, 2 passed in 0.10s =========================<br/>
+    *def test_nombre():<br/>
+    *>    assert nombre('Fernando') == 'Pepe'<br/>
+    *E    AssertionError: assert 'Fernando' == 'Pepe'<br/>
+    *E     - Pepe<br/>
+    *E         + Fernando<br/>
+    *pruebas\test_sample_fail.py:11: AssertionError<br/>
+    ====================== short test summary info ==========================<br/>
+    *FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
+    *FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
+    ====================== 2 failed, 2 passed in 0.10s =========================<br/>
 
 6. **Ejecutar un test específico de un fichero**
 * sintax: pytest [path_al_file.py]::[test_a_ejecutar]
@@ -113,12 +113,12 @@ ____________________________ test_nombre ____________________________<br/>
       pytest pruebas/test_sample_pass.py::test_nombre
 
 * OutPut
-====================== test session starts ============================<br/>
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
-rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
-collected 1 item   <br/>                                                                                                                                                    
-pruebas\test_sample_pass.py .                                    [100%]<br/>
-========================== 1 passed in 0.02s ==========================<br/>
+    ====================== test session starts ============================<br/>
+    platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+    rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
+    collected 1 item   <br/>                                                                                                                                                    
+    pruebas\test_sample_pass.py .                                    [100%]<br/>
+    ========================== 1 passed in 0.02s ==========================<br/>
 
 **Nota:** tambien se podría realizar una ejecución de una fucnion en concreto de una clase:
 
@@ -143,32 +143,32 @@ test_sample_pass.py
     pytest.main()
 
 * Output:
-============================= test session starts =============================<br/>
-platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
-rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
-collected 4 items<br/>
-test_sample_fail.py FF                                                   [ 50%]<br/>
-test_sample_pass.py ..                                                   [100%]<br/>
-================================== FAILURES ===================================<br/>
-_________________________________ test_answer _________________________________<br/>
+    ============================= test session starts =============================<br/>
+    platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
+    rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
+    collected 4 items<br/>
+    test_sample_fail.py FF                                                   [ 50%]<br/>
+    test_sample_pass.py ..                                                   [100%]<br/>
+    ================================== FAILURES ===================================<br/>
+    _________________________________ test_answer _________________________________<br/>
 
-*def test_answer():<br/>
-*>       assert func(5) == 5<br/>
-*E       assert 6 == 5<br/>
-*E        +  where 6 = func(5)<br/>
-*test_sample_fail.py:11: AssertionError<br/>
-_________________________________ test_nombre _________________________________<br/>
+    *def test_answer():<br/>
+    *>       assert func(5) == 5<br/>
+    *E       assert 6 == 5<br/>
+    *E        +  where 6 = func(5)<br/>
+    *test_sample_fail.py:11: AssertionError<br/>
+    _________________________________ test_nombre _________________________________<br/>
 
-*def test_nombre():<br/>
-*>       assert nombre('Fernando') == 'fer'<br/>
-*E       AssertionError: assert 'Fernando' == 'fer'<br/>
-*E         - fer<br/>
-*E         + Fernando<br/>
-*test_sample_fail.py:14: AssertionError<br/>
-=========================== short test summary info ===========================<br/>
-*FAILED test_sample_fail.py::test_answer - assert 6 == 5<br/>
-*FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
-========================= 2 failed, 2 passed in 0.42s =========================<br/>
+    *def test_nombre():<br/>
+    *>       assert nombre('Fernando') == 'fer'<br/>
+    *E       AssertionError: assert 'Fernando' == 'fer'<br/>
+    *E         - fer<br/>
+    *E         + Fernando<br/>
+    *test_sample_fail.py:14: AssertionError<br/>
+    =========================== short test summary info ===========================<br/>
+    *FAILED test_sample_fail.py::test_answer - assert 6 == 5<br/>
+    *FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
+    ========================= 2 failed, 2 passed in 0.42s =========================<br/>
 
 ### REPORTE
 
