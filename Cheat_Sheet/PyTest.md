@@ -39,3 +39,16 @@ test_sample_pass.py
 **Ejecutar todas las pruebas**
 
     $ pytest
+
+**Salida**
+
+>pytest
+========================================================================= test session starts =========================================================================
+platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
+rootdir: C:\Users\FMANRIQU\Desktop\python
+collected 1 item                                                                                                                                                       
+
+pruebas\test_sample.py .                                                                                                                                         [100%]
+
+========================================================================== 1 passed in 0.03s ==========================================================================
+
