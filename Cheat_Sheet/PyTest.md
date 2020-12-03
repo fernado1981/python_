@@ -59,6 +59,7 @@ pruebas\test_sample.py .                                             [100%]<br/>
 **Ejecutar todas las pruebas**
 
     pytest
+    python -m pytest
 
 **Ejecutar pruebas en un directorio**
 * sintax: pytest [path_al_directorio]
