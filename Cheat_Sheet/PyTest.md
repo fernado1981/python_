@@ -43,12 +43,12 @@ test_sample_pass.py
 **Salida**
 
 >pytest <br/>
-=========================== test session starts ============================
+=========================== test session starts ============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
 rootdir: C:\Users\FMANRIQU\Desktop\python
 collected 1 item                                                                                                                                                       
 
-pruebas\test_sample.py .                                             [100%]
+pruebas\test_sample.py .                                             [100%]<br/>
 
-============================ 1 passed in 0.03s ============================
+============================ 1 passed in 0.03s ============================<br/>
 
