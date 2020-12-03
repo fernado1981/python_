@@ -1,17 +1,16 @@
 # PyTest
 pytestes un marco que facilita la creación de pruebas simples y escalables. Las pruebas son expresivas y legibles, no se requiere un código estándar. Comience en minutos con una prueba de unidad pequeña o una prueba funcional compleja para su aplicación o biblioteca.
 
-**Instalar pytest**
+#### Instalar pytest
   
     pip install -U pytest
 
-**Compruebe que instaló la versión correcta:**
+#### Compruebe que instaló la versión correcta:
 
     $ pytest --version
 
-**Crea tu primera prueba**
-**Cree una función de prueba simple con solo cuatro líneas de código:**
-test_sample_fail.py
+#### Cree una función de prueba simple con solo cuatro líneas de código:
+*test_sample_fail.py
   
     def func(x):
     return x + 1
@@ -27,7 +26,7 @@ test_sample_fail.py
       
 **Nota:** esta prueba fallará dado que 3+1 no son 5 y pepe no es igual a 'Fernando'
 
-**Cree una función de prueba simple con solo cuatro líneas de código:**
+#### Cree una función de prueba simple con solo cuatro líneas de código:
 test_sample_pass.py
   
     def func(x):
@@ -44,39 +43,43 @@ test_sample_pass.py
   
 **Nota:** esta prueba pasará dado que 4+1 no son 5 y 'Fernando' es igual a 'Fernando'
 
-**Ejecutar las pruebas de un fichero**
+### EJECUCIONES
+
+1. **Ejecutar todas las pruebas**
+        
+       a) pytest
+       b) pytest -ra
+       c) python -m pytest
+       
+2. **Hacer que pare al primer fallo**
+  
+        Pytest -x
+  
+3. **hacer que para el n fallo**
+ 
+        Pytest --maxfail=2
+    
+**NOTA:** En este caso para cuando encuentre el segundo fallo
+    
+4. **Ejecutar las pruebas de un fichero**
 * sintax: pytest [path_al_file.py]
     
       pytest pruebas/test_sample_pass.py
      
+* OutPut
 =========================== test session starts ============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
 collected 2 item                                                            <br/>                                                                                       
 pruebas\test_sample.py .                                             [100%]<br/>
 ============================ 2 passed in 0.03s ============================<br/>
-     
-**Ejecutar todas las pruebas**
 
-    pytest
-    pytest -ra
-    python -m pytest
- 
- **Hacer que pare al primer fallo**
-  
-    Pytest -x
-  
- **hacer que para el n fallo**
- 
-    Pytest --maxfail=2
-    
-**NOTA:** En este caso para cuando encuentre el segundo fallo
-
-**Ejecutar pruebas en un directorio**
+5. **Ejecutar pruebas en un directorio**
 * sintax: pytest [path_al_directorio]
 
       pytest pruebas/
-    
+
+* OutPut
 ====================== test session starts ==========================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -104,11 +107,12 @@ ____________________________ test_nombre ____________________________<br/>
 *FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
 ====================== 2 failed, 2 passed in 0.10s =========================<br/>
 
-**Ejecutar un test específico de un fichero**
+6. **Ejecutar un test específico de un fichero**
 * sintax: pytest [path_al_file.py]::[test_a_ejecutar]
-    
+
       pytest pruebas/test_sample_pass.py::test_nombre
 
+* OutPut
 ====================== test session starts ============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
@@ -120,20 +124,9 @@ pruebas\test_sample_pass.py .                                    [100%]<br/>
 
     pytest test_mod.py::TestClass::test_method
     
-**Ejecutar reporte en xml**
-
-    pytest --junitxml=pruebas/report
- 
-**Cree un enlace de URL de registro para cada caso de uso de falla de prueba**
-    
-    pytest --pastebin=failed
- 
-**Cree un enlace URL para todo el registro de ejecución de la prueba**
-
-    pytest --pastebin=all
-    
-**Llamar a pytest en código Python**
- test_sample_pass.py
+7. **Llamar a pytest en código Python**
+* sintax: pytest.main()
+test_sample_pass.py
   
     def func(x):
     return x + 1
@@ -149,8 +142,7 @@ pruebas\test_sample_pass.py .                                    [100%]<br/>
     
     pytest.main()
 
-*Output:
-
+* Output:
 ============================= test session starts =============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini<br/>
@@ -177,6 +169,22 @@ _________________________________ test_nombre _________________________________<
 *FAILED test_sample_fail.py::test_answer - assert 6 == 5<br/>
 *FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
 ========================= 2 failed, 2 passed in 0.42s =========================<br/>
+
+### REPORTE
+
+1. **Ejecutar reporte en xml**
+
+        pytest --junitxml=pruebas/report
+ 
+2. **Cree un enlace de URL de registro para cada caso de uso de falla de prueba**
+    
+        pytest --pastebin=failed
+ 
+3. **Cree un enlace URL para todo el registro de ejecución de la prueba**
+
+        pytest --pastebin=all
+    
+
 
 
 
