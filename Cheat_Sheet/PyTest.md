@@ -190,7 +190,11 @@ test_sample_pass.py
 
         pip install pytest-html
         
-2. **Correr test**
+2.- **Generar directorio report**
+ 
+![report_directory](../Images/pytest_report.png)
+        
+3. **Correr test**
 
         pytest --html=report.html
 
@@ -198,8 +202,7 @@ test_sample_pass.py
 
     pytest --html=report/report.html
 
-
-        
+![report_html](../Images/report_pytest_1.png)
  
       
 
