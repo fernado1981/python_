@@ -59,7 +59,18 @@ pruebas\test_sample.py .                                             [100%]<br/>
 **Ejecutar todas las pruebas**
 
     pytest
+    pytest -ra
     python -m pytest
+ 
+ **Hacer que pare al primer fallo**
+  
+    Pytest -x
+  
+ **hacer que para el n fallo**
+ 
+    Pytest --maxfail=2
+    
+**NOTA:** En este caso para cuando encuentre el segundo fallo
 
 **Ejecutar pruebas en un directorio**
 * sintax: pytest [path_al_directorio]
@@ -104,5 +115,73 @@ rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
 collected 1 item   <br/>                                                                                                                                                    
 pruebas\test_sample_pass.py .                                    [100%]<br/>
 ========================== 1 passed in 0.02s ==========================<br/>
+
+**Nota:** tambien se podría realizar una ejecución de una fucnion en concreto de una clase:
+
+    pytest test_mod.py::TestClass::test_method
+    
+**Ejecutar reporte en xml**
+
+    pytest --junitxml=pruebas/report
+ 
+**Cree un enlace de URL de registro para cada caso de uso de falla de prueba**
+    
+    pytest --pastebin=failed
+ 
+**Cree un enlace URL para todo el registro de ejecución de la prueba**
+
+    pytest --pastebin=all
+    
+**Llamar a pytest en código Python**
+ test_sample_pass.py
+  
+    def func(x):
+    return x + 1
+
+    def nombre(name):
+    return name
+
+    def test_answer():
+    assert func(4) == 5
+
+    def test_nombre():
+    assert nombre('Fernando') == 'Fernando'
+    
+    pytest.main()
+
+**Salida:
+
+============================= test session starts =============================
+platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
+rootdir: C:\Users\FMANRIQU\Desktop\python\pruebas, configfile: pytest.ini
+collected 4 items
+
+test_sample_fail.py FF                                                   [ 50%]
+test_sample_pass.py ..                                                   [100%]
+
+================================== FAILURES ===================================
+_________________________________ test_answer _________________________________
+
+    def test_answer():
+>       assert func(5) == 5
+E       assert 6 == 5
+E        +  where 6 = func(5)
+
+test_sample_fail.py:11: AssertionError
+_________________________________ test_nombre _________________________________
+
+    def test_nombre():
+>       assert nombre('Fernando') == 'fer'
+E       AssertionError: assert 'Fernando' == 'fer'
+E         - fer
+E         + Fernando
+
+test_sample_fail.py:14: AssertionError
+=========================== short test summary info ===========================
+FAILED test_sample_fail.py::test_answer - assert 6 == 5
+FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...
+========================= 2 failed, 2 passed in 0.42s =========================
+
+
 
 
