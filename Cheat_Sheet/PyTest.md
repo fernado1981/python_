@@ -186,15 +186,15 @@ test_sample_pass.py
         pytest --pastebin=all
  
  ## HTML
-1. **Instalar pytest-html**
+ 1. **Instalar pytest-html**
 
         pip install pytest-html
-        
-2.- **Generar directorio report**
+     
+ 2. **Generar directorio report**
  
 ![report_directory](../Images/pytest_report.png)
         
-3. **Correr test**
+ 3. **Correr test**
 
         pytest --html=report.html
 
