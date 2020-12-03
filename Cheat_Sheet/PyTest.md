@@ -149,7 +149,7 @@ test_sample_pass.py
     collected 4 items<br/>
     test_sample_fail.py FF                                                   [ 50%]<br/>
     test_sample_pass.py ..                                                   [100%]<br/>
-    ================================== FAILURES ===================================<br/>
+    ================================== FAILURES =============================<br/>
     _________________________________ test_answer _________________________________<br/>
 
     *def test_answer():<br/>
@@ -165,7 +165,7 @@ test_sample_pass.py
     *E         - fer<br/>
     *E         + Fernando<br/>
     *test_sample_fail.py:14: AssertionError<br/>
-    =========================== short test summary info ===========================<br/>
+    =========================== short test summary info ======================<br/>
     *FAILED test_sample_fail.py::test_answer - assert 6 == 5<br/>
     *FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
     ========================= 2 failed, 2 passed in 0.42s =========================<br/>
