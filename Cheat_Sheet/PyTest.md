@@ -42,7 +42,7 @@ test_sample_pass.py
 
 **Salida**
 
->pytest
+>pytest <br/>
 =========================== test session starts ============================
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
 rootdir: C:\Users\FMANRIQU\Desktop\python
