@@ -88,17 +88,17 @@ ____________________________ test_nombre ____________________________<br/>
 *E     - Pepe<br/>
 *E         + Fernando<br/>
 *pruebas\test_sample_fail.py:11: AssertionError<br/>
-==================== short test summary info ====================<br/>
+====================== short test summary info ============================<br/>
 *FAILED pruebas/test_sample_fail.py::test_answer - assert 4 == 5<br/>
 *FAILED pruebas/test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' == 'Pepe'<br/>
-====================== 2 failed, 2 passed in 0.10s ========================<br/>
+====================== 2 failed, 2 passed in 0.10s ============================<br/>
 
 **Ejecutar un test específico de un fichero**
 * sintax: pytest [path_al_file.py]::[test_a_ejecutar]
     
       pytest pruebas/test_sample_pass.py::test_nombre
 
-====================== test session starts ==========================<br/>
+====================== test session starts ============================<br/>
 platform win32 -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1<br/>
 rootdir: C:\Users\FMANRIQU\Desktop\python<br/>
 collected 1 item   <br/>                                                                                                                                                    
