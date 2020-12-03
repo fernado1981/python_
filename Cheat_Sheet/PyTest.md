@@ -170,21 +170,38 @@ test_sample_pass.py
     *FAILED test_sample_fail.py::test_nombre - AssertionError: assert 'Fernando' =...<br/>
     ========================= 2 failed, 2 passed in 0.42s =========================<br/>
 
-### REPORTE
-
+### REPORTE 
+## XML
 1. **Ejecutar reporte en xml**
 
         pytest --junitxml=pruebas/report
  
-2. **Cree un enlace de URL de registro para cada caso de uso de falla de prueba**
+ ## URL
+1. **Cree un enlace de URL de registro para cada caso de uso de falla de prueba**
     
         pytest --pastebin=failed
  
-3. **Cree un enlace URL para todo el registro de ejecución de la prueba**
+2. **Cree un enlace URL para todo el registro de ejecución de la prueba**
 
         pytest --pastebin=all
-    
+ 
+ ## HTML
+1. **Instalar pytest-html**
 
+        pip install pytest-html
+        
+2. **Correr test**
+
+        pytest --html=report.html
+
+**NOTA:** Al ejecutar las pruebas, nos generará un reporte Html como figura abajo, o mejor sería crear un directorio en la raiz que ponga report y dirrigir todos los reports a dicho directorio.
+
+    pytest --html=report/report.html
+
+
+        
+ 
+      
 
 
 
