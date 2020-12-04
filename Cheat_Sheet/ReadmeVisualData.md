@@ -1,4 +1,4 @@
-<a name='Visualizacion de datos'></a>
+<a name='top'></a>
 # Visualizacion de datos
  Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
  Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
@@ -345,5 +345,5 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
 
 ![React](../Images/BarChart_horizontal.png)
 
-*[Up](#Visualizacion de datos)*
+*[Up](#top)*
 
