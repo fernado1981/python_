@@ -386,7 +386,7 @@ no podemos usarla hasta que se aplique una función (p. ej. .sum())
       print(df_continents.head())
       
 * OutPut:
-![React](../Images/group_by_1.png)
+![React](../Images/group_by_1.png)<br/>
 
 **Paso 2: Gráficar los datos.** 
 Usaremos **kind = 'pie'** junto con el resto de los parametros:
