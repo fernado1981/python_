@@ -407,19 +407,19 @@ Usaremos **kind = 'pie'** junto con el resto de los parametros:
            plt.show()
 ![React](../Images/driagrama_tarta.png)
 
-**La visualización de arriba no esta muy clara, los números y el texto se sobreponen en algunas partes. Hagamos algunas modificaciones para mejorarla.**
+**NOTA:** La visualización de arriba no esta muy clara, los números y el texto se sobreponen en algunas partes. 
 
+**Hagamos algunas modificaciones para mejorarla.**
 * **Quitar las etiquetas de texto** en la gráfica pasandole legend y añadiendolo separadamente utilizando plt.legend().
 * **Retira los porcentajes** para ponerlos afuera de la gráfica pasando el parametro pctdistance.
 * **Pasa un conjunto personal de colores** a los continentes con el parametro colors.
 * **Explota la gráfica** para enfatizar a los ultimos tres continente (Africa, Norte America, Latino America y el Caribe) pasando el parametro explode.
 
 # Ajuste para mejor visualizacion
-colors_list = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lightgreen', 'pink']
+      colors_list = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lightgreen', 'pink']
 # la relacion para cada continente para compensar cada parte del pastel.
-explode_list = [0.1, 0, 0, 0, 0.1, 0.1]
-
-df_continents['Total'].plot(kind='pie',
+      explode_list = [0.1, 0, 0, 0, 0.1, 0.1]
+      df_continents['Total'].plot(kind='pie',
                             figsize=(15, 6),
                             autopct='%1.1f%%',
                             startangle=90,
@@ -431,12 +431,11 @@ df_continents['Total'].plot(kind='pie',
                             )
 
 # escala el título un 12% para igualar pctdistance
-plt.title('Immigration to Canada by Continent [1980 - 2013]', y=1.12)
-plt.axis('equal')
-
+     plt.title('Immigration to Canada by Continent [1980 - 2013]', y=1.12)
+     plt.axis('equal')
 # añade etiqueta
-plt.legend(labels=df_continents.index, loc='upper left')
-plt.show()
+     plt.legend(labels=df_continents.index, loc='upper left')
+     plt.show()
 
 ![React](../Images/driagrama_tarta_1.png)
 
