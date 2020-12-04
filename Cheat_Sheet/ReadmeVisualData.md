@@ -415,9 +415,11 @@ Usaremos **kind = 'pie'** junto con el resto de los parametros:
 * **Pasa un conjunto personal de colores** a los continentes con el parametro colors.
 * **Explota la gráfica** para enfatizar a los ultimos tres continente (Africa, Norte America, Latino America y el Caribe) pasando el parametro explode.
 
-# Ajuste para mejor visualizacion
+**Ajuste para mejor visualizacion**
+      
       colors_list = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lightgreen', 'pink']
-# la relacion para cada continente para compensar cada parte del pastel.
+**la relacion para cada continente para compensar cada parte del pastel.**
+      
       explode_list = [0.1, 0, 0, 0, 0.1, 0.1]
       df_continents['Total'].plot(kind='pie',
                             figsize=(15, 6),
@@ -430,10 +432,12 @@ Usaremos **kind = 'pie'** junto con el resto de los parametros:
                             explode=explode_list # 'explota' los últimos tres continentes
                             )
 
-# escala el título un 12% para igualar pctdistance
+**escala el título un 12% para igualar pctdistan**
+     
      plt.title('Immigration to Canada by Continent [1980 - 2013]', y=1.12)
      plt.axis('equal')
-# añade etiqueta
+**añade etiqueta**
+     
      plt.legend(labels=df_continents.index, loc='upper left')
      plt.show()
 
