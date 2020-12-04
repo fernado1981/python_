@@ -1,3 +1,4 @@
+<a name='Visualizacion de datos'></a>
 # Visualizacion de datos
  Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
  Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
@@ -9,8 +10,8 @@
 
 *[Gráfico de área](#Área)*<br/>
 *[Gráfico de histogramas](#histogramas)*<br/>
-*[Gráficos de barras](#barras)*
-*[Gráficos bar_char](#bar_chart)*
+*[Gráficos de barras](#barras)*<br/>
+*[Gráficos bar_char](#bar_chart)*<br/>
 
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
