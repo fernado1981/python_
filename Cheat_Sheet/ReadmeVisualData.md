@@ -386,17 +386,61 @@ no podemos usarla hasta que se aplique una función (p. ej. .sum())
       print(df_continents.head())
       
 * OutPut:
-Es de tipo: <class 'pandas.core.groupby.generic.DataFrameGroupBy'> <br/>
-                                  1980   1981   1982  ...    2012    2013    Total<br/>
-Continent                                             ...                         <br/>
-Africa                            3951   4363   3819  ...   38083   38543   618948<br/>
-Asia                             31025  34314  30214  ...  152218  155075  3317794<br/>
-Europe                           39760  44802  42720  ...   29177   28691  1410947<br/>
-Latin America and the Caribbean  13081  15215  16769  ...   27173   24950   765148<br/>
-Northern America                  9378  10030   9074  ...    7892    8503   241142<br/>
+![React](../Images/group_by_1.png)
+
+**Paso 2: Gráficar los datos.** 
+Usaremos **kind = 'pie'** junto con el resto de los parametros:
+
+* **autopct** - es una cadena o función usada para etiquetar las partes de la gráfica con su valor numérico. La etiqueta sera puesta dentro de cada porcion. Si es una cadena con formato, la etiqueta será fmt%pct.
+* **startangle** - rota el inicio del pastel en grados en sentido horario opuesto desde el eje x.
+* **shadow** - Dibuja una sombra bajo el pastel (para darle un aspecto 3D).
+
+**autopct crea %, el angulo de inicio representa el punto de inicio**
+           
+           df_continents['Total'].plot(kind='pie', figsize=(5, 6), # el pastel tiene aspecto circular
+                            autopct='%1.1f%%', # añade en porcentajes
+                            startangle=90,     # angulo de inicio 90° (Africa)
+                            shadow=True,       # añade sombreado
+                            )
+           plt.title('Immigration to Canada by Continent [1980 - 2013]')
+           plt.axis('equal')
+           plt.show()
+![React](../Images/driagrama_tarta.png)
+
+**La visualización de arriba no esta muy clara, los números y el texto se sobreponen en algunas partes. Hagamos algunas modificaciones para mejorarla.**
+
+* **Quitar las etiquetas de texto** en la gráfica pasandole legend y añadiendolo separadamente utilizando plt.legend().
+* **Retira los porcentajes** para ponerlos afuera de la gráfica pasando el parametro pctdistance.
+* **Pasa un conjunto personal de colores** a los continentes con el parametro colors.
+* **Explota la gráfica** para enfatizar a los ultimos tres continente (Africa, Norte America, Latino America y el Caribe) pasando el parametro explode.
+
+# Ajuste para mejor visualizacion
+colors_list = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lightgreen', 'pink']
+# la relacion para cada continente para compensar cada parte del pastel.
+explode_list = [0.1, 0, 0, 0, 0.1, 0.1]
+
+df_continents['Total'].plot(kind='pie',
+                            figsize=(15, 6),
+                            autopct='%1.1f%%',
+                            startangle=90,
+                            shadow=True,
+                            labels=None,         # deshabilita las etiquetas de la gráfica
+                            pctdistance=1.12,    # la relación entre el centro de cada trozo del pastel y el inicio del texto generado por autopct
+                            colors=colors_list,  # añadir colores personalizados
+                            explode=explode_list # 'explota' los últimos tres continentes
+                            )
+
+# escala el título un 12% para igualar pctdistance
+plt.title('Immigration to Canada by Continent [1980 - 2013]', y=1.12)
+plt.axis('equal')
+
+# añade etiqueta
+plt.legend(labels=df_continents.index, loc='upper left')
+plt.show()
+
+![React](../Images/driagrama_tarta_1.png)
 
 
-Paso 2: Gráficar los datos. Usaremos kind = 'pie' junto con el resto de los parametros:
 
 <a name='caja'></a>
 #### GRÁFICO CAJA:
