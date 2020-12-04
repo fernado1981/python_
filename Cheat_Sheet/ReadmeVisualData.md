@@ -6,10 +6,12 @@
 1) Gráfico de área
 2) Gráfico de histogramas
 3) Gráficos de barras / bar_chart
+4) Gráfico circular
 
 *[Gráfico de área](#Área)*<br/>
 *[Gráfico de histogramas](#histogramas)*<br/>
 *[Gráficos de barras/bar_char](#barras)*<br/>
+*[Gráfico circular](#circular)*<br/>
 
 
 #### Gráfico de área:
@@ -19,6 +21,11 @@ vamos a mostrar tanto los cinco paises que más contribuyen con la imigración c
 Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migratorios internacionales a y desde los países seleccionados – (Revisión de 2015 del portal de la ONU).
 
 ##### TAREAS GENERICAS
+##### INSTALAMOS MÓDULO XLRD:
+modulo requerido por pandas para poder leer archivos de Excel
+    
+    pip3 install xlrd
+    
 ##### 1) Importamos las librerías necesarias:
     import matplotlib as mpl
     import matplotlib.pyplot as plt
@@ -26,7 +33,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
     import pandas as pd # Librería para estructar datos primarios
     
 ##### 2) Obtenemos el dataset deprueba (como se puede observar es de tipo excel):
-    df_can = pd.read_excel('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-   data/CognitiveClass/DV0101EN/labs/Data_Files/Canada.xlsx',
+    df_can = pd.read_excel('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DV0101EN/labs/Data_Files/Canada.xlsx',
                        sheet_name='Canada by Citizenship',
                        skiprows=range(20),
                        skipfooter=2
@@ -43,13 +50,13 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
     df_can.drop(['AREA', 'REG', 'DEV', 'Type', 'Coverage'], axis=1, inplace=True)
     
 ##### 5) Veamos los primeros cinco elementos para ver como cambió el DataFrame
-    df_can.head()
+    print(df_can.head())
     
 ![React](../Images/datos_limpios.png) 
 
 ##### 6) cambiar los nombres de las columnas
     df_can.rename(columns={'OdName':'Country', 'AreaName':'Continent','RegName':'Region'}, inplace=True)
-    df_can.head()
+    print(df_can.head())
 
 ![React](../Images/datos_limpios_1.png) 
 
@@ -70,9 +77,14 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
   
       df_can.set_index('Country', inplace=True)
       df_can['Total'] = df_can.sum(axis=1)
-      df_can.head()
+      print(df_can.head())
     
 ![React](../Images/datos_limpios_2.png) 
+
+* En caso de querer definir los años a usar - de utilidad para graficas más adelante (opcional en este punto)
+ 
+      years = list(map(str, range(1980, 2014)))
+      print('data dimensions:', df_can.shape)
 
 <a name='Área'></a>
 ### DIAGRAMA DE ÁREA:
@@ -88,7 +100,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
   
 ##### transponer el DataFrame (vertical to horizontal)
     df_top5 = df_top5[years].transpose() 
-    df_top5.head()
+    print(df_top5.head())
 ![React](../Images/datos_limpios_3.png) 
        
 ##### cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
@@ -127,7 +139,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
     
 ##### Transpose the dataframe
     df_least5 = df_least5[years].transpose() 
-    df_least5.head()
+    print(df_least5.head())
     
 ##### Cambiar el valor de los índices de df_top5 a tipo entero para graficarlos
     df_least5.index = df_least5.index.map(int)
@@ -197,7 +209,7 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 * Obtener los datos y trasponerlos
     
       df_t = df_can.loc[['Denmark', 'Norway', 'Sweden'], years].transpose()
-      df_t.head()
+      print(df_t.head())
     
 * Generar el histograma
     
@@ -235,7 +247,7 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
       plt.ylabel('Number of Years')
       plt.xlabel('Number of Immigrants')
 
-    plt.show()
+      plt.show()
 
 ![React](../Images/histograma_graphic_data_multiple_no_apilado.png)
 
@@ -344,6 +356,72 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
        plt.show()
 
 ![React](../Images/BarChart_horizontal.png)
+
+
+<a name='circular'></a>
+#### GRÁFICO CIRCULAR o DE TARTA:
+Un gráfico circular o gráfica circular, también llamado "gráfico de pastel ", "gráfico de tarta",gráfico de "Queque" , "gráfico de torta" o "gráfica de 360 grados", es un recurso estadístico que se utiliza para representar porcentajes y proporciones, o se puede decir que es un gráfico estadístico dividido en rodajas para ilustrar la proporción numérica.  El número de elementos comparados dentro de una gráfica circular suele ser de más de cuatro.
+
+Un Diagramas de Pastel es un gráfico circular que muestra proporciones numéricas al dividir un circulo (o pastel) en pedazos proporcionales. Seguramente te resulten familiares estos diagramas ya que son extensamente usados en los negocios y medios de comunicación. Podemos crear diagramas de pastel en Matplotlib usando la palabra clave kind=pie.
+
+Usemos uno de estos diagramas para explorar la proporción (porcentaje) de nuevos inmigrantes agrupados por continentes para el periodo de 1980 a 2013.
+
+**Paso 1: Recolección de Datos.**
+Usaremos el método de pandas groupby para resumir los datos de inmigración por Continente. El proceso general de groupby consta de los siguientes pasos:
+
+* **Split:** Dividir los datos en grupos en base a algún criterio.
+* **Apply:** Aplicar independientemente una función a cada grupo: .sum() .count() .mean() .std() .aggregate() .apply() .etc..
+* **Combine:** Juntar los resultados en una estructura de datos
+
+![React](../Images/group_by.png)
+
+* agrupar los países por continente y aplicar la función sum()
+   
+      df_continents = df_can.groupby('Continent', axis=0).sum()
+
+* observación: la salida del método groupby es un objeto `groupby'
+no podemos usarla hasta que se aplique una función (p. ej. .sum())
+  
+      print('Es de tipo:', type(df_can.groupby('Continent', axis=0)))
+      print(df_continents.head())
+      
+* OutPut:
+Es de tipo: <class 'pandas.core.groupby.generic.DataFrameGroupBy'> <br/>
+                                  1980   1981   1982  ...    2012    2013    Total<br/>
+Continent                                             ...                         <br/>
+Africa                            3951   4363   3819  ...   38083   38543   618948<br/>
+Asia                             31025  34314  30214  ...  152218  155075  3317794<br/>
+Europe                           39760  44802  42720  ...   29177   28691  1410947<br/>
+Latin America and the Caribbean  13081  15215  16769  ...   27173   24950   765148<br/>
+Northern America                  9378  10030   9074  ...    7892    8503   241142<br/>
+
+
+Paso 2: Gráficar los datos. Usaremos kind = 'pie' junto con el resto de los parametros:
+
+<a name='caja'></a>
+#### GRÁFICO CAJA:
+También conocido como diagrama de caja y bigote, box plot, box-plot o boxplot. Es un método estandarizado para representar gráficamente una serie de datos numéricos a través de sus cuartiles. De esta manera, el diagrama de caja muestra a simple vista la mediana y los cuartiles de los datos,1​ pudiendo también representar los valores atípicos de estos. Conviene recordar que se utilizan las bisagras de Tukey, y no los cuartiles a la hora de dibujar la caja del gráfico, aunque los resultados son semejantes en muestras grandes.
+
+Un diagrama de caja es una forma de representar estadísticamente la distribución de datos a través de cinco dimensiones principales.
+La primera dimensión es mínima, que es el número más pequeño en los datos ordenados.
+La segunda dimensión es el primer cuartil, que es el punto 25% del camino a través de los datos ordenados. En otras palabras, un cuarto de los puntos de datos son menores que
+este valor. 
+La tercera dimensión es mediana, que es la mediana de los datos ordenados. 
+La cuarta dimensión es el tercer cuartil, que es el punto 75% del camino a través de los datos ordenados. 
+En otras palabras, las tres cuartas partes de los puntos de datos son inferiores a este valor. 
+la última dimensión es máxima, que es el número más alto en los datos ordenados.
+
+
+<a name='dispersion'></a>
+#### GRÁFICO DISPERSIÓN:
+Un diagrama de dispersión o gráfica de dispersión o gráfico de burbujas es un tipo de diagrama matemático que utiliza las coordenadas cartesianas para mostrar los valores de dos variables para un conjunto de datos.
+
+Un diagrama de dispersión es un tipo de diagrama que muestra valores pertenecientes típicamente a dos variables una contra la otra. Usualmente es una variable dependiente a ser trazada contra una variable independiente para determinar si existe alguna correlación entre las dos. 
+
+
+
+
+
 
 *[Up](#top)*
 
