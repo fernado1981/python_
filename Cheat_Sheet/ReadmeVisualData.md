@@ -7,6 +7,11 @@
 3) Gráficos de barras
 4) Gráficos bar_chart
 
+*[Gráfico de área](#Área)*<br/>
+*[Gráfico de histogramas](#histogramas)*<br/>
+*[Gráficos de barras](#barras)*
+*[Gráficos bar_char](#bar_chart)*
+
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
 <br/>**Ejemplo:**<br/>
@@ -69,6 +74,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
     
 ![React](../Images/datos_limpios_2.png) 
 
+<a name='Área'></a>
 ### DIAGRAMA DE ÁREA:
 #### paises que más contribuyen
 ##### Obtenemos la lista de años dese 1980 a 2014
@@ -136,6 +142,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
 
     plt.show()
 
+<a name='histogramas'></a>
 #### HISTOGRAMAS:
 Un histograma representa la distribución de frecuencia de un conjunto de datos numéricos. La forma en que trabaja es dividiendo el eje x en contenedores y asignando cada dato dentro del conjunto a uno de ellos para después contar el numero de datos asignado a cada contenedor. De esta forma el eje y es la frecuencia o el numero de datos en cada contenedor.
 <br/>**Ejemplo:**<br/>
@@ -234,6 +241,7 @@ Un histograma representa la distribución de frecuencia de un conjunto de datos 
 
 ![React](../Images/histograma_graphic_data_multiple_no_apilado.png)
 
+<a name='barras'></a>
 #### DIAGRAMA DE BARRAS:
 La grafica de barras es una manera de representación de datos donde la longitud de las barras muestran la magnitud/tamaño de una característica/variable. Estas graficas usualmente representan de forma numérica y por categoría, variables agrupadas en intervalos.
 
@@ -242,7 +250,7 @@ Para crear una grafica de barras tenemos que pasar uno o dos argumentos mediante
 * kind=bar crea una grafica de barras verticales
 * kind=barh crea una grafica de barras horizontales
 
-**Grafica de Barras Verticales
+**Grafica de Barras Verticales**
 
 En las graficas de barras verticales, el eje x se usa para el etiquetado y la longitud de las barras en el eje y corresponde a la magnitud de la variable utilizada. Estas graficas son particularmente útiles en el análisis para series de datos de tiempo. Una desventaja es que carecen de espacio para añadir una etiqueta al pie de cada barra.
 
@@ -337,8 +345,7 @@ Anotemos el texto que ira sobre la flecha. Pasaremos los siguientes parámetros 
          plt.anotate(label, xy=(value - 47000, index - 0.10), color='white')
        plt.show()
 
-
 ![React](../Images/BarChart_horizontal.png)
 
-
+*[Up](#Visualizacion de datos)*
 
