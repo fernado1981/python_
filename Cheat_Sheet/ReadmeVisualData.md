@@ -632,6 +632,91 @@ Un diagrama de dispersión o gráfica de dispersión o gráfico de burbujas es u
 
 Un diagrama de dispersión es un tipo de diagrama que muestra valores pertenecientes típicamente a dos variables una contra la otra. Usualmente es una variable dependiente a ser trazada contra una variable independiente para determinar si existe alguna correlación entre las dos. 
 
+Una gráfica de dispersión (2D) es un método util para comparar variables entre si. Una gráfica de dispersión es similar a una de línea en que ambas muestran variables dependientes e independientes en una gráfica 2D. A pesar de los puntos de datos estan conectados entre si por una línea en una gráfica de línea, no lo estan en una de dispersión. Los datos en las de dispersión muestran tendencias. Con analisis mas profundos usando herramientas como la regresión, podemos matematicamente calcular esta relacion y usarla para predecir tendencias fuera del conjunto de datos.
+
+**Empecemos explorando lo siguiente:**
+Usando una gráfica de dispersión, visualicemos la tendencia del total de inmigración hacia Canadá (todos los países combinados) para los años 1980 - 2013.
+
+**Paso 1:** Obtener el conjunto de datos. Debido a que esperamos usar la relación entre años y población total, convertiremos años a tipo int.
+* podemos usar el método sum() para obtner la población total anual
+    
+      df_tot = pd.DataFrame(df_can[years].sum(axis=0))
+      
+* cambiar los años a tipo entero (será util para hacer regresión mas adelante)
+ 
+      df_tot.index = map(int, df_tot.index)
+
+* establecer de nuevo el índice para regresarlas a columnas en el dataframe df_tot
+   
+      df_tot.reset_index(inplace=True)
+
+* renombrar las columnas
+
+      df_tot.columns = ['year', 'total']
+
+* ver el dataframe final
+
+      print(df_tot.head())
+
+**Paso 2:** Dibujar los datos. En Matplotlib podemos crear gráficos de dispersión pasando kind='scatter' como argumento. También necesitaremos pasar x y y para especificar las columnas que iran en los ejes x e y.
+
+      df_tot.plot(kind='scatter', x='year', y='total', figsize=(10, 6), color='darkblue')
+      plt.title('Total Immigration to Canada from 1980 - 2013')
+      plt.xlabel('Year')
+      plt.ylabel('Number of Immigrants')
+      plt.show()
+      
+ ![React](../Images/dispersion_0)
+     
+**NOTA:** Observa como la gráfica de dispersión no conecta los datos entre si. Podemos obervar con facilidad un tendencia positiva en los datos: a medida que pasan los años, el número total de inmigrantes asciende. Podemos analizar matematicamente esta tendencia positiva usando una línea de regresión.
+
+Tratemos de gráficar una línea de regresión y utilizarla para predecir el numero de inmigrantes en 2015.
+**Paso 1:** Obtener la ecuación de la línea. Usaremos el método polyfit() de Numpy pasando lo siguiente:
+* x: coordenadas x de los datos
+* y: coordenadas y de los datos
+* deg: Grados polinomiales. 1 = lineal, 2 = cuadrática, etc ..
+
+      # año en el eje x
+      x = df_tot['year']
+      # total en el eje y
+      y = df_tot['total']
+      fit = np.polyfit(x, y, deg=1)
+      print(fit)
+      
+La salida es un arreglo con los coeficientes polinomiales, las potencias mas grandes primero. Debido a que estamos graficando una regresión lineal y= a*x + b, la salida tiene 2 elementos [5.56709228e+03, -1.09261952e+07] con la pendiente en 0 y la intercepción en 1.
+
+**Paso 2:** Gráficar la regresión lineal en la gráfica de dispersión.
+
+     df_tot.plot(kind='scatter', x='year', y='total', figsize=(10, 6), color='darkblue')
+     plt.title('Total Immigration to Canada from 1980 - 2013')
+     plt.xlabel('Year')
+     plt.ylabel('Number of Immigrants')
+
+**Paso 3:** dibujar línea de regresión
+* recuerda que x son los Años
+
+      plt.plot(x, fit[0] * x + fit[1], color='red')
+      plt.annotate('y={0:.0f} x + {1:.0f}'.format(fit[0], fit[1]), xy=(2000, 150000))
+      plt.show()
+      
+ ![React](../Images/dispersion_1)
+
+**paso 4:** imprimir la línea optima
+
+      'No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1])
+
+
+      
+      
+
+     
+
+
+
+  
+
+
+
 
 
 
