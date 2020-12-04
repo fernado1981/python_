@@ -12,6 +12,8 @@
 *[Gráfico de histogramas](#histogramas)*<br/>
 *[Gráficos de barras/bar_char](#barras)*<br/>
 *[Gráfico circular](#circular)*<br/>
+*[Gráfico caja](#caja)*<br/>
+*[Gráfico dispersion](#dispersion)*<br/>
 
 
 #### Gráfico de área:
@@ -703,24 +705,7 @@ La salida es un arreglo con los coeficientes polinomiales, las potencias mas gra
 
 **paso 4:** imprimir la línea optima
 
-      'No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1])
-
-
-      
-      
-
-     
-
-
-
-  
-
-
-
-
-
-
-
+      'No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1]
 
 *[Up](#top)*
 
