@@ -7,6 +7,8 @@
 2) Gráfico de histogramas
 3) Gráficos de barras / bar_chart
 4) Gráfico circular
+5) Gráfico de caja
+6) Gráfico de dispersion
 
 *[Gráfico de área](#Área)*<br/>
 *[Gráfico de histogramas](#histogramas)*<br/>
