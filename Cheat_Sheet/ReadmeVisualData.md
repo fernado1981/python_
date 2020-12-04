@@ -449,15 +449,49 @@ Usaremos **kind = 'pie'** junto con el resto de los parametros:
 #### GRÁFICO CAJA:
 También conocido como diagrama de caja y bigote, box plot, box-plot o boxplot. Es un método estandarizado para representar gráficamente una serie de datos numéricos a través de sus cuartiles. De esta manera, el diagrama de caja muestra a simple vista la mediana y los cuartiles de los datos,1​ pudiendo también representar los valores atípicos de estos. Conviene recordar que se utilizan las bisagras de Tukey, y no los cuartiles a la hora de dibujar la caja del gráfico, aunque los resultados son semejantes en muestras grandes.
 
-Un diagrama de caja es una forma de representar estadísticamente la distribución de datos a través de cinco dimensiones principales.
-La primera dimensión es mínima, que es el número más pequeño en los datos ordenados.
-La segunda dimensión es el primer cuartil, que es el punto 25% del camino a través de los datos ordenados. En otras palabras, un cuarto de los puntos de datos son menores que
-este valor. 
-La tercera dimensión es mediana, que es la mediana de los datos ordenados. 
-La cuarta dimensión es el tercer cuartil, que es el punto 75% del camino a través de los datos ordenados. 
-En otras palabras, las tres cuartas partes de los puntos de datos son inferiores a este valor. 
-la última dimensión es máxima, que es el número más alto en los datos ordenados.
+![React](../Images/Diagrama_de_caja.jpg)
 
+Una gráfica de caja es una forma de representar estadisticamente la distribución de los datos mediante cinco dimensiones principales:
+* Minimo: El número mas pequeño del conjunto de datos
+* Primer Cuartil: El número del medio entre el minimo y la mediana
+* Segundo Cuartil (Mediana): El número en la mitad del conjunto de datos
+* Tercer Cuartil: El número del medio entre la mediana y el máximo
+* Máximo: El número mas grande del conjunto
+
+![React](../Images/Diagrama_de_caja.png)
+
+Para construir una gráfica de caja podemos utilizar kind=box en el método plot invocado en una serie de dataframe pandas.
+Dibujemos la gráfica para los inmigrantes japoneses entre 1980 y 2013.
+
+**Paso 1:** Obtener el conjunto de datos. A pesar de extraer datos para un solo país, lo haremos como un dataframe. Esto nos ayudará a llamar el método dataframe.describe() para ver los percentiles.
+
+    df_japan = df_can.loc[['Japan'], years].transpose()
+    print(df_japan.head())
+    
+ ![React](../Images/data_japon_box.png)
+    
+**Paso 2:** Paso 2: Dibujar la gráfica con kind='box'.
+
+    df_japan.plot(kind='box', figsize=(8, 6))
+
+    plt.title('Box plot of Japanese Immigrants from 1980 - 2013')
+    plt.ylabel('Number of Immigrants')
+
+    plt.show()
+
+![React](../Images/diagrama_caja.png)
+
+Inmediatamente podemos hacer un par de observaciones de la gráfica anterior:
+
+* El número mínimo de inmigrantes es de alrededor de 200 (min), el máximo de 1300 (max) y una mediana de 900 (median).
+* 25% de los años para el periodo 1980 - 2013 tienen una cuenta anual de inmigrantes de ~500 o menos (primer cuartil).
+* 75% de los años para el periodo 1980 - 2013 tienen una cuenta anual de inmigrantes de ~1100 o menos (tercer cuartil).
+
+**Paso 3:** Podemos ver el número actual haciendo una llamada al método describe() en el dataframe.
+
+    df_japan.describe()
+    
+ ![React](../Images/data_japon_box_1.png)    
 
 <a name='dispersion'></a>
 #### GRÁFICO DISPERSIÓN:
