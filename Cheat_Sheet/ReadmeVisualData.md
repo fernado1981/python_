@@ -121,9 +121,7 @@ Conjunto de Datos: Inmigración en Canadá desde 1980 a 2013 – Flujos migrator
       ax.set_title('Immigration Trend of Top 5 Countries')
       ax.set_ylabel('Number of Immigrants')
       ax.set_xlabel('Years')
-    
 ![React](../Images/gráfico_area_1.png)
-
 ### Mostrar los cinco paises que menos contribuyen con la imigración
 ##### Obtenemos los cinco primeros valores, head()
     df_least5 = df_can.tail(5)
