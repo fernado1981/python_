@@ -5,13 +5,12 @@
 #### Tipo de gráficos:
 1) Gráfico de área
 2) Gráfico de histogramas
-3) Gráficos de barras
-4) Gráficos bar_chart
+3) Gráficos de barras / bar_chart
 
 *[Gráfico de área](#Área)*<br/>
 *[Gráfico de histogramas](#histogramas)*<br/>
-*[Gráficos de barras](#barras)*<br/>
-*[Gráficos bar_char](#bar_chart)*<br/>
+*[Gráficos de barras/bar_char](#barras)*<br/>
+
 
 #### Gráfico de área:
 Los gráficos de área se utilizan para mostrar el desarrollo de valores cuantitativos a lo largo de un intervalo o período de tiempo.
