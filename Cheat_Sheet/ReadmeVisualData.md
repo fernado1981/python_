@@ -626,7 +626,7 @@ Outlier > ***209,611.5**
 
      print(new_df[new_df['2000s']> 209611.5])
 
-![React](../Images/chinaIndiaBox_atipicos_1980_1990_2000)
+![React](../Images/chinaIndiaBox_atipicos_1980_1990_2000.png)
 
 **NOTA:** China e India se consideran atípicos debido a que su población para la década excede ***209,611.5**
 
@@ -670,7 +670,7 @@ Usando una gráfica de dispersión, visualicemos la tendencia del total de inmig
       plt.ylabel('Number of Immigrants')
       plt.show()
       
- ![React](../Images/dispersion_0)
+ ![React](../Images/dispersion_0.png)
      
 **NOTA:** Observa como la gráfica de dispersión no conecta los datos entre si. Podemos obervar con facilidad un tendencia positiva en los datos: a medida que pasan los años, el número total de inmigrantes asciende. Podemos analizar matematicamente esta tendencia positiva usando una línea de regresión.
 
@@ -703,7 +703,7 @@ La salida es un arreglo con los coeficientes polinomiales, las potencias mas gra
       plt.annotate('y={0:.0f} x + {1:.0f}'.format(fit[0], fit[1]), xy=(2000, 150000))
       plt.show()
       
- ![React](../Images/dispersion_1)
+ ![React](../Images/dispersion_1.png)
 
 **paso 4:** imprimir la línea optima
 
