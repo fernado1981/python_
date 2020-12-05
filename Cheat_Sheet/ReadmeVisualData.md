@@ -483,7 +483,7 @@ Dibujemos la gráfica para los inmigrantes japoneses entre 1980 y 2013.
 
     plt.show()
 
-![React](../Images/diagrama_caja.png)
+![React](../Images/Diagrama_caja.png)
 
 Inmediatamente podemos hacer un par de observaciones de la gráfica anterior:
 
@@ -593,7 +593,7 @@ Crea una gráfica de caja para visualizar la distribución de los 15 países pri
        print(new_df.describe())
        
        
-![React](../Images/chinaIndiaBox_data_1980_1990_2000)
+![React](../Images/chinaIndiaBox_data_1980_1990_2000.png)
 
 4. Graficamos
 
@@ -604,7 +604,7 @@ Crea una gráfica de caja para visualizar la distribución de los 15 países pri
 
        plt.show()
 
-![React](../Images/chinaIndiaBox_diagrama_1980_1990_2000)
+![React](../Images/chinaIndiaBox_diagrama_1980_1990_2000.png)
 
 **NOTA:** #Observa como la gráfica de caja es distinta de la tabla resumida que se creó. La gráfica escanea los datos e identifica los que estan separados (outliers). 
 Para reconocer un dato separado, su valor debe ser:
