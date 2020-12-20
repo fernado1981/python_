@@ -5,7 +5,7 @@
 - Machine Learning: 
 [Visualización](Cheat_Sheet/READMEVISUALDATA.md) |  [Regresión](Cheat_Sheet/READMECHEATLEARN.md) | [Clasificación](Cheat_Sheet/READMETECHNIQUES.md)
 
-- Automatización con selenium:
+- Automatización de pruebas:
 [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
 
 # :snake: python_:snake:
