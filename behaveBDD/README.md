@@ -1,11 +1,11 @@
-#### 1.- Instalacion:
+#### 1.- INTALACION:
 > pip3 install behave
 > pip3 install -U behave
 
 #### 2.- Versión mas reciente desde el repositorio behave:
 > pip install git+https://github.com/behave/behave
 
-#### 1.- Implementacion de los requistos mínimos:
+#### 1.- REQUISITOS MÍNIMOS:
 > features/
 > features/everything.feature
 > features/steps/
@@ -74,7 +74,7 @@
 **Sintax:** behave -e file_name
 > behave -e tutorial.feature
 
-#### 1.- Como funcionan los archivos .feature:
+#### 1.- FUNCIONAMIENTO ARCHIVOS .feature:
 - 'Given' que ponemos el sistema en un estado conocido antes de que el usuario (o sistema externo) comience a interactuar con el sistema (en los pasos Cuándo). Evite hablar de la interacción del usuario en situaciones dadas.
 
 - 'When' nos tomamos acciones clave que el usuario (o sistema externo) lleva a cabo. Esta es la interacción con su sistema que debería (o tal vez no debería) hacer que algún estado cambie.
