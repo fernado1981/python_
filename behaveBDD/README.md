@@ -1,9 +1,9 @@
-#### Instalacion:
+#### 1.- Instalacion:
 - pip3 install behave
 - pip3 install -U behave
 
-2.- Versión mas reciente desde el repositorio behave:
-pip install git+https://github.com/behave/behave
+#### 2.- Versión mas reciente desde el repositorio behave:
+- pip install git+https://github.com/behave/behave
 
 1.- Implementacion de los requistos mínimos:
 features/
