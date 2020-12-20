@@ -60,6 +60,8 @@
     mkdir reports
 
 #### 9.- Implementar behave.ini:
+opciones de configuración que se ubicarán en archivos .ini o .cfg.
+
     # -- FILE: behave.ini
     # Define ALIAS for HtmlFormatter.
     [behave.formatters]
