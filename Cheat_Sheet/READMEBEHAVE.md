@@ -1,6 +1,7 @@
 #### 1.- INTALACION:
 > pip3 install behave
 > pip3 install -U behave
+> pip install behave-html-formatter
 
 #### 2.- Versión mas reciente desde el repositorio behave:
 > pip install git+https://github.com/behave/behave
@@ -10,6 +11,7 @@
 > features/everything.feature
 > features/steps/
 > features/steps/steps.py
+> reports
 
 #### 2.- Creamos un directorio llamado features
 > mkdir features
@@ -54,29 +56,39 @@
       def step_impl(context):
         assert context.failed is False
 
-#### 8.- Ejecute los escenarios:
-> behave
+#### 8.- Implementar directorio para report:
+> mkdir reports
 
-#### 9.- Ejecución por nombre de escenario:
+#### 9.- Implementar behave.ini:
+# -- FILE: behave.ini
+# Define ALIAS for HtmlFormatter.
+[behave.formatters]
+html = behave_html_formatter:HTMLFormatter
+
+#### 9.- Ejecute los escenarios con report:
+> behave -f html -o reports/report.html
+
+#### 10.- Ejecute los escenarios:
+> behave
+>
+#### 11.- Ejecución por nombre de escenario:
 **sintax:** behave -n 'nombre del escenario'
 > behave -n 'run a simple test'
 
-#### 10.- Ejecute por tag:
+#### 12.- Ejecute por tag:
 **Nota:** para ello deberemos añadir el tag justo encima del escenario
 **sintax:** behave -t 'nombre del @tag'
 > behave -t '@slow_tag_name'
 
-#### 11.- Ejecutar sólo un .feature:
+#### 13.- Ejecutar sólo un .feature:
 **sintax:** behave -i nombre del .feature
 > behave -i tutorial.feature
 
-#### 12.- Excluyendo .feature:
+#### 14.- Excluyendo .feature:
 **Sintax:** behave -e file_name
 > behave -e tutorial.feature
 
 #### 1.- FUNCIONAMIENTO ARCHIVOS .feature:
 - 'Given' que ponemos el sistema en un estado conocido antes de que el usuario (o sistema externo) comience a interactuar con el sistema (en los pasos Cuándo). Evite hablar de la interacción del usuario en situaciones dadas.
-
 - 'When' nos tomamos acciones clave que el usuario (o sistema externo) lleva a cabo. Esta es la interacción con su sistema que debería (o tal vez no debería) hacer que algún estado cambie.
-
 - 'Then' nos observamos los resultados.
