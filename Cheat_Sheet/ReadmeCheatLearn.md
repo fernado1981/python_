@@ -1,13 +1,16 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
+
+# REGRESION:
+
 **Documentación:** <https://www.interactivechaos.com/python/function/traintestsplit>
 
-
-*[scikit-learn -> regresión lineal simple](#linealsimple)*<br/>
-*[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
-*[scikit-learn -> regresión polinómica](#polinomica)*<br/>
-*[scikit-learn -> regresión no lineal](#noLineal)*<br/>
+## Tipos de regresion:
+- *[scikit-learn -> regresión lineal simple](#linealsimple)*<br/>
+- *[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
+- *[scikit-learn -> regresión polinómica](#polinomica)*<br/>
+- *[scikit-learn -> regresión no lineal](#noLineal)*<br/>
 
 <a name='linealsimple'></a>
 # Librería scikit-learn para implementar regresión lineal simple:
