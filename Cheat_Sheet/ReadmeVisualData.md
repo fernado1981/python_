@@ -1,9 +1,12 @@
-<a name='top'></a>
+<a name="top"></a>
 
 # Visualizacion de datos
- Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
- Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
+
+**Pandas series:** <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
+**Matplotlib anotaciones:** <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
+
 #### Tipo de gráficos:
+
 1) Gráfico de área
 2) Gráfico de histogramas
 3) Gráficos de barras / bar_chart
@@ -710,5 +713,4 @@ La salida es un arreglo con los coeficientes polinomiales, las potencias mas gra
 
       'No. Immigrants = {0:.0f} * Year + {1:.0f}'.format(fit[0], fit[1]
 
-*[Up](#top)*
-
+[Up](#top)
