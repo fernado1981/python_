@@ -3,7 +3,7 @@
 [Principal](../README.md)<br/>
 
 # CLASIFICACIÓN:
-## Tipoas de clasificación:
+## Tipos de clasificación:
 
 - *[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
 - *[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
