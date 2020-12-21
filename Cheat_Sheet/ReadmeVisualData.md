@@ -2,12 +2,13 @@
 [Principal](../README.md)<br/>
 
 
-# Visualizacion de datos
+# Visualizacion de datos:
+## Documentación:
 
-**Pandas series:** <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
-**Matplotlib anotaciones:** <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
+- **Pandas series:** <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
+- **Matplotlib anotaciones:** <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
 
-#### Tipo de gráficos:
+#### Tipo de gráficos de visualización:
 
 1) Gráfico de área
 2) Gráfico de histogramas
