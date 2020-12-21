@@ -1,4 +1,5 @@
 <a name='top'></a>
+
 # Visualizacion de datos
  Pandas series: <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.plot.html><br/>
  Matplotlib anotaciones: <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.annotate><br/>
