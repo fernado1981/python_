@@ -1,7 +1,7 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
-[Documentación]<https://www.interactivechaos.com/python/function/traintestsplit>
+**Documentación:** <https://www.interactivechaos.com/python/function/traintestsplit>
 
 
 *[scikit-learn -> regresión lineal simple](#linealsimple)*<br/>
