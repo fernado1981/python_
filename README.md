@@ -14,7 +14,12 @@ iré subiendo los ejercicios que voy realizando alguno siguen la estructura del 
 Versión última de python<br/>
 
 # Actualizar a la última version en mac:
-Para cambiar la version de python instalada por defecto, a la más actualizada, debemos descargar la última version, instalarla y despúes en los ficheros .bash_profile, .zshrc  y .profile meter las siguientes lineas alias python='/usr/bin/python3' siendo alias python= [ruta donde la tengáis instalada]. despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y wola actualizado python en mac
+Para cambiar la version de python instalada por defecto, a la más actualizada, debemos descargar la última version, instalarla y despúes en los ficheros .bash_profile, .zshrc  y .profile meter las siguientes lineas: <br/>
+sintax: alias python= [ruta donde la tengáis instalada]
+
+    alias python='/usr/bin/python3'
+
+despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y wola actualizado python en mac
 
 # :memo: APUNTES BÁSICOS
 
