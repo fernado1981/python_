@@ -3,10 +3,6 @@
 [Principal](../README.md)<br/>
 
 
-
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
-
-
 *[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
 *[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
 *[Regresion -> regresión logística](#RegrasionLogistica)*
