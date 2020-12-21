@@ -2,10 +2,12 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
+# CLASIFICACIÓN:
+## Tipoas de clasificación:
 
-*[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
-*[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
-*[Regresion -> regresión logística](#RegrasionLogistica)*
+- *[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
+- *[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
+- *[Regresion -> regresión logística](#RegrasionLogistica)*
 
 <a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):
