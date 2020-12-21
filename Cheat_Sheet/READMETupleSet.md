@@ -1,5 +1,6 @@
 [Principal](../README.md)<br/>
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
+
+
 # Tuple set
     conjunto = ("pepe", "maria", "juanito", "raulin")
     conjuntos = {"pepe", "maria", "juanito", "raulin","fatima"}
