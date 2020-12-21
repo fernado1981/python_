@@ -1,6 +1,5 @@
 <a name="top"></a>
 [Principal](../README.md)<br/>
-[Api_Post](../Cheat_Sheet/READMEPOST.md) | [Api_Get](../Cheat_Sheet/READMEGET.md)  | [Tuple_Set](../Cheat_Sheet/READMETupleSet.md) | [lista_array](../Cheat_Sheet/READMELIST.md) | [Diccionario](../Cheat_Sheet/READMEDIC.md)
 
 
 # Documentación:
