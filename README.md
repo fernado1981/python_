@@ -1,9 +1,9 @@
 <a name="top"></a>
 
 - Python Esencial:
-[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETUPLESET.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
+[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
 - Machine Learning: 
-[Visualización](Cheat_Sheet/READMEVISUALDATA.md) |  [Regresión](Cheat_Sheet/READMECHEATLEARN.md) | [Clasificación](Cheat_Sheet/READMETECHNIQUES.md)
+[Visualización](Cheat_Sheet/ReadmeVisualData.md) |  [Regresión](Cheat_Sheet/ReadmeCheatLearn.md) | [Clasificación](Cheat_Sheet/ReadmeTechniques.md)
 
 - Automatización de pruebas:
 [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
