@@ -2,14 +2,14 @@
 
 ## MYSQL Instalacion:
 
-- brew install mysql
-- brew cleanup
-- brew tap homebrew/services
-- brew services start mysql
-- mysql -V
-- mysqladmin -u root password 'unapasswdsegura'
+    brew install mysql
+    brew cleanup
+    brew tap homebrew/services
+    brew services start mysql
+    mysql -V
+    mysqladmin -u root password 'unapasswdsegura'
 
-## importacion de librería:
+## importacion de librería connector:
     import mysql.connector
 
 ## mysql.conector.conect:
