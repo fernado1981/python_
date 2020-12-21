@@ -5,8 +5,9 @@
     Diego = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
     dicF = {"Fernando": Fernando, "Diego": Diego}
 
-# type dic
-    print(type(dicF))
+- type dic
+    
+        print(type(dicF))
 
 # funcionaes del diccionario
 - add -- añadir
