@@ -1,10 +1,8 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
-[Documentación])<https://www.interactivechaos.com/python/function/traintestsplit>
+[Documentación]<https://www.interactivechaos.com/python/function/traintestsplit>
 
-
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
 
 *[scikit-learn -> regresión lineal simple](#linealsimple)*<br/>
 *[scikit-learn -> regresión lineal multiple](#multiple)*<br/>
