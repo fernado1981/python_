@@ -7,11 +7,18 @@
     pip install git+https://github.com/behave/behave
 
 #### 1.- REQUISITOS MÍNIMOS:
-    features/
-    features/everything.feature
-    features/steps/
-    features/steps/steps.py
-    reports
+Nota: mantener una estructura de proyecto uniforme ayuda a mantener el proyecto.<br>
+La implementación completa debe estar presente en el directorio 'features'.<br>
+Los archivos de caracteristicas (* .feature) deben estar presentes en el directorio 'features', incluido 'environment.py' (que contiene los ganchos necesarios para la inicialización y finalización).<br>
+La implementación de las definiciones de pasos de las caracteristicas debe estar presente en el directorio features / steps.<br>
+Las opciones de configuración que se ubicarán en archivos .ini / .cfg.
+Los reportes los pondremos en un directorio aparte reports
+
+        features/
+        features/everything.feature
+        features/steps/
+        features/steps/steps.py
+        reports
 
 #### 2.- Creamos un directorio llamado features
     mkdir features
@@ -93,6 +100,9 @@ opciones de configuración que se ubicarán en archivos .ini o .cfg.
 **Sintax:** behave -e file_name
 
     behave -e tutorial.feature
+   
+#### 15.- Help:
+    behave -help
 
 #### 1.- FUNCIONAMIENTO ARCHIVOS .feature:
 - 'Given' que ponemos el sistema en un estado conocido antes de que el usuario (o sistema externo) comience a interactuar con el sistema (en los pasos Cuándo). Evite hablar de la interacción del usuario en situaciones dadas.
