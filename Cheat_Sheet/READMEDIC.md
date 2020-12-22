@@ -1,33 +1,35 @@
+<a name="top"></a>
 [Principal](../README.md)<br/>
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
+
 # cramos el diciconario {K,V}
     Fernando = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
     Diego = {"Apellidos": "manrique villanueva", "Edad": 39, "Profesión": "Informático"}
     dicF = {"Fernando": Fernando, "Diego": Diego}
 
-# type dic
-    print(type(dicF))
+- type dic
+    
+        print(type(dicF))
 
 # funcionaes del diccionario
-> add -- añadir
+- add -- añadir
   
-    dicF['Fernando']["Rango"] = "Rambo"
+      dicF['Fernando']["Rango"] = "Rambo"
     
-> pop(v) -- Eliminar por valor
+- pop(v) -- Eliminar por valor
 
-    dicF['Fernando'].pop('Edad')
+      dicF['Fernando'].pop('Edad')
 
-> values -- ver valores
+- values -- ver valores
 
-    print(dicF.values())
+      print(dicF.values())
 
-> keys -- ver claves
+- keys -- ver claves
 
-    print(dicF.keys())
+      print(dicF.keys())
 
-> len  -- longitud
+- len  -- longitud
 
-    print(len(dicF))
+      print(len(dicF))
 
 # Bucles asociados al diccionario
     for c, v in dicF.items():
@@ -38,3 +40,4 @@
     for c, v in Diego.items():
         print(c,v)
         
+[Subir](#top)

@@ -1,15 +1,18 @@
+<a name="top"></a>
+[Principal](../README.md)<br/>
+
 # MysqlDb
 
 ## MYSQL Instalacion:
 
-- brew install mysql
-- brew cleanup
-- brew tap homebrew/services
-- brew services start mysql
-- mysql -V
-- mysqladmin -u root password 'unapasswdsegura'
+    brew install mysql
+    brew cleanup
+    brew tap homebrew/services
+    brew services start mysql
+    mysql -V
+    mysqladmin -u root password 'unapasswdsegura'
 
-## importacion de librería:
+## importacion de librería connector:
     import mysql.connector
 
 ## mysql.conector.conect:
@@ -65,3 +68,6 @@ cursor.fetchone() El método devuelve un solo registro o Ninguno si no hay más 
     cursor.execute("CREATE TABLE users (name VARCHAR(255), user_name VARCHAR(255))")
 ### actualizacion
     cursor.execute("UPDATE users SET name = 'Kareem' WHERE id = 1")
+
+
+[Subir](#top)

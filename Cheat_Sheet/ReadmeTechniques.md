@@ -2,14 +2,12 @@
 <a name='top'></a>
 [Principal](../README.md)<br/>
 
+# CLASIFICACIÓN:
+## Tipos de clasificación:
 
-
-[Api_Post](READMEPOST.md) | [Api_Get](READMEGET.md)  | [Tuplas](READMETupleSet.md) | [Listas](READMELIST.md) | [Diccionarios](READMEDIC.md) | [Selenium](../Selenium/README.md)
-
-
-*[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
-*[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
-*[Regresion -> regresión logística](#RegrasionLogistica)*
+- *[clasificacion supervisado -> K-Vecinos Más Cercanos (KNN)](#KNN)*<br/>
+- *[modelo predictivo No supervisado -> Arboles de decisión](#Árboles)*<br/>
+- *[Regresion -> regresión logística](#RegrasionLogistica)*
 
 <a name='KNN'></a>
 ## K-Vecinos Más Cercanos (KNN):

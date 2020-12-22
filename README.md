@@ -1,9 +1,9 @@
 <a name="top"></a>
 
 - Python Esencial:
-[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETUPLESET.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
+[Api_Post](Cheat_Sheet/READMEPOST.md) | [Api_Get](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
 - Machine Learning: 
-[Visualización](Cheat_Sheet/READMEVISUALDATA.md) |  [Regresión](Cheat_Sheet/READMECHEATLEARN.md) | [Clasificación](Cheat_Sheet/READMETECHNIQUES.md)
+[Visualización](Cheat_Sheet/ReadmeVisualData.md) |  [Regresión](Cheat_Sheet/ReadmeCheatLearn.md) | [Clasificación](Cheat_Sheet/ReadmeTechniques.md)
 
 - Automatización de pruebas:
 [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
@@ -14,7 +14,12 @@ iré subiendo los ejercicios que voy realizando alguno siguen la estructura del 
 Versión última de python<br/>
 
 # Actualizar a la última version en mac:
-Para cambiar la version de python instalada por defecto, a la más actualizada, debemos descargar la última version, instalarla y despúes en los ficheros .bash_profile, .zshrc  y .profile meter las siguientes lineas alias python='/usr/bin/python3' siendo alias python= [ruta donde la tengáis instalada]. despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y wola actualizado python en mac
+Para cambiar la version de python instalada por defecto, a la más actualizada, debemos descargar la última version, instalarla y despúes en los ficheros .bash_profile, .zshrc  y .profile meter las siguientes lineas: <br/>
+sintax: alias python= [ruta donde la tengáis instalada]
+
+    alias python='/usr/bin/python3'
+
+despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y wola actualizado python en mac
 
 # :memo: APUNTES BÁSICOS
 
