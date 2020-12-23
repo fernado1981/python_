@@ -9,7 +9,7 @@
 [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
 
 # :snake: python_:snake:
-iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza
+iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza,todo esta realizado a modo de aprendizaje.
 
 Versión última de python<br/>
 
