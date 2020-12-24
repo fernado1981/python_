@@ -54,12 +54,12 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
                   print("calve: ", c, ' Valor: ', v)
            count += 1
 
-- Buscar por clave:
+- Buscar por clave:<br/>
 If in
  
      if clave in dic
 
-If dic.has_Key(clave)
+If dic.has_Key(clave)<br/>
 
     if d.has_key('x'):
      print d['x']
