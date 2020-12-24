@@ -58,7 +58,7 @@ despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y w
 **Nota:** se pueden buscar los todos desde la pestaña TODO de pycharm
 
 ## Interprete:
-- ejecutar python3<br/>
+- Ejecutar python3<br/>
 ** (venv) MacBook-Pro-de-fernando:Pythonist fernandomanrique$** python3<br/>
 ** Python 3.7.3 (default, Dec 13 2019, 19:58:14)**<br/>
 ** [Clang 11.0.0 (clang-1100.0.33.17)] on darwin**<br/>
@@ -75,7 +75,7 @@ despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y w
 **>>>** 5+2<br/>
  7<br/>
 
-- salir del interprete:<br/>
+- Salir del interprete:<br/>
 **>>>** quit()<br/>
      
 [Subir](#top)
