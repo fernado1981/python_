@@ -63,20 +63,20 @@ despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y w
 ** Python 3.7.3 (default, Dec 13 2019, 19:58:14)**
 ** [Clang 11.0.0 (clang-1100.0.33.17)] on darwin**
 ** Type "help", "copyright", "credits" or "license" for more information.**
-**>>>**
+**>>>**<br/>
 
 - Ejemplo: (suma con asignacion de variables)
-**>>>** num1=5
-**>>>** num2=2
-**>>>** print(num1+num2)
- 7
+**>>>** num1=5<br/>
+**>>>** num2=2<br/>
+**>>>** print(num1+num2)<br/>
+ 7<br/>
 
 - Ejemplo: (suma sin asignacion de variables)
-**>>>** 5+2
- 7
+**>>>** 5+2<br/>
+ 7<br/>
 
 - salir del interprete:
-**>>>** quit()
+**>>>** quit()<br/>
      
 [Subir](#top)
 
