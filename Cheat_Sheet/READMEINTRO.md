@@ -55,7 +55,7 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
            count += 1
 
 - Buscar por clave:<br/>
-If in
+If in<br/>
  
      if clave in dic
 
