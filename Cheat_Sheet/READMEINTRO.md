@@ -3,196 +3,192 @@
 # APUNTES BÁSICOS:
 
 ## Diccionario:
-un Diccionario es un conjunto de elementos organizados por clave : valor, se podría decir que son los conocidos tippo de datos "objetos" en javascript la forma de acceso a estos es muy similar a la de las listas<br/>
+un Diccionario es un conjunto de elementos organizados por clave : valor, se podría decir que son los conocidos tippo de datos "objetos" en javascript la forma de acceso a estos es muy similar a la de las listas
 
     dic={"c":"valor", "clave":"valor", ^n}
 
 - Recorrer:
 
-    for c,v in dic.items():
-        print(c,v)
+        for c,v in dic.items():
+            print(c,v)
 
 - Eliminar: del()
 
-    del (dic[posición or 'item'])
+        del (dic[posición or 'item'])
 
 - Eliminar: pop()
 
-    dic.pop('clave')
-      print(dic)
+        dic.pop('clave')
+        print(dic)
 
-:dart: Añadir:
-----------------
-    dic[item] = val
+- Añadir:
 
-:dart: Añadir con update
--------------------------
-    valor = {"Rango": "Militar"}
+        dic[item] = val
 
-    dic.update(valor)
-    print(dic)
+- Añadir con update
 
-:dart: Tomar un valor específico dentro de una lista con diccionarios:
------------------------------------------------------------------
-    count=0
+        valor = {"Rango": "Militar"}
 
-    while count < len(lista):
-         print(lista[count]['clave'])
-         count+=1
-  
-    for i in range(len(lista)):
-         print(lista[i]['clave'])
+        dic.update(valor)
+        print(dic)
 
-:dart: Buscar dic e iterarlo:
------------------------------
-    matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]
-    count = 0
+- Tomar un valor específico dentro de una lista con diccionarios:
 
-    while count < len(matrix):
-        if type(matrix[count]) == dict:
-            for c, v in matrix[count].items():
-              print("calve: ", c, ' Valor: ', v)
-       count += 1
+        count=0
 
-:dart: Buscar por clave:<br/>
------------------
->If in
+        while count < len(lista):
+             print(lista[count]['clave'])
+             count+=1
+
+        for i in range(len(lista)):
+             print(lista[i]['clave'])
+
+- Buscar dic e iterarlo:
+
+        matrix = [4, 5, 6, {"Nombre": "Fernando"}, [2, 3, 4, 5, 6]]
+        count = 0
+
+        while count < len(matrix):
+            if type(matrix[count]) == dict:
+                for c, v in matrix[count].items():
+                  print("calve: ", c, ' Valor: ', v)
+           count += 1
+
+- Buscar por clave:
+**If in**
  
      if clave in dic
 
->If dic.has_Key(clave)<br/>
+**If dic.has_Key(clave)**
 
     if d.has_key('x'):
      print d['x']
 
-## :gem: Lista:
-Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript<br/>
+## Lista:
+Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript
 
-:dart: Recorrer:
----------
-> FOR<br/>
-> Muetsra la posición<br/>
+## Recorrer Listas:
+**FOR**
+- Muetsra la posición
        
-    for i in lista:<br/>
-       print(i)           //muesta la posición
-       print(lista[i])    //muetsra el valor por posición
+        for i in lista:<br/>
+           print(i)           //muesta la posición
+           print(lista[i])    //muetsra el valor por posición
 
-> Muestra la posición y su valor<br/>
+- Muestra la posición y su valor
 
-    for i in enumerate(lista)_:
-       print(i)   //(posición,valor)(posición,valor)(posición,valor)...
+        for i in enumerate(lista)_:
+           print(i)   //(posición,valor)(posición,valor)(posición,valor)...
 
-> Muestra la posición<br/>
+- Muestra la posición
 
-     for i in range(len(lista)):
-        print(i)
-        print(lista[i])     //muetsra el valor por posición
+         for i in range(len(lista)):
+            print(i)
+            print(lista[i])     //muetsra el valor por posición
 
-> WHILE<br/>
-> Muestra el contenido del array por posición<br/>
+**WHILE**
+- Muestra el contenido del array por posición<br/>
     
-    count = 0
+        count = 0
 
-     while count < len(lista):
-        print(lista[count])
-        count += 1
+         while count < len(lista):
+            print(lista[count])
+            count += 1
 
-:dart: Eliminar: del () / pop()
-------------------------
-     del (lista[posición])
+- Eliminar: del () / pop()
 
-    pos=lista.index('elemento a buscar su posición')
-    lista.pop(pos)
+        del (lista[posición])
 
-:dart: Añadir: append()
-----------------
-    lista.append(elemento)
+        pos=lista.index('elemento a buscar su posición')
+        lista.pop(pos)
 
-:dart: Ver tamaño de una lista: len(lista)
------------------------------------
-    len(lista)
+- Añadir: append()
 
-:dart:bucle range: range(0,3)
------------------------------
-    for i in range(0,3):
-       print(i)      //0,1,2
+        lista.append(elemento)
 
-## MÉTODOS PREDEFINIDOS:<br/>
-:dart: saber el tipo de dato: type(dato)
----------------------------------
-     dato=[1,2]
-     type(dato)  //<class 'list'>
+- Ver tamaño de una lista: len(lista)
 
-:dart: obtener el valor de un diccionario por su clave: __getitem__(clave)
---------------------------------------------------------------------
-     dicA = {"Nombre": "Fer", "Edad": 39}
+        len(lista)
 
-     def __getitem__(Nombre):
-        print("tengo: ", Nombre['Nombre'])
+- bucle range: range(0,3)
 
-     __getitem__(dicA)    //devuelve Fer
+        for i in range(0,3):
+           print(i)      //0,1,2
 
-:dart: insertar en lista: insert(pos,value)
--------------------------------------------
-     Zapatos = ["Reebok", "Adidas", "Nike"]
-     value = "ascis"
-     Zapatos.insert(2, value)
+## MÉTODOS PREDEFINIDOS:
+- saber el tipo de dato: type(dato)
 
-:dart: insertar en lista: append(value)
--------------------------------------------
-     Zapatos.append(value)
-     print(Zapatos)
+         dato=[1,2]
+         type(dato)  //<class 'list'>
 
-:dart: Eliminar: remove(value)
------------------------------
-     Zapatos.remove('Reebok')
+- obtener el valor de un diccionario por su clave: __getitem__(clave)
 
-:dart: Eliminar: pop(posicion)
------------------------------
-     Zapatos.pop(0)
+         dicA = {"Nombre": "Fer", "Edad": 39}
 
-:dart: Contar elementos: count(value)
-------------------------------------
-     Zapatos.count("ascis")
+         def __getitem__(Nombre):
+            print("tengo: ", Nombre['Nombre'])
 
-:dart: longuitud lista: len(lista)
-------------------------------------
-     len(Zapatos)
+         __getitem__(dicA)    //devuelve Fer
 
-:dart: indice de un elemento en la lista: index(lista)
--------------------------------------------------
-     Zapatos.index('Nike')
+- insertar en lista: insert(pos,value)
+
+         Zapatos = ["Reebok", "Adidas", "Nike"]
+         value = "ascis"
+         Zapatos.insert(2, value)
+
+- insertar en lista: append(value)
+
+         Zapatos.append(value)
+         print(Zapatos)
+
+- Eliminar: remove(value)
+
+        Zapatos.remove('Reebok')
+
+- Eliminar: pop(posicion)
+
+        Zapatos.pop(0)
+
+- Contar elementos: count(value)
+
+         Zapatos.count("ascis")
+
+- longuitud lista: len(lista)
+
+      len(Zapatos)
+
+- indice de un elemento en la lista: index(lista)
+
+        Zapatos.index('Nike')
 
 ## :gem: class:
->Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
-el constructor siempre es el primero en ejecutrarse al instanciar un objeto a una clase, en el se inicializan las variables necesarias.<br/>
+Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
+el constructor siempre es el primero en ejecutrarse al instanciar un objeto a una clase, en el se inicializan las variables necesarias.
 
      class NombreClase:
 
-:dart: Constructor:
-------------
-     def __init__(self,atributos^n):
-       self.atributo = atributos
+- Constructor:
 
-:dart: Métodos:
---------
-> Los metodos son funcionalidades muy especificas de la clase, por ejemplo añadir, eliminar, ver ...<br/>
+         def __init__(self,atributos^n):
+           self.atributo = atributos
+
+- Métodos:
+Los metodos son funcionalidades muy especificas de la clase, por ejemplo añadir, eliminar, ver ...
      
     def NombreMétodo(self,atributo):
        ...
 
-:dart: Interactuación entre clases:
-----------------------------
-> para crear un objeto de una clase que este fuera de nuestro file class, lo primnero quer debemos hacer es importar desde el fichero la clase<br/>
+- Interactuación entre clases:
+para crear un objeto de una clase que este fuera de nuestro file class, lo primnero quer debemos hacer es importar desde el fichero la clase
 
-     from class import NameClass<br/>
+     from class import NameClass
 
-> na vez realizada la improtación, tendriamos acceso a la clase, instanciando un objeto de tipo la class<br/>
+una vez realizada la improtación, tendriamos acceso a la clase, instanciando un objeto de tipo la class
 
-     NameClass = My_objtClass()<br/>
+     NameClass = My_objtClass()
 
-> La forma de acceder a los métodos y atributos de la clase es por medio del conocido acceso de punto, lo cual una vez que pongamos nuestro objeto seguido de un punto nos mostrara los atributos y métodos a lo quer tenemos acceso<br/>
+La forma de acceder a los métodos y atributos de la clase es por medio del conocido acceso de punto, lo cual una vez que pongamos nuestro objeto seguido de un punto nos mostrara los atributos y métodos a lo quer tenemos acceso
 
-     My_objtClass.<br/>
+     My_objtClass
 
 [Subir](#top)
