@@ -58,24 +58,24 @@ despúes pasamos el source ~/.zshrc source ~/.profile source ~/.bash_profile y w
 **Nota:** se pueden buscar los todos desde la pestaña TODO de pycharm
 
 ## Interprete:
-- ejecutar python3
-** (venv) MacBook-Pro-de-fernando:Pythonist fernandomanrique$** python3
-** Python 3.7.3 (default, Dec 13 2019, 19:58:14)**
-** [Clang 11.0.0 (clang-1100.0.33.17)] on darwin**
-** Type "help", "copyright", "credits" or "license" for more information.**
+- ejecutar python3<br/>
+** (venv) MacBook-Pro-de-fernando:Pythonist fernandomanrique$** python3<br/>
+** Python 3.7.3 (default, Dec 13 2019, 19:58:14)**<br/>
+** [Clang 11.0.0 (clang-1100.0.33.17)] on darwin**<br/>
+** Type "help", "copyright", "credits" or "license" for more information.**<br/>
 **>>>**<br/>
 
-- Ejemplo: (suma con asignacion de variables)
+- Ejemplo: (suma con asignacion de variables)<br/>
 **>>>** num1=5<br/>
 **>>>** num2=2<br/>
 **>>>** print(num1+num2)<br/>
  7<br/>
 
-- Ejemplo: (suma sin asignacion de variables)
+- Ejemplo: (suma sin asignacion de variables)<br/>
 **>>>** 5+2<br/>
  7<br/>
 
-- salir del interprete:
+- salir del interprete:<br/>
 **>>>** quit()<br/>
      
 [Subir](#top)
