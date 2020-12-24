@@ -108,7 +108,7 @@ lista.append(elemento)
         for i in range(0,3):
            print(i)      //0,1,2
    
-## Recorrer Listas:
+##  Recorrer Listas:
 1. **For**
 - Muetsra la posición
        
