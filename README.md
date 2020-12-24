@@ -1,7 +1,7 @@
 <a name="top"></a>
 
 - Python Esencial:
-[Básico](Cheat_Sheet/READMEINTRO.md) | [Api](Cheat_Sheet/READMEGET.md)  | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
+[Básico](Cheat_Sheet/READMEINTRO.md) | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Api](Cheat_Sheet/READMEGET.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
 - Machine Learning: 
 [Visualización](Cheat_Sheet/ReadmeVisualData.md) |  [Regresión](Cheat_Sheet/ReadmeCheatLearn.md) | [Clasificación](Cheat_Sheet/ReadmeTechniques.md)
 
