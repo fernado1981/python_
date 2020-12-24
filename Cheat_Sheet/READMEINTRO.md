@@ -54,15 +54,14 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
                   print("calve: ", c, ' Valor: ', v)
            count += 1
 
-- Buscar por clave:<br/>
-If in<br/>
- 
-     if clave in dic
+- Buscar por clave:
+     
+        if clave in dic
 
-If dic.has_Key(clave)<br/>
+If dic.has_Key(clave)
 
-    if d.has_key('x'):
-     print d['x']
+        if d.has_key('x'):
+         print d['x']
 
 ## Lista:
 Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript
