@@ -55,20 +55,62 @@ un Diccionario es un conjunto de elementos organizados por clave : valor, se pod
            count += 1
 
 - Buscar por clave:
-**If in**
+If in
  
      if clave in dic
 
-**If dic.has_Key(clave)**
+If dic.has_Key(clave)
 
     if d.has_key('x'):
      print d['x']
 
 ## Lista:
 Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser de todo tipo al igual que pasa en lenguajes tipo javascript
+- Crear lista:
 
+        Zapatos = ["Reebok", "Adidas", "Nike"]
+
+- Eliminar: del () / pop()
+
+        del (Zapatos[posición])
+
+        pos=Zapatos.index('Reebok')
+        Zapatos.pop(pos)
+        
+- Eliminar: remove(value)
+
+        Zapatos.remove('Reebok')
+
+- Añadir: append()
+lista.append(elemento)
+        
+        Zapatos.append(value)
+        print(Zapatos)
+
+- Insertar en una posición determinada de la lista: insert(pos,value)
+ 
+         value = "ascis"
+         Zapatos.insert(2, value)
+
+- Ver tamaño de una lista: len(lista)
+
+        len(Zapatos)
+
+- Contar elementos: count(value)
+
+         Zapatos.count("ascis")
+
+- Indice de un elemento en la lista: index(lista)
+
+        Zapatos.index('Nike')  
+
+- bucle range: range(0,3)
+
+        for i in range(0,3):
+           print(i)      //0,1,2
+   
 ## Recorrer Listas:
-**FOR**
+1. **For**
 - Muetsra la posición
        
         for i in lista:<br/>
@@ -86,7 +128,7 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
             print(i)
             print(lista[i])     //muetsra el valor por posición
 
-**WHILE**
+2. **WHILE**
 - Muestra el contenido del array por posición<br/>
     
         count = 0
@@ -94,26 +136,6 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
          while count < len(lista):
             print(lista[count])
             count += 1
-
-- Eliminar: del () / pop()
-
-        del (lista[posición])
-
-        pos=lista.index('elemento a buscar su posición')
-        lista.pop(pos)
-
-- Añadir: append()
-
-        lista.append(elemento)
-
-- Ver tamaño de una lista: len(lista)
-
-        len(lista)
-
-- bucle range: range(0,3)
-
-        for i in range(0,3):
-           print(i)      //0,1,2
 
 ## MÉTODOS PREDEFINIDOS:
 - saber el tipo de dato: type(dato)
@@ -130,38 +152,7 @@ Las listas a diferencia de los diccionarios, guardan valores, estos pueden ser d
 
          __getitem__(dicA)    //devuelve Fer
 
-- insertar en lista: insert(pos,value)
-
-         Zapatos = ["Reebok", "Adidas", "Nike"]
-         value = "ascis"
-         Zapatos.insert(2, value)
-
-- insertar en lista: append(value)
-
-         Zapatos.append(value)
-         print(Zapatos)
-
-- Eliminar: remove(value)
-
-        Zapatos.remove('Reebok')
-
-- Eliminar: pop(posicion)
-
-        Zapatos.pop(0)
-
-- Contar elementos: count(value)
-
-         Zapatos.count("ascis")
-
-- longuitud lista: len(lista)
-
-      len(Zapatos)
-
-- indice de un elemento en la lista: index(lista)
-
-        Zapatos.index('Nike')
-
-## :gem: class:
+## class:
 Al igual que en otros lenguajes de programación orientados a objetos se declara la clase padre donde se inicializan los atributos y contiene los métodos
 el constructor siempre es el primero en ejecutrarse al instanciar un objeto a una clase, en el se inicializan las variables necesarias.
 
