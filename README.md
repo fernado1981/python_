@@ -1,12 +1,12 @@
 <a name="top"></a>
 
 - Python Esencial:
-[Básico](Cheat_Sheet/READMEINTRO.md) | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Api](Cheat_Sheet/READMEGET.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md) | [DB](Cheat_Sheet/READMEDB.md) | [PyTest](Cheat_Sheet/READMEPYTEST.md)<br/>
+[Básico](Cheat_Sheet/READMEINTRO.md) | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Api](Cheat_Sheet/READMEGET.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md)<br/>
+- DB: [DB](Cheat_Sheet/READMEDB.md)
 - Machine Learning: 
 [Visualización](Cheat_Sheet/ReadmeVisualData.md) |  [Regresión](Cheat_Sheet/ReadmeCheatLearn.md) | [Clasificación](Cheat_Sheet/ReadmeTechniques.md)
-
-- Automatización de pruebas:
-[Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
+- Automatización de pruebas unitarias: [PyTest](Cheat_Sheet/READMEPYTEST.md)
+- Automatización de pruebas BDD: [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
 
 # :snake: python_:snake:
 iré subiendo los ejercicios que voy realizando alguno siguen la estructura del enunciado, otros los hago más complejos para aumentar la destraza,todo esta realizado a modo de aprendizaje.
