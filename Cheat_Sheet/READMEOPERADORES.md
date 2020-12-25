@@ -1,3 +1,6 @@
+<a name="top"></a>
+[Principal](../README.md)<br/>
+
 ## OPERADORES DE COMPARACIÓN:
 Estos se utilizan para comparar dos o más valores:
 
@@ -187,3 +190,5 @@ se utilizan para comprobar si dos variables son, o no, el mismo objeto.
         
         print(x is not 5)
         -> True
+
+[Subir](#top)
