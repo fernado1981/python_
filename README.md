@@ -1,7 +1,7 @@
 <a name="top"></a>
 
 - Python Esencial:
-[Básico](Cheat_Sheet/READMEINTRO.md) | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Api](Cheat_Sheet/READMEGET.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md)<br/>
+[Básico](Cheat_Sheet/READMEINTRO.md) | [Operadores] (Cheat_Sheet/READMEOPERADORES.md) | [Tuple_Set](Cheat_Sheet/READMETupleSet.md) | [lista_array](Cheat_Sheet/READMELIST.md) | [Diccionario](Cheat_Sheet/READMEDIC.md) | [Api](Cheat_Sheet/READMEGET.md) | [Lectura y escritura de ficheros](Cheat_Sheet/READMEFILES.md) | [numpy/Matplot](Cheat_Sheet/READMENUMPY.md)<br/>
 - DB: [DB](Cheat_Sheet/READMEDB.md)
 - Automatización de pruebas unitarias: [PyTest](Cheat_Sheet/READMEPYTEST.md)
 - Automatización de pruebas BDD: [Selenium](Cheat_Sheet/READMESELENIUM.md) | [Behave](Cheat_Sheet/READMEBEHAVE.md)
