@@ -1,4 +1,5 @@
-<a name="top"></a>
+<a name='top'></a>
+[Utilidades](cheat_sheet/READMEBEHAVE.md) | [Selectores](cheat_sheet/READMESELECTORES.md) | [Comandos](cheat_sheet/READMECOMANDOS.md)| [Allure-reports](cheat_sheet/REAMDEALLUREREPORT.md) <br/>
 
 ## behave_framework_test
 Framework para automatización de pruebas BDD (Behavior Driven Development) para (front-back) con python
@@ -8,12 +9,15 @@ behave, con una gran documentación que podréis encontrar en su web oficial, la
 - **behave:** <https://behave.readthedocs.io/en/stable/>
 - **cucumber:** <https://cucumber.io/>
 - **selenium:** <https://www.selenium.dev/documentation/es/>
+- **behave-allure:** <https://pypi.org/project/allure-behave/>
 
 ## Instalación de requerimientos:
       pip3 install behave
       pip3 install behave2cucumber
       pip3 install cucumber-tag-expressions
       pip3 install behave-html-formatter
+      pip3 install allure-behave
+      npm install -g allure-commandline --save-dev
 
 ## Instalación más reciente desde repositorio behave:
       pip3 install git+https://github.com/behave/behave
@@ -47,11 +51,14 @@ behave, con una gran documentación que podréis encontrar en su web oficial, la
 - **Nota:** sobre el directorio principal del proyecto creado,
       
       new Python Package llamado web
-      
-- **Nota:** repetir este proceso para el package features y dentro de el para el package steps
-      
-      new Directory llamado reports
+      new package llamado reports
+      new package llamado page_object
+      new package llamado features
 
+- **Nota:** sobre el directorio features:
+
+      new package llamado steps
+      
 #### **Step 3 (behave.ini):**
 - crear el fichero de configuración behave.ini (Consiste en una o secciones más nombradas(cada sección esta delimitada por []), cada una de las cuales puede contener opciones individuales con nombres y valores), en la raiz del proyecto con el siguiente contenido:
 **Nota:** opciones de configuración que se ubicarán en archivos .ini / .cfg

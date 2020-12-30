@@ -27,9 +27,7 @@ class Web(object):
         return self._web_driver.title
 
     def get_text_xpath(self, xpath):
-        return self._web_driver_wait.until(EC.visibility_of_element_located((By.XPATH, xpath))).text
-
-    # Helper functions that are used to identify the web locators in Selenium Python tutorial
+        return self._web_driver_wait.until(EC.presence_of_element_located((By.XPATH, xpath))).text
 
     def find_by_xpath(self, xpath):
         return self._web_driver_wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))

@@ -1,5 +1,8 @@
 from behave import when, then
 
+from page_objects.orangeHrm.home_orangeHrm import home
+from page_objects.orangeHrm.dashboard_orangeHrm import dashboard_orangeHrm
+
 
 @when('the user verify the title page "{titlePage}"')
 def title_page(context, titlePage):
@@ -9,56 +12,46 @@ def title_page(context, titlePage):
 
 @then('verify that the logo present on page')
 def verifyLogo(context):
-    logo = context.web.find_by_xpath_displayed("//div[@id='divLogo']//img")
-    assert logo is True
+    logo = home()
+    result = logo.view_logo(context)
+    assert result is True
 
 
 # Login
 @when('Enter username "{user}" and password "{pwd}"')
 def login(context, user, pwd):
-    userName = context.web.find_by_id_displayed("txtUsername")
-    password = context.web.find_by_id_displayed("txtPassword")
-    if userName is True and password is True:
-        context.web.find_by_id("txtUsername").send_keys(user)
-        context.web.find_by_id("txtPassword").send_keys(pwd)
+    login = home()
+    result = login.simple_login_home(context, user, pwd)
+    assert result is True
 
 
 # login table with header
 @when('put username "{name}" and password "{pwd}"')
 def login_table(context, name, pwd):
-    for row in context.table:
-        context.temp_name = row['name']
-        context.temp_password = row['pwd']
-        userName = context.web.find_by_id_displayed("txtUsername")
-        password = context.web.find_by_id_displayed("txtPassword")
-        if userName is True and password is True:
-            context.web.find_by_id("txtUsername").send_keys(context.temp_name)
-            context.web.find_by_id("txtPassword").send_keys(context.temp_password)
+    login = home()
+    result = login.table_login_home(context, name, pwd)
+    assert result is True
 
 
 # login outline valid
-@when('insert username "{name}" and password "{pwd}"')
-def login_outline(context, name, pwd):
-    context.temp_name = name
-    context.temp_password = pwd
-    userName = context.web.find_by_id_displayed("txtUsername")
-    password = context.web.find_by_id_displayed("txtPassword")
-    if userName is True and password is True:
-        context.web.find_by_id("txtUsername").send_keys(context.temp_name)
-        context.web.find_by_id("txtPassword").send_keys(context.temp_password)
+@when('insert username "{user}" and password "{pwd}"')
+def login_outline(context, user, pwd):
+    login = home()
+    result = login.example_login_home(context, user, pwd)
+    assert result is True
 
 
 # finish valid login
 @then('User must succesfully login to the Dashboard page')
 def Dashboard(context):
-    text = context.web.get_text_xpath("(//h1[contains(text(),'Dashboard')])")
-    if text == "Dashboard":
-        assert True
+    Dashboard = dashboard_orangeHrm()
+    dashboard = Dashboard.dashboard_header(context)
+    assert dashboard is True
 
 
 # finish invalid login
 @then('User must unsuccesfully login to the Dashboard page')
-def Dashboard(context):
-    message = context.web.get_text_xpath("//span[@id='spanMessage']")
-    if message == "Invalid credentials":
-        assert True
+def login_error(context):
+    login = home()
+    result = login.invalid_login(context)
+    assert result is True

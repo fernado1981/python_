@@ -115,11 +115,11 @@ function Collapsible_expandAllFailed()
         </div>
         <div id="summary">
           <p id="totals">
-            <p id="feature_totals">Features: passed: 1</p>
-            <p id="scenario_totals">Scenarios: passed: 1</p>
-            <p id="step_totals">Steps: passed: 5</p>
+            <p id="feature_totals">Features: skipped: 2, passed: 1</p>
+            <p id="scenario_totals">Scenarios: skipped: 5, passed: 1</p>
+            <p id="step_totals">Steps: skipped: 16, untested: 8</p>
           </p>
-          <p id="duration">Finished in 2.1 seconds</p>
+          <p id="duration">Finished in 11.0 seconds</p>
           <div id="expand-collapse">
             <a id="expander" href="#" onclick="Collapsible_expandAll('scenario_steps')">Expand All</a>
             <span> | </span>
@@ -134,11 +134,21 @@ function Collapsible_expandAllFailed()
           <span class="val">Feature: The user can book available flights</span>
         </h2>
       </div>
+      <div class="feature">
+        <h2>
+          <span class="val">Feature: OrangeHRM</span>
+        </h2>
+      </div>
+      <div class="feature">
+        <h2>
+          <span class="val">Feature: OrangeHRM outline</span>
+        </h2>
+      </div>
       <div class="scenario">
-        <span class="scenario_file">features/flightSearch/flightSearchFromTo.feature:4</span>
+        <span class="scenario_file">features/orangeHrm/orangeHrm_outline.feature:30</span>
         <span class="tag">@test</span>
         <h3 onclick="Collapsible_toggle('scenario_0')">
-          <span class="val">Scenario: The user can find a flight from Philadelphia to New York</span>
+          <span class="val">Scenario Outline: Login table Examples invalid to OrangeHRM -- @1.1 </span>
         </h3>
         <ol class="scenario_steps" id="scenario_0">
           <li class="step passed">
@@ -146,13 +156,13 @@ function Collapsible_expandAllFailed()
               <span class="keyword">Given </span>
               <span class="step val">
                 <span>the user is on the search page &quot;</span>
-                <b>blazedemo</b>
+                <b>orangehrmlive</b>
                 <span>&quot;</span>
               </span>
-              <small class="step_duration">(1.515s)</small>
+              <small class="step_duration">(2.906s)</small>
             </div>
             <div class="step_file">
-              <span>features/steps/hook.py:4</span>
+              <span>features/steps/hook.py:6</span>
             </div>
             <span class="embed"/>
           </li>
@@ -160,51 +170,164 @@ function Collapsible_expandAllFailed()
             <div class="step_name">
               <span class="keyword">When </span>
               <span class="step val">
-                <span>the user selects a departure city &quot;</span>
-                <b>Philadelphia</b>
+                <span>insert username &quot;</span>
+                <b>admin</b>
+                <span>&quot; and password &quot;</span>
+                <b>admin1</b>
                 <span>&quot;</span>
               </span>
-              <small class="step_duration">(0.041s)</small>
+              <small class="step_duration">(0.174s)</small>
             </div>
             <div class="step_file">
-              <span>features/steps/flightSearch_steps.py:4</span>
+              <span>features/steps/orangeHrm_steps.py:37</span>
             </div>
             <span class="embed"/>
           </li>
           <li class="step passed">
             <div class="step_name">
               <span class="keyword">And </span>
-              <span class="step val">
-                <span>the user selects a destination city &quot;</span>
-                <b>New York</b>
-                <span>&quot;</span>
-              </span>
-              <small class="step_duration">(0.037s)</small>
+              <span class="step val">Click on login button</span>
+              <small class="step_duration">(0.957s)</small>
             </div>
             <div class="step_file">
-              <span>features/steps/flightSearch_steps.py:9</span>
-            </div>
-            <span class="embed"/>
-          </li>
-          <li class="step passed">
-            <div class="step_name">
-              <span class="keyword">And </span>
-              <span class="step val">clicks on the Find Flights button</span>
-              <small class="step_duration">(0.453s)</small>
-            </div>
-            <div class="step_file">
-              <span>features/steps/flightSearch_steps.py:14</span>
+              <span>features/steps/hook.py:14</span>
             </div>
             <span class="embed"/>
           </li>
           <li class="step passed">
             <div class="step_name">
               <span class="keyword">Then </span>
-              <span class="step val">flights are presented on the search result page</span>
-              <small class="step_duration">(0.011s)</small>
+              <span class="step val">User must unsuccesfully login to the Dashboard page</span>
+              <small class="step_duration">(0.020s)</small>
             </div>
             <div class="step_file">
-              <span>features/steps/flightSearch_steps.py:19</span>
+              <span>features/steps/orangeHrm_steps.py:53</span>
+            </div>
+            <span class="embed"/>
+          </li>
+        </ol>
+      </div>
+      <div class="scenario">
+        <span class="scenario_file">features/orangeHrm/orangeHrm_outline.feature:31</span>
+        <span class="tag">@test</span>
+        <h3 onclick="Collapsible_toggle('scenario_1')">
+          <span class="val">Scenario Outline: Login table Examples invalid to OrangeHRM -- @1.2 </span>
+        </h3>
+        <ol class="scenario_steps" id="scenario_1">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">
+                <span>the user is on the search page &quot;</span>
+                <b>orangehrmlive</b>
+                <span>&quot;</span>
+              </span>
+              <small class="step_duration">(2.445s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/hook.py:6</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>insert username &quot;</span>
+                <b>admin1</b>
+                <span>&quot; and password &quot;</span>
+                <b>admin123</b>
+                <span>&quot;</span>
+              </span>
+              <small class="step_duration">(0.177s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/orangeHrm_steps.py:37</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">Click on login button</span>
+              <small class="step_duration">(0.454s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/hook.py:14</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">User must unsuccesfully login to the Dashboard page</span>
+              <small class="step_duration">(0.019s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/orangeHrm_steps.py:53</span>
+            </div>
+            <span class="embed"/>
+          </li>
+        </ol>
+      </div>
+      <div class="scenario">
+        <span class="scenario_file">features/orangeHrm/orangeHrm_outline.feature:32</span>
+        <span class="tag">@test</span>
+        <h3 onclick="Collapsible_toggle('scenario_2')">
+          <span class="val">Scenario Outline: Login table Examples invalid to OrangeHRM -- @1.3 </span>
+        </h3>
+        <ol class="scenario_steps" id="scenario_2">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">
+                <span>the user is on the search page &quot;</span>
+                <b>orangehrmlive</b>
+                <span>&quot;</span>
+              </span>
+              <small class="step_duration">(2.774s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/hook.py:6</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>insert username &quot;</span>
+                <b>admin</b>
+                <span>&quot; and password &quot;</span>
+                <b>admin</b>
+                <span>&quot;</span>
+              </span>
+              <small class="step_duration">(0.172s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/orangeHrm_steps.py:37</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">Click on login button</span>
+              <small class="step_duration">(0.884s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/hook.py:14</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">User must unsuccesfully login to the Dashboard page</span>
+              <small class="step_duration">(0.021s)</small>
+            </div>
+            <div class="step_file">
+              <span>features/steps/orangeHrm_steps.py:53</span>
             </div>
             <span class="embed"/>
           </li>
