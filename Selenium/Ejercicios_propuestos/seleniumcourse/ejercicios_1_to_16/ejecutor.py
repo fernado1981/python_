@@ -1,17 +1,17 @@
-from Selenium.Ejercicios_propuestos.seleniumcourse.funciones_basicas import funciones_basicas
+from Selenium.Ejercicios_propuestos.seleniumcourse.ejercicios_1_to_16.funciones_basicas import funciones_basicas
 
 
 class ejecutor:
     lanza = funciones_basicas()
 
     # Ejercicio4:
-    #title_text = lanza.open_browser_title(url="https://www.google.es/", title=None)
-    #lanza.show_title(title_text)
-    #lanza.open_browser_title(url="https://www.bbc.com/mundo", title=False)
-    #lanza.selecionar()
-    #lanza.max_window()
-    #lanza.refres_screen()
-    #lanza.quit_driver()
+    title_text = lanza.open_browser_title(url="https://www.google.es/", title=None)
+    lanza.show_title(title_text)
+    lanza.open_browser_title(url="https://www.bbc.com/mundo", title=False)
+    lanza.selecionar()
+    lanza.max_window()
+    lanza.refres_screen()
+    lanza.quit_driver()
 
     # Ejercicio5:
     # title_text = lanza.open_browser_title(url="https://www.google.es/", title=None)
