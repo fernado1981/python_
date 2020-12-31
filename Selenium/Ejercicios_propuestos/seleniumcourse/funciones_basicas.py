@@ -6,6 +6,26 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class funciones_basicas:
+    count = 0
+    count_h1 = 0
+    count_h2 = 0
+    count_h3 = 0
+    lista_divs_header = {
+        "h1": count_h1,
+        "h2": count_h2,
+        "h3": count_h3
+    }
+
+    locator = {
+        "xpath_cookie_netflix": "//div[@id='cookie-disclosure'] // div[@class ='cta-btn-container']//*[contains(text(),'Aceptar')]",
+        "xpath_init_sesion": "//*[contains(text(),'Iniciar sesión')]",
+        "xpath_documentacion": "//a[@class='nav-item'][normalize-space()='Documentation']",
+        "input_google": "[name='q']",
+        "input_email_facebook": "//input[@id='email']",
+        "input_pass_facebook": "//input[@id='pass']",
+        "submit_entrar_facebook": "//button[normalize-space()='Entrar']",
+        "acepted_cookie_facebook": "//button[@type='submit'][2]"
+    }
 
     def __init__(self):
         self.driver = webdriver.Firefox()
@@ -14,21 +34,24 @@ class funciones_basicas:
         if title is False:
             self.driver.get(url)
             return "pass"
-        else:
+        elif title is True:
+            self.driver.get(url)
+            title = self.driver.title
+            return title
+        elif title is None:
             self.driver.get(url)
             title = WebDriverWait(self.driver, 20).until(EC.title_contains("Google"))
             return title
 
     def show_title(self, title):
-        print(title)
-        if title is True:
+        if title:
             print("Passed")
         else:
             print("Failed")
 
     def nav_doc(self):
         doc = WebDriverWait(self.driver, 20).until(
-            EC.visibility_of_element_located((By.XPATH, "//a[@class='nav-item'][normalize-space()='Documentation']")))
+            EC.visibility_of_element_located((By.XPATH, self.locator["xpath_documentacion"])))
         doc.click()
 
     def get_windows_size_test(self):
@@ -48,75 +71,76 @@ class funciones_basicas:
 
     def search_in_google(self, element="Welement"):
         print("tengo", element)
-        self.driver.find_element_by_css_selector("[name='q'").send_keys(element, Keys.ENTER)
-
-    def bbcMundo(self):
-        self.driver.get("https://www.bbc.com/mundo")
-        count_h1 = 0
-        count_h2 = 0
-        count_h3 = 0
-
-        for ele_h1 in self.driver.find_elements_by_tag_name("H1"):
-            count_h1 += 1
-        print("Hay elementos de tipo H1: ", count_h1)
-
-        print("\n Elementos H2: \n")
-        for ele_h2 in self.driver.find_elements_by_tag_name("H2"):
-            count_h2 += 1
-            if count_h2 <= 3:
-                print(count_h2, "", ele_h2.text)
-        print("Hay elementos de tipo H2: ", count_h2)
-
-        print("\n Elementos H3: \n")
-        for ele_h3 in self.driver.find_elements_by_tag_name("H3"):
-            count_h3 += 1
-            if count_h3 <= 3:
-                print(count_h3, "", ele_h3.text)
-        print("Hay elementos de tipo H3 ", count_h3)
-
-    def bbcmundolistas(self):
-        count = 0
-        for ele_li in self.driver.find_elements_by_tag_name("li"):
-            print(ele_li.text)
-            count += 1
-        print("hay ", count, " li")
+        self.driver.find_element_by_css_selector(self.locator["input_google"]).send_keys(element, Keys.ENTER)
 
     def acepted_cookie(self):
-        self.driver.find_element_by_xpath("//button[normalize-space()='Aceptar todas']").click()
+        self.driver.find_element_by_xpath(self.locator["acepted_cookie_facebook"]).click()
 
     def send_keys(self, email="test@test.com", pwd="holamundo"):
-        WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//input[@id='email']")))
-        input_email = self.driver.find_element_by_xpath("//input[@id='email']")
+        WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, self.locator["input_email_facebook"])))
+        input_email = self.driver.find_element_by_xpath(self.locator["input_email_facebook"])
         input_email.send_keys(email)
 
-        WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//input[@id='pass']")))
-        input_pass = self.driver.find_element_by_xpath("//input[@id='pass']")
+        WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((By.XPATH, self.locator["input_pass_facebook"])))
+        input_pass = self.driver.find_element_by_xpath(self.locator["input_pass_facebook"])
         input_pass.send_keys(pwd)
 
-        self.driver.find_element_by_xpath("//button[normalize-space()='Entrar']").click()
+        self.driver.find_element_by_xpath(self.locator["submit_entrar_facebook"]).click()
 
-    def show_link(self):
-        count = 0
-        print("cantidad de parrafos")
-        for ele_parrafo in self.driver.find_elements_by_tag_name("a"):
-            count += 1
-            print(ele_parrafo.text)
-        print("hay ", count, " parrafos")
+    def selecionar(self):
+        for ele_h1 in self.driver.find_elements_by_tag_name("H1"):
+            self.count_h1 += 1
+            self.lista_divs_header["h1"] = self.count_h1
+        print("Hay elementos de tipo H1: ", self.lista_divs_header["h1"])
 
-    def show_div(self):
-        count = 0
-        print("cantidad de div's")
-        for i in self.driver.find_elements_by_tag_name("div"):
-            count += 1
-        print("cantidad de div's: ", count)
+        for ele_h2 in self.driver.find_elements_by_tag_name("H2"):
+            self.count_h2 += 1
+            self.lista_divs_header["h2"] = self.count_h2
+        print("Hay elementos de tipo H2: ", self.lista_divs_header["h2"])
 
-    def show_button(self):
-        count = 0
-        print("cantidad de botones")
-        for i in self.driver.find_elements_by_tag_name("button"):
-            print(i.text)
-            count += 1
-        print("cantidad de botones: ", count)
+        for ele_h3 in self.driver.find_elements_by_tag_name("H3"):
+            self.count_h3 += 1
+            self.lista_divs_header["h3"] = self.count_h3
+        print("Hay elementos de tipo H3 ", self.lista_divs_header["h3"])
+
+        print("el que más veces se muestra es: ",
+              list(self.lista_divs_header.keys())[
+                  list(self.lista_divs_header.values()).index(max(self.lista_divs_header.values()))])
+
+    def show_tag(self, div=False, button=False, input=False, link=False, listas=False):
+        if div is True:
+            for i in self.driver.find_elements_by_tag_name("div"):
+                self.count += 1
+            print("cantidad de div's: ", self.count)
+        elif button is True:
+            for i in self.driver.find_elements_by_tag_name("button"):
+                # print(i.text)
+                self.count += 1
+            print("cantidad de botones: ", self.count)
+        elif input is True:
+            for i in self.driver.find_elements_by_tag_name("input"):
+                # print(i.text)
+                self.count += 1
+            print("cantidad de input: ", self.count)
+        elif link is True:
+            for ele_parrafo in self.driver.find_elements_by_tag_name("a"):
+                self.count += 1
+                # print(ele_parrafo.text)
+                self.lista_divs_header["link"] = self.count
+            print("hay ", self.count, " links")
+        elif listas is True:
+            for ele_li in self.driver.find_elements_by_tag_name("li"):
+                # print(ele_li.text)
+                self.count += 1
+                self.lista_divs_header["lista"] = self.count
+            print("hay ", self.count, " li")
+
+    def show_repeticiones(self):
+        print(self.lista_divs_header)
+        print("el que más veces se muestra es: ",
+              list(self.lista_divs_header.keys())[
+                  list(self.lista_divs_header.values()).index(max(self.lista_divs_header.values()))], " con: ",
+              max(self.lista_divs_header.values()))
 
     def max_window(self):
         self.driver.maximize_window()
@@ -125,12 +149,22 @@ class funciones_basicas:
         self.driver.refresh()
 
     def go_forward(self):
-        print("voy adelante")
         self.driver.forward()
 
     def go_back(self):
-        print("voy atrás")
         self.driver.back()
+
+    def accept_cookie(self):
+        self.driver.find_element_by_xpath(self.locator["xpath_cookie_netflix"]).click()
+
+    def iniciar_sesion_btn(self):
+        initsesion = WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located((By.XPATH, self.locator["xpath_init_sesion"])))
+        print(initsesion.text)
+        if initsesion != "":
+            initsesion.click()
+        else:
+            print("error")
 
     def quit_driver(self):
         self.driver.quit()
