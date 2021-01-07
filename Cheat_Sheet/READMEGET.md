@@ -1,29 +1,35 @@
 [Principal](../README.md)<br/>
 
 # IMPORT REQUESTS:
-
     import requests
     from pip._vendor import requests
 
 # API_GET:
-    
-    class ApiPrueba:
-        url = "http://demo5977139.mockable.io/qa-cdco/exercises/cars_01"
-        sospechoso = 'suspicious_car'
-        lista = []
-        response = requests.get(url)
-        if response.status_code == 200:
-            response = response.json()
-            for c, v in response.items():
-                if c == sospechoso:
-                    lista.append(c)
-                    lista.append(v)
-        print(lista)
-     
-     //response=['suspicious_car', ['black', 'blue']]
+    my_url = '<website>'
+    response = requests.get(url)
+    if response.status_code == 200:
+       response = response.json()
+       for c, v in response.items():
+         print(c,v)
   
-# API_POST:
+# API_GET_TOKEN:
+    my_token = '<token>'
+    my_url = '<website>'
+    head = {'Authorization': 'token {}'.format(my_token)}
+    response = requests.get(my_url, headers=head)
+    
+# API_GET_TOKEN_BEARER:    
+    response = requests.get('myurl', headers={ 'Authorization': 'Bearer <your_token>' })
+    print response.json()
+    
+# API_GET_USER_PASS:
+    from requests.auth import HTTPBasicAuth
+    my_url = '<website>'
+    user = '<user>'
+    pass = '<pass>'
+    requests.get(my_url, auth=HTTPBasicAuth(user, pass))
 
+# API_POST:
     class ApiPrueba:
         url = "https://jsonplaceholder.typicode.com/posts"
         data = {"Nombre": "Fer", "Edad": 39}
