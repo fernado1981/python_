@@ -26,6 +26,8 @@
 ## conection y cursor:
         mydb = conection.mydb
         cursor = self.mydb.cursor()
+        
+![React](../Images/db.png)
 
 ## consulta selct, fetchall():
 cursor.fetchall()recupera todas las filas del resultado de una consulta. Devuelve todas las filas como una lista de tuplas. Se devuelve una lista vacía si no hay ningún registro que recuperar.
