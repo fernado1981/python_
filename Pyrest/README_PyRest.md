@@ -1,4 +1,4 @@
-[GET](README_GetApi.md) | [POST](README_PostApi.md)
+[GET](README_GetApi.md) | [POST](README_PostApi.md) | [DELETE](README_DeleteApi.md)
 
 # Instalar PyRest
 

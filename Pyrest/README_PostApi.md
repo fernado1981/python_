@@ -1,9 +1,9 @@
 [PRINCIPAL](README_PyRest.md) 
 
-# GET API:
+# POST API:
 
 ### Generar el fichero get.py:
-    touch get.py
+    touch post.py
  
 ### Agregar el siguiente contenido: 
     from flask import Flask, jsonify
@@ -28,7 +28,7 @@
         id = int(id) - 1
         return jsonify(accounts[id])
         
-    @app.route("/account", methods=['POST'])
+    @app.route("/addaccount", methods=['POST'])
     def addAccount():
         name = request.json['name']
         balance = request.json['balance']
@@ -45,7 +45,7 @@
     python3 get.py
     
 ### Agregar nuevos datos:
-    MacBook-Pro:python$ curl -X POST -H "Content-Type: application/json" -d '{"name": "Shovon", "balance": 100}' http://127.0.0.1:8083/account
+    MacBook-Pro:python$ curl -X POST -H "Content-Type: application/json" -d '{"name": "Shovon", "balance": 100}' http://127.0.0.1:8083/addaccount
     {
       "balance": 100, 
       "name": "Shovon"

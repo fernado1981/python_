@@ -33,7 +33,23 @@ def addAccount():
 
     return jsonify(data)
 
+@app.route("/delaccountname/<name>", methods=['DELETE'])
+def deleteAccountname(name):
+    for i in accounts:
+        if i['name'] == name:
+            accounts.remove(i)
+    return jsonify(accounts)
+
+@app.route("/delaccountid/<id>", methods=['DELETE'])
+def deleteAccountid(id):
+    id = int(id) - 1
+    print(id)
+    for i in range(len(accounts)):
+        if i == id:
+            accounts.pop(i)
+    return jsonify(accounts[id])
+
 
 ##APP.run the server
 if __name__ == "__main__":
-    app.run(port=8083)
+    app.run(port=8084)
